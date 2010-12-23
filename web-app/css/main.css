@@ -237,7 +237,6 @@ th.sortable a {
 }
 
 th.asc a {
-	/* TODO: sprite */
 	background-image: url(../images/skin/sorted_asc.gif);
 }
 
@@ -286,27 +285,6 @@ th:hover, tr:hover {
 
 .pagination .currentStep {
 	font-weight: bold;
-}
-
-/* DIALOG */
-
-.dialog table {
-	padding: 5px 0;
-}
-
-.prop {
-	padding: 5px;
-}
-
-.prop .name {
-	text-align: left;
-	width: 15%;
-	white-space: nowrap;
-}
-
-.prop .value {
-	text-align: left;
-	width: 85%;
 }
 
 /* ACTION BUTTONS */
