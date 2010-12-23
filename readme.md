@@ -20,6 +20,7 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
  * All controllers in nav?
  * Primary & secondary nav for controllers / actions?
+ * Highlight active state
 
 ### Form inputs
 
@@ -35,6 +36,7 @@ This is a sample project for prototyping changes to Grails scaffolding.
 ### Mobile
 
  * Test on iOS, Android, Blackberry
+ * Apple touch icons
 
 ### Accessibility
 
