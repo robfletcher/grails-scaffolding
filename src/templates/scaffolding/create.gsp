@@ -35,17 +35,16 @@
 					display = true
 					boolean hasHibernate = PluginManagerHolder.pluginManager.hasGrailsPlugin('hibernate')
 					props.each { p ->
-						if (!Collection.class.isAssignableFrom(p.type)) {
-							if (hasHibernate) {
-								cp = domainClass.constrainedProperties[p.name]
-								display = (cp ? cp.display : true)
-							}
-							if (display) { %>
+						if (hasHibernate) {
+							cp = domainClass.constrainedProperties[p.name]
+							display = (cp ? cp.display : true)
+						}
+						if (display) { %>
 					<li class="\${hasErrors(bean: ${propertyName}, field: '${p.name}', 'errors')}">
 						<label for="${p.name}"><g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}" /></label>
 						${renderEditor(p)}
 					</li>
-				<%  }   }   } %>
+				<%  }   } %>
                 </ol>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="\${message(code: 'default.button.create.label', default: 'Create')}" />
