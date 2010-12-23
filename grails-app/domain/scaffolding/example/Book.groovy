@@ -8,6 +8,8 @@ class Book {
 	// boolean field
 	// enum field
 	// date field
+	Date dateCreated
+	Date lastUpdated
 
 	static hasMany = [authors: Author]
 
