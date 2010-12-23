@@ -31,7 +31,7 @@
 					<span class="name"><g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}" /></span>
 					<span class="value">
 					<%  if (p.isEnum()) { %>
-						<g:fieldValue bean="\${propertyName}" field="${p.name}"/>
+						<g:fieldValue bean="\${${propertyName}}" field="${p.name}"/>
 					<%  } else if (p.oneToMany || p.manyToMany) { %>
 						<ul>
 						<g:each in="\${${propertyName}.${p.name}}" var="${p.name[0]}">
@@ -45,7 +45,7 @@
 					<%  } else if (p.type == Date.class || p.type == java.sql.Date.class || p.type == java.sql.Time.class || p.type == Calendar.class) { %>
 						<g:formatDate date="\${${propertyName}?.${p.name}}" />
 					<%  } else if(!p.type.isArray()) { %>
-						<g:fieldValue bean="\${propertyName}" field="${p.name}"/>
+						<g:fieldValue bean="\${${propertyName}}" field="${p.name}"/>
 					<%  } %>
 					</span>
 				</li>
