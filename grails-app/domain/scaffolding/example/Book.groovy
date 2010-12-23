@@ -15,4 +15,8 @@ class Book {
 		title blank: false
 		authors min: 1
     }
+
+	String toString() {
+		title
+	}
 }
