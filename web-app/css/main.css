@@ -1,0 +1,337 @@
+html * {
+	margin: 0;
+}
+
+body {
+	background: #fff;
+	color: #333;
+	font-size: 62.5%; /* this gives us a base font size of 10px in most browsers, ems calculations are then easy */
+	font-family: "Segoe UI",Tahoma,Helvetica,"Helvetica Neue",Arial,sans-serif;
+}
+
+a:link, a:visited, a:hover {
+	color: #48802c;
+}
+
+h1 {
+	color: #48802c;
+	font-weight: normal;
+	font-size: 1.6em;
+	margin: .8em 0 .3em 0;
+}
+
+ul {
+	padding-left: 15px;
+}
+
+/* GENERAL */
+
+.spinner {
+	padding: 5px;
+	position: absolute;
+	right: 0;
+}
+
+#grailsLogo a {
+	display: inline-block;
+	margin: 2em;
+}
+
+.body {
+	float: left;
+	margin: 0 1.5em 1em 1.5em;
+}
+
+/* margins are doubled on floated elements in ie6 */
+.ie6 .body {
+	margin: 0 .75em .5em .75em;
+}
+
+/* NAVIGATION MENU */
+
+.nav {
+	background-color: #ffffff;
+	background-image: -moz-linear-gradient(top, #ffffff, #eaeaea);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #ffffff),color-stop(1, #eaeaea));
+			  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea');
+		  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea')";
+	border-width: 1px;
+	border-color: #ccc;
+	border-style: solid none solid none;
+	padding: .7em 1.2em;
+	zoom: 1;
+}
+
+.nav ul {
+	overflow: auto;
+	padding-left: 0;
+	zoom: 1;
+}
+
+.nav li {
+	display: block;
+	float: left;
+	list-style-type: none;
+	padding: .4em 1.1em;
+}
+
+.nav a {
+	color: #666;
+	display: block;
+	font-size: 1.3em;
+	font-weight: bold;
+	line-height: 1.3em;
+	text-decoration: none;
+}
+
+.nav a:active, .nav a:visited {
+	color: #666;
+}
+
+.nav a:focus, .nav a:hover {
+	color: #333;
+}
+
+.nav a.home {
+	background: url(../images/skin/house.png) center left no-repeat;
+	padding-left: 25px;
+}
+
+.nav a.list {
+	background: url(../images/skin/database_table.png) center left no-repeat;
+	padding-left: 25px;
+}
+
+.nav a.create {
+	background: url(../images/skin/database_add.png) center left no-repeat;
+	padding-left: 25px;
+}
+
+/* FORMS */
+
+form ol {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+label {
+	display: block;
+	font-size: 1.3em;
+}
+
+input, select, textarea {
+	background-color: #fcfcfc;
+	border: 1px solid #ccc;
+	font-size: 1.2em;
+	margin: .2em 0;
+	padding: .2em .4em;
+}
+
+select {
+	padding: .2em .2em .2em 0;
+}
+
+textarea {
+	width: 250px;
+	height: 150px;
+	vertical-align: top;
+}
+
+input:focus, select:focus, textarea:focus {
+	border: 1px solid #b2d1ff;
+}
+
+/* MESSAGES AND ERRORS */
+
+.message {
+	background: #f3f8fc url(../images/skin/information.png) 5px 50% no-repeat;
+	border: 1px solid #b2d1ff;
+	color: #006dba;
+	font-size: 1.2em;
+	margin: 1em 0 .5em 0;
+	padding: .5em;
+	text-indent: 19px;
+}
+
+div.errors {
+	background: #fff3f3;
+	border: 1px solid red;
+	color: #cc0000;
+	margin: 1em 0 .5em 0;
+	padding: .5em;
+}
+
+div.errors ul {
+	list-style: none;
+	padding: 0;
+}
+
+div.errors li {
+	background: url(../images/skin/exclamation.png) 8px 0% no-repeat;
+	line-height: 16px;
+	padding-left: 30px;
+}
+
+td.errors select {
+	border: 1px solid red;
+}
+
+td.errors input {
+	border: 1px solid red;
+}
+
+td.errors textarea {
+	border: 1px solid red;
+}
+
+/* TABLES */
+
+table {
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+	width: 100%
+}
+
+tr {
+	border: 0;
+}
+
+td, th {
+	border-left: 1px solid #ddd;
+	font: 11px verdana, arial, helvetica, sans-serif;
+	line-height: 12px;
+	padding: 5px 6px;
+	text-align: left;
+	vertical-align: top;
+}
+
+th {
+	background: #fff url(../images/skin/shadow.jpg);
+	color: #666;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 17px;
+	padding: 2px 6px;
+}
+
+th a:link, th a:visited, th a:hover {
+	color: #333;
+	display: block;
+	font-size: 10px;
+	text-decoration: none;
+	width: 100%;
+}
+
+th.asc a, th.desc a {
+	background-position: right;
+	background-repeat: no-repeat;
+}
+
+th.asc a {
+	background-image: url(../images/skin/sorted_asc.gif);
+}
+
+th.desc a {
+	background-image: url(../images/skin/sorted_desc.gif);
+}
+
+.odd {
+	background: #f7f7f7;
+}
+
+.even {
+	background: #fff;
+}
+
+th:hover, tr:hover {
+	background: #b2d1ff;
+}
+
+/* PAGINATION */
+
+.paginateButtons {
+	background: #fff url(../images/skin/shadow.jpg) bottom repeat-x;
+	border: 1px solid #ccc;
+	border-top: 0;
+	color: #666;
+	font-size: 10px;
+	overflow: hidden;
+	padding: 10px 3px;
+}
+
+.paginateButtons a {
+	background: #fff;
+	border: 1px solid #ccc;
+	border-color: #ccc #aaa #aaa #ccc;
+	color: #666;
+	margin: 0 3px;
+	padding: 2px 6px;
+}
+
+.paginateButtons span {
+	padding: 2px 3px;
+}
+
+/* DIALOG */
+
+.dialog table {
+	padding: 5px 0;
+}
+
+.prop {
+	padding: 5px;
+}
+
+.prop .name {
+	text-align: left;
+	width: 15%;
+	white-space: nowrap;
+}
+
+.prop .value {
+	text-align: left;
+	width: 85%;
+}
+
+/* ACTION BUTTONS */
+
+.buttons {
+	background-color: #ffffff;
+	background-image: -moz-linear-gradient(top, #ffffff, #eaeaea);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #ffffff),color-stop(1, #eaeaea));
+			  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea');
+		  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea')";
+	border: 1px solid #ccc;
+	color: #666;
+	font-size: 10px;
+	margin-top: 5px;
+	overflow: hidden;
+	padding: 0;
+}
+
+.buttons input {
+	background: #fff;
+	border: 0;
+	color: #333;
+	cursor: pointer;
+	font-size: 10px;
+	font-weight: bold;
+	margin-left: 3px;
+	overflow: visible;
+	padding: 2px 6px;
+}
+
+.buttons input.delete {
+	background: transparent url(../images/skin/database_delete.png) 5px 50% no-repeat;
+	padding-left: 28px;
+}
+
+.buttons input.edit {
+	background: transparent url(../images/skin/database_edit.png) 5px 50% no-repeat;
+	padding-left: 28px;
+}
+
+.buttons input.save {
+	background: transparent url(../images/skin/database_save.png) 5px 50% no-repeat;
+	padding-left: 28px;
+}
