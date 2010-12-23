@@ -26,12 +26,6 @@ ul {
 
 /* GENERAL */
 
-.spinner {
-	padding: 5px;
-	position: absolute;
-	right: 0;
-}
-
 #grailsLogo a {
 	display: inline-block;
 	margin: 2em;
@@ -42,9 +36,8 @@ ul {
 	margin: 0 1.5em 1em 1.5em;
 }
 
-/* margins are doubled on floated elements in ie6 */
 .ie6 .body {
-	margin: 0 .75em .5em .75em;
+	display: inline; /* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
 }
 
 /* NAVIGATION MENU */
@@ -172,15 +165,9 @@ div.errors li {
 	padding-left: 30px;
 }
 
-td.errors select {
-	border: 1px solid red;
-}
-
-td.errors input {
-	border: 1px solid red;
-}
-
-td.errors textarea {
+li.errors select,
+li.errors input,
+li.errors textarea {
 	border: 1px solid red;
 }
 
