@@ -319,6 +319,7 @@ th:hover, tr:hover {
 	border: 0;
 	color: #666;
 	cursor: pointer;
+	display: inline-block;
 	font-size: 1.3em;
 	font-weight: bold;
 	margin-left: .3em;
