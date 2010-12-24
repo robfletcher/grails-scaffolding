@@ -53,6 +53,9 @@ ul {
 	border-style: solid none solid none;
 	padding: .7em 1.2em;
 	zoom: 1;
+	-moz-box-shadow: 0px 0px 3px #ccc;
+ -webkit-box-shadow: 0px 0px 3px #ccc;
+		 box-shadow: 0px 0px 3px #ccc;
 }
 
 .nav ul {
@@ -103,8 +106,12 @@ ul {
 /* FORMS */
 
 form ol {
+	border: 1px solid #CCCCCC;
 	list-style-type: none;
-	padding-left: 0;
+	padding: 0 1.5em 1em;
+	-moz-box-shadow: 0px 0px 3px #ccc;
+ -webkit-box-shadow: 0px 0px 3px #ccc;
+		 box-shadow: 0px 0px 3px #ccc;
 }
 
 form li {
@@ -202,7 +209,10 @@ li.error textarea:focus {
 table {
 	border: 1px solid #ccc;
 	border-collapse: collapse;
-	width: 100%
+	width: 100%;
+	-moz-box-shadow: 0px 0px 3px #ccc;
+ -webkit-box-shadow: 0px 0px 3px #ccc;
+		 box-shadow: 0px 0px 3px #ccc;
 }
 
 tr {
@@ -281,6 +291,9 @@ th:hover, tr:hover {
 	border-top: 0;
 	padding: 1em .3em;
 	text-align: center;
+	-moz-box-shadow: 0px 0px 3px #ccc;
+ -webkit-box-shadow: 0px 0px 3px #ccc;
+		 box-shadow: 0px 0px 3px #ccc;
 }
 
 .pagination a,
@@ -312,6 +325,9 @@ th:hover, tr:hover {
 	margin-top: 1em;
 	overflow: hidden;
 	padding: 0;
+	-moz-box-shadow: 0px 0px 3px #ccc;
+ -webkit-box-shadow: 0px 0px 3px #ccc;
+		 box-shadow: 0px 0px 3px #ccc;
 }
 
 .buttons input {
@@ -350,6 +366,14 @@ th:hover, tr:hover {
 }
 
 /* SHOW PAGES */
+dl {
+	border: 1px solid #CCCCCC;
+	padding: 0 1.5em 1em;
+	-moz-box-shadow: 0px 0px 3px #ccc;
+ -webkit-box-shadow: 0px 0px 3px #ccc;
+		 box-shadow: 0px 0px 3px #ccc;
+}
+
 dt, dd {
 	display: block;
 	font-size: 1.3em;
