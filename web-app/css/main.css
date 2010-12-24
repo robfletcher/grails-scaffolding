@@ -107,14 +107,20 @@ form ol {
 	padding-left: 0;
 }
 
+form li {
+	margin-top: .5em;
+}
+
 label {
-	display: block;
+	cursor: pointer;
+	display: inline-block;
 	font-size: 1.3em;
 }
 
 input, select, textarea {
 	background-color: #fcfcfc;
 	border: 1px solid #ccc;
+	display: block;
 	font-size: 1.2em;
 	margin: .2em 0;
 	padding: .2em .4em;
@@ -132,43 +138,63 @@ textarea {
 
 input:focus, select:focus, textarea:focus {
 	border: 1px solid #b2d1ff;
+	-moz-box-shadow: 0px 0px 3px #b2d1ff;
+ -webkit-box-shadow: 0px 0px 3px #b2d1ff;
+		 box-shadow: 0px 0px 3px #b2d1ff;
 }
 
 /* MESSAGES AND ERRORS */
+
+.errors,
+.message {
+	font-size: 1.2em;
+	line-height: 1.6em;
+	margin: 1em 0 .5em 0;
+	padding: .5em;
+}
 
 .message {
 	background: #f3f8fc url(../images/skin/information.png) 5px 50% no-repeat;
 	border: 1px solid #b2d1ff;
 	color: #006dba;
-	font-size: 1.2em;
-	margin: 1em 0 .5em 0;
-	padding: .5em;
 	text-indent: 19px;
 }
 
-div.errors {
+.errors {
 	background: #fff3f3;
-	border: 1px solid red;
-	color: #cc0000;
-	margin: 1em 0 .5em 0;
-	padding: .5em;
+	border: 1px solid #c00;
+	color: #c00;
 }
 
-div.errors ul {
+.errors ul {
 	list-style: none;
 	padding: 0;
 }
 
-div.errors li {
-	background: url(../images/skin/exclamation.png) 8px 0% no-repeat;
-	line-height: 16px;
+.errors li {
+	background: url(../images/skin/exclamation.png) .5em 50% no-repeat;
 	padding-left: 30px;
 }
 
-li.errors select,
-li.errors input,
-li.errors textarea {
+select:invalid,
+input:invalid,
+textarea:invalid,
+li.error select,
+li.error input,
+li.error textarea {
 	border: 1px solid red;
+}
+
+
+select:invalid:focus,
+input:invalid:focus,
+textarea:invalid:focus,
+li.error select:focus,
+li.error input:focus,
+li.error textarea:focus {
+	   -moz-box-shadow: 0px 0px 3px red;
+	-webkit-box-shadow: 0px 0px 3px red;
+            box-shadow: 0px 0px 3px red;
 }
 
 /* TABLES */
@@ -283,7 +309,7 @@ th:hover, tr:hover {
 			  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea');
 		  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea')";
 	border: 1px solid #ccc;
-	margin-top: .5em;
+	margin-top: 1em;
 	overflow: hidden;
 	padding: 0;
 }
@@ -302,6 +328,9 @@ th:hover, tr:hover {
 
 .buttons input:hover, .buttons input:focus {
 	color: #333;
+	-moz-box-shadow: none;
+ -webkit-box-shadow: none;
+		 box-shadow: none;
 }
 
 .buttons input.delete {

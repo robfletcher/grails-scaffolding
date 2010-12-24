@@ -40,7 +40,7 @@
 							display = (cp ? cp.display : true)
 						}
 						if (display) { %>
-					<li class="\${hasErrors(bean: ${propertyName}, field: '${p.name}', 'errors')}">
+					<li class="\${hasErrors(bean: ${propertyName}, field: '${p.name}', 'error')}">
 						<label for="${p.name}"><g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}" /></label>
 						${renderEditor(p)}
 					</li>
