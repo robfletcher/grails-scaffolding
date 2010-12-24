@@ -10,6 +10,7 @@ This is a sample project for prototyping changes to Grails scaffolding.
  * Show pages (left/right layout or dl style?)
  * .body { float: left; } is horrible and doesn't work on IE6
  * Home page
+ * Mark mandatory fields
 
 ## Phase 2 - Re-design
 

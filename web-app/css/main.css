@@ -318,3 +318,14 @@ th:hover, tr:hover {
 	background: transparent url(../images/skin/database_save.png) 5px 50% no-repeat;
 	padding-left: 28px;
 }
+
+/* SHOW PAGES */
+dt, dd {
+	display: block;
+	font-size: 1.3em;
+}
+
+dt {
+	color: #666;
+	margin-top: 0.5em;
+}
