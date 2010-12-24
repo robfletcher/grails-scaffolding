@@ -35,7 +35,6 @@ This is a sample project for prototyping changes to Grails scaffolding.
 ### Mobile
 
  * Test on iOS, Android, Blackberry
- * Apple touch icons
 
 ### Accessibility
 
