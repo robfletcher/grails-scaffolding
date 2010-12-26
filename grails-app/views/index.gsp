@@ -18,6 +18,9 @@
 	   -webkit-border-radius: 1em; 
 	           border-radius: 1em; 
         }
+		.ie6 #nav {
+			display: inline; /* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
+		}
 		#nav ul {
 			font-size: 1.3em;
             list-style-type: none;
