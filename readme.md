@@ -18,6 +18,7 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ### Navigation
 
+ * Include nav using SiteMesh
  * All controllers in nav?
  * Primary & secondary nav for controllers / actions?
  * Highlight active state
