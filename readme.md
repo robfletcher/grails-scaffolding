@@ -4,12 +4,11 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ## Phase 1 - slightly slicker version of current Grails L&F
 
- * Flash messages & errors
  * Some _subtle_ use of text shadow and border radius
  * Form width
- * Show pages (left/right layout or dl style?)
  * .body { float: left; } is horrible and doesn't work on IE6
  * Home page
+ * Mark mandatory fields
 
 ## Phase 2 - Re-design
 
@@ -37,7 +36,6 @@ This is a sample project for prototyping changes to Grails scaffolding.
 ### Mobile
 
  * Test on iOS, Android, Blackberry
- * Apple touch icons
 
 ### Accessibility
 

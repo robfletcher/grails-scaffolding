@@ -16,41 +16,35 @@
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
         </div>
-        <div class="body">
+        <div class="body show-${domainClass.propertyName}">
             <h1><g:message code="default.show.label" args="[entityName]" /></h1>
             <g:if test="\${flash.message}">
             <div class="message">\${flash.message}</div>
             </g:if>
-			<ol>
+			<dl>
 			<%  excludedProps = Event.allEvents.toList() << 'version'
 				allowedNames = domainClass.persistentProperties*.name << 'id' << 'dateCreated' << 'lastUpdated'
 				props = domainClass.properties.findAll { allowedNames.contains(it.name) && !excludedProps.contains(it.name) }
 				Collections.sort(props, comparator.constructors[0].newInstance([domainClass] as Object[]))
 				props.each { p -> %>
-				<li>
-					<span class="name"><g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}" /></span>
-					<span class="value">
-					<%  if (p.isEnum()) { %>
-						<g:fieldValue bean="\${${propertyName}}" field="${p.name}"/>
-					<%  } else if (p.oneToMany || p.manyToMany) { %>
-						<ul>
-						<g:each in="\${${propertyName}.${p.name}}" var="${p.name[0]}">
-							<li><g:link controller="${p.referencedDomainClass?.propertyName}" action="show" id="\${${p.name[0]}.id}">\${${p.name[0]}?.encodeAsHTML()}</g:link></li>
-						</g:each>
-						</ul>
-					<%  } else if (p.manyToOne || p.oneToOne) { %>
-						<g:link controller="${p.referencedDomainClass?.propertyName}" action="show" id="\${${propertyName}?.${p.name}?.id}">\${${propertyName}?.${p.name}?.encodeAsHTML()}</g:link>
-					<%  } else if (p.type == Boolean.class || p.type == boolean.class) { %>
-						<g:formatBoolean boolean="\${${propertyName}?.${p.name}}" />
-					<%  } else if (p.type == Date.class || p.type == java.sql.Date.class || p.type == java.sql.Time.class || p.type == Calendar.class) { %>
-						<g:formatDate date="\${${propertyName}?.${p.name}}" />
-					<%  } else if(!p.type.isArray()) { %>
-						<g:fieldValue bean="\${${propertyName}}" field="${p.name}"/>
-					<%  } %>
-					</span>
-				</li>
+				<dt><g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}" /></dt>
+				<%  if (p.isEnum()) { %>
+					<dd><g:fieldValue bean="\${${propertyName}}" field="${p.name}"/></dd>
+				<%  } else if (p.oneToMany || p.manyToMany) { %>
+					<g:each in="\${${propertyName}.${p.name}}" var="${p.name[0]}">
+						<dd><g:link controller="${p.referencedDomainClass?.propertyName}" action="show" id="\${${p.name[0]}.id}">\${${p.name[0]}?.encodeAsHTML()}</g:link></dd>
+					</g:each>
+				<%  } else if (p.manyToOne || p.oneToOne) { %>
+					<dd><g:link controller="${p.referencedDomainClass?.propertyName}" action="show" id="\${${propertyName}?.${p.name}?.id}">\${${propertyName}?.${p.name}?.encodeAsHTML()}</g:link></dd>
+				<%  } else if (p.type == Boolean.class || p.type == boolean.class) { %>
+					<dd><g:formatBoolean boolean="\${${propertyName}?.${p.name}}" /></dd>
+				<%  } else if (p.type == Date.class || p.type == java.sql.Date.class || p.type == java.sql.Time.class || p.type == Calendar.class) { %>
+					<dd><g:formatDate date="\${${propertyName}?.${p.name}}" /></dd>
+				<%  } else if(!p.type.isArray()) { %>
+					<dd><g:fieldValue bean="\${${propertyName}}" field="${p.name}"/></dd>
+				<%  } %>
 			<%  } %>
-			</ol>
+			</dl>
 			<g:form>
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="\${${propertyName}?.id}" />

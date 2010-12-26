@@ -16,7 +16,7 @@
 				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 			</ul>
         </div>
-        <div class="body">
+        <div class="body create-${domainClass.propertyName}">
             <h1><g:message code="default.create.label" args="[entityName]" /></h1>
             <g:if test="\${flash.message}">
             <div class="message">\${flash.message}</div>
@@ -40,7 +40,7 @@
 							display = (cp ? cp.display : true)
 						}
 						if (display) { %>
-					<li class="\${hasErrors(bean: ${propertyName}, field: '${p.name}', 'errors')}">
+					<li class="\${hasErrors(bean: ${propertyName}, field: '${p.name}', 'error')}">
 						<label for="${p.name}"><g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}" /></label>
 						${renderEditor(p)}
 					</li>
