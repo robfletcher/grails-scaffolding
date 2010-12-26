@@ -28,7 +28,7 @@ ul {
 
 #grailsLogo a {
 	display: inline-block;
-	margin: 2em;
+	margin: 1.5em;
 }
 
 .body {
@@ -86,6 +86,7 @@ ul {
 
 .nav a:focus, .nav a:hover {
 	color: #333;
+    text-shadow: 1px 1px 3px #ccc; 
 }
 
 .nav a.home {
@@ -165,12 +166,18 @@ input:focus, select:focus, textarea:focus {
 	border: 1px solid #b2d1ff;
 	color: #006dba;
 	text-indent: 19px;
+	-moz-box-shadow: 0px 0px 3px #b2d1ff;
+ -webkit-box-shadow: 0px 0px 3px #b2d1ff;
+		 box-shadow: 0px 0px 3px #b2d1ff;
 }
 
 .errors {
 	background: #fff3f3;
-	border: 1px solid #c00;
+	border: 1px solid #faa;
 	color: #c00;
+	-moz-box-shadow: 0px 0px 3px #faa;
+ -webkit-box-shadow: 0px 0px 3px #faa;
+		 box-shadow: 0px 0px 3px #faa;
 }
 
 .errors ul {
@@ -307,6 +314,7 @@ th:hover, tr:hover {
 
 .pagination a:hover, .pagination a:focus {
 	color: #333;
+    text-shadow: 1px 1px 3px #ccc; 
 }
 
 .pagination .currentStep {
@@ -348,6 +356,7 @@ th:hover, tr:hover {
 	-moz-box-shadow: none;
  -webkit-box-shadow: none;
 		 box-shadow: none;
+	     text-shadow: 1px 1px 3px #ccc; 
 }
 
 .buttons input.delete {
