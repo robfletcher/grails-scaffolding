@@ -106,17 +106,31 @@ ul {
 
 /* FORMS */
 
-form ol {
+form ol,
+dl {
 	border: 1px solid #CCCCCC;
-	list-style-type: none;
-	padding: 0 1.5em 1em;
+	padding: .5em 1.5em 1em;
 	-moz-box-shadow: 0px 0px 3px #ccc;
  -webkit-box-shadow: 0px 0px 3px #ccc;
 		 box-shadow: 0px 0px 3px #ccc;
 }
 
-form li {
+form ol {
+	list-style-type: none;
+}
+
+form li,
+dt {
 	margin-top: .5em;
+}
+
+dt, dd {
+	display: block;
+	font-size: 1.3em;
+}
+
+dt {
+	color: #666;
 }
 
 label {
@@ -372,23 +386,4 @@ th:hover, tr:hover {
 .buttons input.save {
 	background: transparent url(../images/skin/database_save.png) 5px 50% no-repeat;
 	padding-left: 28px;
-}
-
-/* SHOW PAGES */
-dl {
-	border: 1px solid #CCCCCC;
-	padding: 0 1.5em 1em;
-	-moz-box-shadow: 0px 0px 3px #ccc;
- -webkit-box-shadow: 0px 0px 3px #ccc;
-		 box-shadow: 0px 0px 3px #ccc;
-}
-
-dt, dd {
-	display: block;
-	font-size: 1.3em;
-}
-
-dt {
-	color: #666;
-	margin-top: 0.5em;
 }
