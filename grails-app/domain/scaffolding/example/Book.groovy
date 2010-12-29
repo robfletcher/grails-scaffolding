@@ -16,7 +16,7 @@ class Book {
 
     static constraints = {
 		title blank: false
-		authors min: 1
+		authors minSize: 1
 		yearOfPublication matches: /\d{4}/
     }
 
