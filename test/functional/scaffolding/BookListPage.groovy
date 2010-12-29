@@ -14,6 +14,7 @@ class BookListPage extends Page {
 				module BookRow, it
 			}
 		}
+		message(required: false) { $(".message").text() }
 	}
 
 }

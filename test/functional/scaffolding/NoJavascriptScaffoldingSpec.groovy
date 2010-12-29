@@ -106,7 +106,15 @@ class NoJavascriptScaffoldingSpec extends GebSpec {
 	}
 
 	def "delete instance"() {
-		
+		when:
+		withConfirm {
+			deleteButton.click()
+		}
+
+		then:
+		at BookListPage
+		message ==~ /Book \d+ deleted/
+		books.empty
 	}
 	
 }
