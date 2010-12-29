@@ -8,6 +8,7 @@ class AuthorShowPage extends Page {
 	static at = { title == "Show Author" }
 	static content = {
 		author { module AuthorDetail, $("dl") }
+		deleteButton(to: AuthorListPage) { $("input.delete") }
 	}
 
 }

@@ -33,7 +33,7 @@ class NoJavascriptScaffoldingSpec extends GebSpec {
 		name << ["William Gibson", "Bruce Sterling"]
 	}
 
-	def "view empty list"() {
+	def "view empty book list"() {
 		given:
 		to BookListPage
 		
@@ -63,7 +63,7 @@ class NoJavascriptScaffoldingSpec extends GebSpec {
 		bookIds["Neuromancer"] = book.id
 	}
 	
-	def "view list"() {
+	def "view book list"() {
 		given:
 		to BookListPage
 		
@@ -71,7 +71,7 @@ class NoJavascriptScaffoldingSpec extends GebSpec {
 		books.size() == 1
 	}
 
-	def "show instance"() {
+	def "show book"() {
 		when:
 //		books[0].showLink.click() // TODO: selenium 2.0a7 won't click properly
 		to BookShowPage, bookIds["Neuromancer"]
@@ -83,7 +83,7 @@ class NoJavascriptScaffoldingSpec extends GebSpec {
 		book.yearOfPublication == 1984
 	}
 
-	def "navigate to edit page"() {
+	def "navigate to edit book page"() {
 		when:
 		editButton.click()
 
@@ -91,7 +91,7 @@ class NoJavascriptScaffoldingSpec extends GebSpec {
 		at BookEditPage
 	}
 
-	def "edit instance"() {
+	def "edit book"() {
 		when:
 		book.title = "The Difference Engine"
 		book.authors = authorIds.values()*.toString()
@@ -105,7 +105,7 @@ class NoJavascriptScaffoldingSpec extends GebSpec {
 		book.yearOfPublication == 1990
 	}
 
-	def "delete instance"() {
+	def "delete book"() {
 		when:
 		withConfirm {
 			deleteButton.click()
@@ -115,6 +115,23 @@ class NoJavascriptScaffoldingSpec extends GebSpec {
 		at BookListPage
 		message ==~ /Book \d+ deleted/
 		books.empty
+	}
+
+	def "delete authors"() {
+		given:
+		to AuthorShowPage, id
+
+		when:
+		withConfirm {
+			deleteButton.click()
+		}
+
+		then:
+		at AuthorListPage
+		message ==~ /Author \d+ deleted/
+
+		where:
+		id << authorIds.values()
 	}
 	
 }
