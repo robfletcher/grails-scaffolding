@@ -26,6 +26,7 @@ class BookRow extends Module {
 		yearOfPublication { cell(2).text().toInteger() }
 		dateCreated { new SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z").parse(cell(3).text()) }
 		lastUpdated { new SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z").parse(cell(4).text()) }
+		showLink(to: BookShowPage) { cell(0).find("a") }
 	}
 
 	@Override

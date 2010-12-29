@@ -7,6 +7,7 @@ import grails.plugin.geb.*
 class NoJavascriptScaffoldingSpec extends GebSpec {
 
 	@Shared Map<String, Long> authorIds = [:]
+	@Shared Map<String, Long> bookIds = [:]
 
 	@Override
 	String getBaseUrl() {
@@ -57,6 +58,9 @@ class NoJavascriptScaffoldingSpec extends GebSpec {
 		book.title == "Neuromancer"
 		book.authors == ["William Gibson"]
 		book.yearOfPublication == 1984
+
+		cleanup:
+		bookIds["Neuromancer"] = book.id
 	}
 	
 	def "view list"() {
@@ -68,11 +72,37 @@ class NoJavascriptScaffoldingSpec extends GebSpec {
 	}
 
 	def "show instance"() {
+		when:
+//		books[0].showLink.click() // TODO: selenium 2.0a7 won't click properly
+		to BookShowPage, bookIds["Neuromancer"]
 
+		then:
+		at BookShowPage
+		book.title == "Neuromancer"
+		book.authors == ["William Gibson"]
+		book.yearOfPublication == 1984
+	}
+
+	def "navigate to edit page"() {
+		when:
+		editButton.click()
+
+		then:
+		at BookEditPage
 	}
 
 	def "edit instance"() {
+		when:
+		book.title = "The Difference Engine"
+		book.authors = authorIds.values()*.toString()
+		book.yearOfPublication = "1990"
+		updateButton.click()
 
+		then:
+		at BookShowPage
+		book.title == "The Difference Engine"
+		book.authors == ["William Gibson", "Bruce Sterling"]
+		book.yearOfPublication == 1990
 	}
 
 	def "delete instance"() {
