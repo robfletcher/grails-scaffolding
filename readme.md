@@ -6,7 +6,6 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
  * Form width
  * .body { float: left; } is horrible and doesn't work on IE6
- * Mark mandatory fields
 
 ## Phase 2 - Re-design
 

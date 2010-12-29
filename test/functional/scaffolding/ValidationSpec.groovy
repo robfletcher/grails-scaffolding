@@ -9,6 +9,36 @@ class ValidationSpec extends GebSpec {
 		super.getBaseUrl() ?: "http://localhost:8080/"
 	}
 
+	def "mandatory indicators are displayed on create page"() {
+		given:
+		to BookCreatePage
+
+		expect:
+		isRequired("title")
+		!isRequired("authors")
+		isRequired("yearOfPublication")
+	}
+
+	def "mandatory indicators are displayed on edit page"() {
+		given:
+		to BookCreatePage
+		book.title = "Neuromancer"
+		book.yearOfPublication = "1984"
+		createButton.click()
+		editButton.click()
+
+		expect:
+		at BookEditPage
+		isRequired("title")
+		!isRequired("authors")
+		isRequired("yearOfPublication")
+
+		cleanup:
+		withConfirm {
+			deleteButton.click()
+		}
+	}
+
 	def "error messages displayed for fields in error"() {
 		given:
 		to BookCreatePage

@@ -9,6 +9,16 @@ class BookEditPage extends Page {
 	static content = {
 		book { $("form") }
 		updateButton(to: BookShowPage) { $("input.save") }
+		deleteButton(to: BookListPage) { $("input.delete") }
+		errors(required: false) { $(".errors li")*.text() }
+	}
+
+	boolean hasError(String fieldName) {
+		book."$fieldName"().parent("li").hasClass("error")
+	}
+
+	boolean isRequired(String fieldName) {
+		book."$fieldName"().parent("li").hasClass("required")
 	}
 
 }

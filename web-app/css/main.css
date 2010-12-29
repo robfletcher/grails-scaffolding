@@ -53,7 +53,7 @@ ul {
 	border-style: solid none solid none;
 	padding: .7em 1.2em;
 	zoom: 1;
-	-moz-box-shadow: 0px 0px 3px #ccc;
+	-moz-box-shadow: -3px 0px 3px #ccc; /* firefox will render a horizontal scrollbar without the h-offset -3px */
  -webkit-box-shadow: 0px 0px 3px #ccc;
 		 box-shadow: 0px 0px 3px #ccc;
 }
@@ -163,6 +163,12 @@ input:focus, select:focus, textarea:focus {
 	-moz-box-shadow: 0px 0px 3px #b2d1ff;
  -webkit-box-shadow: 0px 0px 3px #b2d1ff;
 		 box-shadow: 0px 0px 3px #b2d1ff;
+}
+
+.required-indicator {
+	font-size: 1.3em;
+	font-weight: bold;
+	margin-left: .25em;
 }
 
 /* MESSAGES AND ERRORS */

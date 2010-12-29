@@ -16,4 +16,8 @@ class BookCreatePage extends Page {
 		book."$fieldName"().parent("li").hasClass("error")
 	}
 
+	boolean isRequired(String fieldName) {
+		book."$fieldName"().parent("li").hasClass("required")
+	}
+
 }
