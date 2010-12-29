@@ -17,7 +17,7 @@ class Book {
     static constraints = {
 		title blank: false
 		authors minSize: 1
-		yearOfPublication matches: /\d{4}/
+		yearOfPublication blank: false, matches: /\d{4}/
     }
 
 	String toString() {
