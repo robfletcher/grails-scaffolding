@@ -7,6 +7,11 @@ body {
 	color: #333;
 	font-size: 62.5%; /* this gives us a base font size of 10px in most browsers, ems calculations are then easy */
 	font-family: "Segoe UI",Tahoma,Helvetica,"Helvetica Neue",Arial,sans-serif;
+	visibility: hidden;
+}
+
+.no-js body, body.ready {
+	visibility: visible;
 }
 
 a:link, a:visited, a:hover {
