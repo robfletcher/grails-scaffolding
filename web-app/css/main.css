@@ -144,7 +144,7 @@ input, select, textarea {
 	border: 1px solid #ccc;
 	display: block;
 	font-size: 1.2em;
-	margin: .2em 0;
+	margin: .2em 0 .8em;
 	padding: .2em .4em;
 }
 
@@ -166,6 +166,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .required-indicator {
+	color: #48802C;
 	font-size: 1.3em;
 	font-weight: bold;
 	margin-left: .25em;
@@ -366,7 +367,7 @@ th:hover, tr:hover {
 	display: inline-block;
 	font-size: 1.3em;
 	font-weight: bold;
-	margin-left: .3em;
+	margin: .2em 0 .2em .3em;
 	overflow: visible;
 	padding: .2em .6em;
 }
