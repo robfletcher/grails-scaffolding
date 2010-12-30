@@ -4,7 +4,6 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ## Phase 1 - slightly slicker version of current Grails L&F
 
- * Form width
  * .body { float: left; } is horrible and doesn't work on IE
 
 ## Phase 2 - Re-design

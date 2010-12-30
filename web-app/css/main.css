@@ -36,8 +36,11 @@ ul {
 	margin: 0 1.5em 1em 1.5em;
 }
 
-.ie6 .body {
-	display: inline; /* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
+.ie6 .body,
+.ie7 .body {
+	display: inline;
+	float: none;
+	zoom: 1;
 }
 
 /* NAVIGATION MENU */
