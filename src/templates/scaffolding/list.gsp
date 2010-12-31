@@ -15,7 +15,7 @@
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
         </div>
-        <div class="body list-${domainClass.propertyName}">
+        <div class="content list-${domainClass.propertyName}">
             <h1><g:message code="default.list.label" args="[entityName]" /></h1>
             <g:if test="\${flash.message}">
             <div class="message">\${flash.message}</div>
