@@ -13,6 +13,15 @@
 //}
 
 $(document).ready(function() {
+	if (Modernizr.history) {
+		// decorate list pagination & sorting controls with AJAX
+		$(".pagination a, th.sortable a").live("click", function() {
+			var url = $(this).attr("href");
+			$(".content").load(url + " .content");
+			return false;
+		});
+	}
+
 	// prevent FOUC by only making body visible once document is ready
 	$("body").addClass("ready");
 });
