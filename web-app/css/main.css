@@ -31,13 +31,13 @@ ul {
 	margin: 1.5em;
 }
 
-.body {
+.content {
 	float: left;
 	margin: 0 1.5em 1em 1.5em;
 }
 
-.ie6 .body,
-.ie7 .body {
+.ie6 .content,
+.ie7 .content {
 	display: inline;
 	float: none;
 	zoom: 1;
