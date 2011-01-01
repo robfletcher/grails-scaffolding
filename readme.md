@@ -20,6 +20,7 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ### Form inputs
 
+ * autofocus - 1st field in error or 1st in form
  * Radio groups for enums (use select when more than x values?)
  * URL & email inputs when constraints present
  * Numerics using type="number", type="range"
