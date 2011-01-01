@@ -1,7 +1,9 @@
 package scaffolding
 
+import grails.plugin.geb.GebSpec
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.firefox.*
 import spock.lang.*
-import grails.plugin.geb.*
 
 @Stepwise
 class NoJavascriptScaffoldingSpec extends GebSpec {
@@ -10,8 +12,19 @@ class NoJavascriptScaffoldingSpec extends GebSpec {
 	@Shared Map<String, Long> bookIds = [:]
 
 	@Override
+	WebDriver createDriver() {
+		def profile = new FirefoxProfile()
+		profile.setPreference("javascript.enabled", false)
+		new FirefoxDriver(profile)
+	}
+
+	@Override
 	String getBaseUrl() {
 		super.getBaseUrl() ?: "http://localhost:8080/"
+	}
+
+	def cleanupSpec() {
+		browser.driver.close()
 	}
 
 	def "set up a couple of authors"() {
@@ -36,7 +49,7 @@ class NoJavascriptScaffoldingSpec extends GebSpec {
 	def "view empty book list"() {
 		given:
 		to BookListPage
-		
+
 		expect:
 		books.empty
 	}
@@ -44,15 +57,15 @@ class NoJavascriptScaffoldingSpec extends GebSpec {
 	def "add new book"() {
 		given:
 		to BookCreatePage
-		
+
 		when:
 		book.title = "Neuromancer"
 		book.authors = [authorIds["William Gibson"].toString()] // TODO: this really sucks, should be able to set select by option text
 		book.yearOfPublication = "1984"
-		
+
 		and:
 		createButton.click()
-		
+
 		then:
 		at BookShowPage
 		book.title == "Neuromancer"
@@ -62,11 +75,11 @@ class NoJavascriptScaffoldingSpec extends GebSpec {
 		cleanup:
 		bookIds["Neuromancer"] = book.id
 	}
-	
+
 	def "view book list"() {
 		given:
 		to BookListPage
-		
+
 		expect:
 		books.size() == 1
 	}
@@ -107,9 +120,7 @@ class NoJavascriptScaffoldingSpec extends GebSpec {
 
 	def "delete book"() {
 		when:
-		withConfirm {
-			deleteButton.click()
-		}
+		deleteButton.click()
 
 		then:
 		at BookListPage
@@ -122,9 +133,7 @@ class NoJavascriptScaffoldingSpec extends GebSpec {
 		to AuthorShowPage, id
 
 		when:
-		withConfirm {
-			deleteButton.click()
-		}
+		deleteButton.click()
 
 		then:
 		at AuthorListPage
@@ -133,5 +142,5 @@ class NoJavascriptScaffoldingSpec extends GebSpec {
 		where:
 		id << authorIds.values()
 	}
-	
+
 }
