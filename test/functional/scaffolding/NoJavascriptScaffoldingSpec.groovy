@@ -1,31 +1,12 @@
 package scaffolding
 
-import grails.plugin.geb.GebSpec
-import org.openqa.selenium.WebDriver
-import org.openqa.selenium.firefox.*
 import spock.lang.*
 
 @Stepwise
-class NoJavascriptScaffoldingSpec extends GebSpec {
+class NoJavascriptScaffoldingSpec extends NoJavascriptSpec {
 
 	@Shared Map<String, Long> authorIds = [:]
 	@Shared Map<String, Long> bookIds = [:]
-
-	@Override
-	WebDriver createDriver() {
-		def profile = new FirefoxProfile()
-		profile.setPreference("javascript.enabled", false)
-		new FirefoxDriver(profile)
-	}
-
-	@Override
-	String getBaseUrl() {
-		super.getBaseUrl() ?: "http://localhost:8080/"
-	}
-
-	def cleanupSpec() {
-		browser.driver.close()
-	}
 
 	def "set up a couple of authors"() {
 		given:
