@@ -14,18 +14,24 @@
 
 $(document).ready(function() {
 	if (Modernizr.history) {
+		if ($(".pagination a, th.sortable a")) {
+			// store current table state in history
+			history.replaceState({html: $(".content").html()}, "");
+		}
+
 		// decorate list pagination & sorting controls with AJAX
 		$(".pagination a, th.sortable a").live("click", function() {
 			var url = $(this).attr("href");
-			$(".content").load(url + " .content", function(response) {
-				history.pushState({html: $(".content").html()}, "");
+			$(".content").load(url + " .content > *", function(response) {
+				history.pushState({html: $(".content").html()}, "", url);
 			});
 			return false;
 		});
 
+		// handle back button
 		window.onpopstate = function(event) {
 			if (event.state) {
-				$(".content").replaceWith(event.state.html);
+				$(".content").html(event.state.html);
 			}
 		};
 	}
