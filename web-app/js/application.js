@@ -22,7 +22,8 @@ $(document).ready(function() {
 		// decorate list pagination & sorting controls with AJAX
 		$(".pagination a, th.sortable a").live("click", function() {
 			var url = $(this).attr("href");
-			$(".content").load(url + " .content > *", function(response) {
+			$(".content").load(url + " .content > *", function() {
+				// put the new content into history and update the URL
 				history.pushState({html: $(".content").html()}, "", url);
 			});
 			return false;
@@ -30,6 +31,7 @@ $(document).ready(function() {
 
 		// handle back button
 		window.onpopstate = function(event) {
+			// retrieve previous content from history if there is any
 			if (event.state) {
 				$(".content").html(event.state.html);
 			}
