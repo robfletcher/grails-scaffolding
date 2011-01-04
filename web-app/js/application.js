@@ -13,6 +13,23 @@
 //}
 
 $(document).ready(function() {
+
+	// replace range selects with HTML5 range control if supported
+	if (Modernizr.inputtypes.range) {
+		$("select.range").each(function() {
+			var rangeInput = $('<input type="range">')
+					.attr("min", $(this).find("option:first-child").attr("value"))
+					.attr("max", $(this).find("option:last-child").attr("value"))
+					.attr("name", $(this).attr("name"));
+			if ($(this).attr("id")) {
+				rangeInput.attr("id", $(this).attr("id"));
+			}
+			var value = $(this).find("option[selected]").attr("value");
+			if (value) rangeInput.attr("value", value);
+			$(this).replaceWith(rangeInput);
+		});
+	}
+
 	if (Modernizr.history) {
 		if ($(".pagination a, th.sortable a")) {
 			// store current table state in history
