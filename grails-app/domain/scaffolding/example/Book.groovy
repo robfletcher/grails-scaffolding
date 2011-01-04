@@ -5,7 +5,7 @@ class Book {
 	String title
 	List<Author> authors
 	String yearOfPublication
-	// numeric field
+	Integer numberOfPages
 	// boolean field
 	// enum field
 	// date field
@@ -18,6 +18,7 @@ class Book {
 		title blank: false
 		authors minSize: 1
 		yearOfPublication blank: false, matches: /\d{4}/
+		numberOfPages nullable: true
     }
 
 	String toString() {
