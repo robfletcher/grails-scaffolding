@@ -6,7 +6,7 @@ class Book {
 	List<Author> authors
 	String yearOfPublication
 	Integer numberOfPages
-	// boolean field
+	boolean ebook
 	// enum field
 	// date field
 	Date dateCreated

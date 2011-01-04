@@ -16,6 +16,7 @@ class InputTypesSpec extends NoJavascriptSpec {
 		input            | expectedType
 		"#title"         | "text"
 		"#numberOfPages" | "number"
+		"#ebook"         | "checkbox"
 	}
 
 	def "many-to-many input is rendered as a multiple select"() {
