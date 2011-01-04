@@ -2,15 +2,15 @@ package scaffolding
 
 import grails.plugin.geb.GebSpec
 import org.openqa.selenium.WebDriver
-import org.openqa.selenium.firefox.*
+import org.openqa.selenium.htmlunit.HtmlUnitDriver
 
 abstract class NoJavascriptSpec extends GebSpec {
 
 	@Override
 	WebDriver createDriver() {
-		def profile = new FirefoxProfile()
-		profile.setPreference("javascript.enabled", false)
-		new FirefoxDriver(profile)
+		def driver = new HtmlUnitDriver()
+		driver.javascriptEnabled = false
+		driver
 	}
 
 	@Override
