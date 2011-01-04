@@ -10,6 +10,7 @@ class InputTypesSpec extends NoJavascriptSpec {
 		to BookCreatePage
 
 		expect:
+		$(input).is("input")
 		$(input).@type == expectedType
 
 		where:
@@ -17,6 +18,17 @@ class InputTypesSpec extends NoJavascriptSpec {
 		"#title"         | "text"
 		"#numberOfPages" | "number"
 		"#ebook"         | "checkbox"
+	}
+
+	def "numeric properties with a range constraint are rendered as range inputs"() {
+		given:
+		to BookCreatePage
+
+		expect:
+		$("#averageRating").is("input")
+		$("#averageRating").@type == "range"
+		$("#averageRating").@min == "1"
+		$("#averageRating").@max == "5"
 	}
 
 	def "many-to-many input is rendered as a multiple select"() {

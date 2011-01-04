@@ -5,6 +5,7 @@ class Book {
 	String title
 	List<Author> authors
 	String yearOfPublication
+	Integer averageRating
 	Integer numberOfPages
 	boolean ebook
 	// enum field
@@ -18,6 +19,7 @@ class Book {
 		title blank: false
 		authors minSize: 1
 		yearOfPublication blank: false, matches: /\d{4}/
+		averageRating range: 1..5
 		numberOfPages nullable: true
     }
 
