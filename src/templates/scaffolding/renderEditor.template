@@ -1,20 +1,20 @@
-<%  if (property.type == Boolean.class || property.type == boolean.class)
+<%  if (property.type == Boolean || property.type == boolean)
         out << renderBooleanEditor(domainClass, property)
-    else if (Number.class.isAssignableFrom(property.type) || (property.type.isPrimitive() && property.type != boolean.class))
+    else if (Number.isAssignableFrom(property.type) || (property.type.isPrimitive() && property.type != boolean))
         out << renderNumberEditor(domainClass, property)
-    else if (property.type == String.class)
+    else if (property.type == String)
         out << renderStringEditor(domainClass, property)
-    else if (property.type == Date.class || property.type == java.sql.Date.class || property.type == java.sql.Time.class || property.type == Calendar.class)
+    else if (property.type == Date || property.type == java.sql.Date || property.type == java.sql.Time || property.type == Calendar)
         out << renderDateEditor(domainClass, property)
-    else if (property.type == URL.class)
+    else if (property.type == URL)
         out << renderStringEditor(domainClass, property)
     else if (property.isEnum())
         out << renderEnumEditor(domainClass, property)
-    else if (property.type == TimeZone.class)
+    else if (property.type == TimeZone)
         out << renderSelectTypeEditor("timeZone", domainClass, property)
-    else if (property.type == Locale.class)
+    else if (property.type == Locale)
         out << renderSelectTypeEditor("locale", domainClass, property)
-    else if (property.type == Currency.class)
+    else if (property.type == Currency)
         out << renderSelectTypeEditor("currency", domainClass, property)
     else if (property.type==([] as Byte[]).class) //TODO: Bug in groovy means i have to do this :(
         out << renderByteArrayEditor(domainClass, property)
@@ -85,7 +85,7 @@
 
     private renderNumberEditor(domainClass, property) {
         if (!cp) {
-            if (property.type == Byte.class) {
+            if (property.type == Byte) {
                 return "<g:select name=\"${property.name}\" from=\"\${-128..127}\" value=\"\${fieldValue(bean: ${domainInstance}, field: '${property.name}')}\" />"
             }
             else {
@@ -121,7 +121,7 @@
     }
 
     private renderDateEditor(domainClass, property) {
-        def precision = (property.type == Date.class || property.type == java.sql.Date.class || property.type == Calendar.class) ? "day" : "minute";
+        def precision = (property.type == Date || property.type == java.sql.Date || property.type == Calendar) ? "day" : "minute";
         if (!cp) {
             return "<g:datePicker name=\"${property.name}\" precision=\"${precision}\" value=\"\${${domainInstance}?.${property.name}}\" />"
         }
@@ -162,7 +162,7 @@
             if (property.manyToOne || property.oneToOne) {
                 return "noSelection=\"['null': '']\""
             }
-            else if (property.type == Date.class || property.type == java.sql.Date.class || property.type == java.sql.Time.class || property.type == Calendar.class) {
+            else if (property.type == Date || property.type == java.sql.Date || property.type == java.sql.Time || property.type == Calendar) {
                 return "default=\"none\" noSelection=\"['': '']\""
             }
             else {

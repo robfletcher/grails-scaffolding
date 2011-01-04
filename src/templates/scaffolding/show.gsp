@@ -36,9 +36,9 @@
 					</g:each>
 				<%  } else if (p.manyToOne || p.oneToOne) { %>
 					<dd><g:link controller="${p.referencedDomainClass?.propertyName}" action="show" id="\${${propertyName}?.${p.name}?.id}">\${${propertyName}?.${p.name}?.encodeAsHTML()}</g:link></dd>
-				<%  } else if (p.type == Boolean.class || p.type == boolean.class) { %>
+				<%  } else if (p.type == Boolean || p.type == boolean) { %>
 					<dd><g:formatBoolean boolean="\${${propertyName}?.${p.name}}" /></dd>
-				<%  } else if (p.type == Date.class || p.type == java.sql.Date.class || p.type == java.sql.Time.class || p.type == Calendar.class) { %>
+				<%  } else if (p.type == Date || p.type == java.sql.Date || p.type == java.sql.Time || p.type == Calendar) { %>
 					<dd><g:formatDate date="\${${propertyName}?.${p.name}}" /></dd>
 				<%  } else if(!p.type.isArray()) { %>
 					<dd><g:fieldValue bean="\${${propertyName}}" field="${p.name}"/></dd>
