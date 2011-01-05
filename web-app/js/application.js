@@ -17,16 +17,25 @@ $(document).ready(function() {
 	// replace range selects with HTML5 range control if supported
 	if (Modernizr.inputtypes.range) {
 		$("select.range").each(function() {
-			var rangeInput = $('<input type="range">')
-					.attr("min", $(this).find("option:first-child").attr("value"))
-					.attr("max", $(this).find("option:last-child").attr("value"))
-					.attr("name", $(this).attr("name"));
-			if ($(this).attr("id")) {
-				rangeInput.attr("id", $(this).attr("id"));
+			var select = $(this);
+			var range = $('<input>', {
+				type: "range",
+				name: select.attr("name"),
+				id: select.attr("id"),
+				min: select.find("option:first-child").attr("value"),
+				max: select.find("option:last-child").attr("value"),
+				onchange: function() {
+					$('output[for=' + $(this).attr('id') + ']').html($(this).val());
+				}
+			});
+			var output = $('<output for="' + select.attr("id") + '"></output>');
+			var value = select.find("option[selected]").attr("value");
+			if (value) {
+				range.val(value);
+				output.html(value);
 			}
-			var value = $(this).find("option[selected]").attr("value");
-			if (value) rangeInput.attr("value", value);
-			$(this).replaceWith(rangeInput);
+			select.replaceWith(range);
+			range.after(output);
 		});
 	}
 

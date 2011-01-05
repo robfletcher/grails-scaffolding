@@ -180,6 +180,32 @@ input:focus, select:focus, textarea:focus {
 	margin-left: .25em;
 }
 
+/*
+	found here http://net.tutsplus.com/tutorials/html-css-techniques/25-html5-features-tips-and-techniques-you-must-know/
+	doesn't seem to work in latest Chrome but does in Opera
+*/
+input[type=range]:before { content: attr(min); padding-right: 0.5em; }
+input[type=range]:after { content: attr(max); padding-left: 0.5em; }
+
+input[type=range] {
+	margin-bottom: 0;
+	text-align: center;
+}
+
+output {
+	display: block;
+	font-size: 1.4em;
+	font-weight: bold;
+	margin-bottom: 0.8em;
+	text-align: center;
+}
+
+input[type=checkbox] {
+	display: inline-block;
+	vertical-align: bottom;
+	margin: 0 0 0 .25em;
+}
+
 /* MESSAGES AND ERRORS */
 
 .errors,
