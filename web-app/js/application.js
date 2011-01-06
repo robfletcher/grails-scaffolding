@@ -1,49 +1,68 @@
-//var Ajax;
-//if (Ajax && (Ajax != null)) {
-//	Ajax.Responders.register({
-//	  onCreate: function() {
-//        if($('spinner') && Ajax.activeRequestCount>0)
-//          Effect.Appear('spinner',{duration:0.5,queue:'end'});
-//	  },
-//	  onComplete: function() {
-//        if($('spinner') && Ajax.activeRequestCount==0)
-//          Effect.Fade('spinner',{duration:0.5,queue:'end'});
-//	  }
-//	});
-//}
-
 $(document).ready(function() {
-
-	// replace range selects with HTML5 range control if supported
 	if (Modernizr.inputtypes.range) {
-		$("select.range").each(function() {
-			var select = $(this);
-			var range = $('<input>', {
-				type: "range",
-				name: select.attr("name"),
-				id: select.attr("id"),
-				min: select.find("option:first-child").attr("value"),
-				max: select.find("option:last-child").attr("value"),
-				onchange: function() {
-					$('output[for=' + $(this).attr('id') + ']').html($(this).val());
-				}
-			});
-			var output = $('<output for="' + select.attr("id") + '"></output>');
-			var value = select.find("option[selected]").attr("value");
-			if (value) {
-				range.val(value);
-				output.html(value);
-			}
-			select.replaceWith(range);
-			range.after(output);
-		});
+		initRangeInputs();
 	}
 
 	if (Modernizr.history) {
-		if ($(".pagination a, th.sortable a")) {
-			// store current table state in history
-			history.replaceState({html: $(".content").html()}, "");
+		initAjaxPagination();
+	}
+
+	// prevent FOUC by only making body visible once document is ready
+	$("body").addClass("ready");
+
+	// focus first error field (this only works once page content is visible)
+	$(".error:first").find("input, select, textarea").focus();
+});
+
+/**
+ * Replaces range selects with an HTML5 range control.
+ */
+function initRangeInputs() {
+	$("select.range").each(function() {
+		var select = $(this);
+		var min = select.find("option:first-child").attr("value");
+		var max = select.find("option:last-child").attr("value");
+		var value = select.val();
+		var name = select.attr("name");
+		var id = select.attr("id");
+
+		// create a new range input with min & max based on the first & last options in the select
+		var range = $('<input>', {
+			type: "range",
+			name: name,
+			id: id,
+			min: min,
+			max: max,
+			onchange: function() {
+				$('output[for=' + this.id + ']').html($(this).val());
+			}
+		});
+
+		// create an output element to echo back the current range value (tabindex -1 is needed for Opera)
+		var output = $('<output for="' + id + '"></output>').attr("tabindex", "-1");
+
+		// if there's a current selection set the range value and the initial output text
+		if (value) {
+			range.val(value);
+			output.html(value);
+		} else {
+			range.val(min);
+			output.html(max);
 		}
+
+		// replace the select with the range input and insert the output before it
+		select.replaceWith(range);
+		range.before(output);
+	});
+}
+
+/**
+ * AJAX-enables pagination and sorting controls in a table.
+ */
+function initAjaxPagination() {
+	if ($(".pagination a, th.sortable a")) {
+		// store current table state in history
+		history.replaceState({html: $(".content").html()}, "");
 
 		// decorate list pagination & sorting controls with AJAX
 		$(".pagination a, th.sortable a").live("click", function() {
@@ -63,10 +82,4 @@ $(document).ready(function() {
 			}
 		};
 	}
-
-	// prevent FOUC by only making body visible once document is ready
-	$("body").addClass("ready");
-
-	// focus first error field (this only works once page content is visible)
-	$(".error:first").find("input, select, textarea").focus();
-});
+}
