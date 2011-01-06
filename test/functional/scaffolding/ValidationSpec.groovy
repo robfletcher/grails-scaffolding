@@ -1,6 +1,7 @@
 package scaffolding
 
 import grails.plugin.geb.GebSpec
+import scaffolding.pages.*
 
 class ValidationSpec extends GebSpec {
 

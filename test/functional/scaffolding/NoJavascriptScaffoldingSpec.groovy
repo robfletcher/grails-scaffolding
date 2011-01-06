@@ -1,5 +1,6 @@
 package scaffolding
 
+import scaffolding.pages.*
 import spock.lang.*
 
 @Stepwise

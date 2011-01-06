@@ -1,4 +1,4 @@
-package scaffolding
+package scaffolding.pages
 
 import geb.*
 

@@ -1,5 +1,6 @@
 package scaffolding
 
+import scaffolding.pages.BookCreatePage
 import spock.lang.Unroll
 
 class InputTypesSpec extends NoJavascriptSpec {

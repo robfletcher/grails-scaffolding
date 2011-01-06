@@ -8,7 +8,7 @@ class Book {
 	Integer averageRating
 	Integer numberOfPages
 	boolean ebook
-	// enum field
+	Genre genre
 	// date field
 	Date dateCreated
 	Date lastUpdated
@@ -21,9 +21,14 @@ class Book {
 		yearOfPublication blank: false, matches: /\d{4}/
 		averageRating range: 1..5
 		numberOfPages nullable: true
+		genre nullable: true
     }
 
 	String toString() {
 		title
 	}
+}
+
+enum Genre {
+	biography, crime, fiction, reference, scifi
 }
