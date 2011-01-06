@@ -43,7 +43,5 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ### Enhanced experience
 
- * js range input
- * Sort & paginate list with AJAX (remember to support back button)
  * Light-box show, edit, create direct from list page
  * Functional tests to ensure non-JS and JS versions work consistently
