@@ -1,7 +1,8 @@
 package scaffolding
 
+import scaffolding.example.Genre
 import scaffolding.pages.BookCreatePage
-import spock.lang.Unroll
+import spock.lang.*
 
 class InputTypesSpec extends NoJavascriptSpec {
 
@@ -21,6 +22,7 @@ class InputTypesSpec extends NoJavascriptSpec {
 		"#ebook"         | "checkbox"
 	}
 
+	@Ignore("only valid for webkit and opera")
 	def "numeric properties with a range constraint are rendered as range inputs"() {
 		given:
 		to BookCreatePage
@@ -38,7 +40,16 @@ class InputTypesSpec extends NoJavascriptSpec {
 
 		expect:
 		$("#authors").is("select")
-		$("#authors").@multiple == "yes"
+		$("#authors").@multiple == "multiple"
+	}
+
+	def "enum input is a select"() {
+		given:
+		to BookCreatePage
+
+		expect:
+		$("#genre").is("select")
+		$("#genre option")*.@value == [""] + Genre.values()*.toString()
 	}
 
 }
