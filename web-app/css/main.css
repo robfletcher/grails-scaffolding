@@ -29,6 +29,10 @@ ul {
 	padding-left: 15px;
 }
 
+img {
+	border: none;
+}
+
 /* GENERAL */
 
 #grailsLogo a {
@@ -188,6 +192,7 @@ input[type=range]:before { content: attr(min); padding-right: 0.5em; }
 input[type=range]:after { content: attr(max); padding-left: 0.5em; }
 
 input[type=range] {
+	border: 1px solid transparent;
 	margin-left: 2.5em;
 }
 
