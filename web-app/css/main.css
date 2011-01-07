@@ -152,7 +152,7 @@ label {
 	margin-bottom: .2em;
 }
 
-input, select, textarea {
+input, output, select, textarea {
 	background-color: #fcfcfc;
 	border: 1px solid #ccc;
 	font-size: 1.2em;
@@ -196,31 +196,25 @@ input[type=range]:after { content: attr(max); padding-left: 0.5em; }
 
 input[type=range] {
 	border: 1px solid transparent;
-	margin-left: 2.5em;
+	vertical-align: middle;
 }
 
 input[type=range]:focus {
 	border: 1px solid transparent;
-	-moz-box-shadow: none;
- -webkit-box-shadow: 0;
-		 box-shadow: 0;
+	/*-moz-box-shadow: none;*/
+ /*-webkit-box-shadow: 0;*/
+		 /*box-shadow: 0;*/
 }
 
 
 output {
-	display: block;
-	font-size: 1.2em;
-	margin: .4em 0 1em;
-	position: absolute;
-	width: 2.5em;
-}
-
-input[type=checkbox] {
 	display: inline-block;
-	vertical-align: bottom;
-	margin: 0 0 0 .25em;
+	font-size: 1.2em;
+	margin-right: .5em;
+	text-align: center;
+	width: 2em;
+	vertical-align: middle;
 }
-
 
 /* MESSAGES AND ERRORS */
 
