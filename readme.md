@@ -11,6 +11,8 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
  * FOUC prevention by fade-in with CSS transition
  * Center content & apply some background
+ * Form panel background #f7f7f7?
+ * Hide null/blank values in show view
 
 ### Navigation
 
@@ -25,8 +27,6 @@ This is a sample project for prototyping changes to Grails scaffolding.
  * autofocus - 1st field in error or 1st in form
  * Radio groups for enums (use select when more than x values?)
  * URL & email inputs when constraints present
- * Numerics using type="number", type="range"
- * JS enhance range with slider (where not natively supported)
  * Dates using type="date" with 3-field JS enhanced version?
  * Proper buttons
  * Is there a good alternative to multi-selects? (JS enhanced add & remove single selects?)
@@ -35,6 +35,7 @@ This is a sample project for prototyping changes to Grails scaffolding.
 ### Mobile
 
  * Test on iOS, Android, Blackberry
+ * compatible with jQuery-mobile (i.e. any necessary markup conventions followed)
 
 ### Accessibility
 
