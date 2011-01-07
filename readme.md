@@ -6,6 +6,7 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
  * .body { float: left; } is horrible and doesn't work on IE
  * spacing between message/errors and form is inconsistent with spacing between form and buttons
+ * put required class (and HTML5 attribute) on the input itself rather than the container
 
 ## Phase 2 - Re-design
 
