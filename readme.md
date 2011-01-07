@@ -5,7 +5,7 @@ This is a sample project for prototyping changes to Grails scaffolding.
 ## Phase 1 - slightly slicker version of current Grails L&F
 
  * .body { float: left; } is horrible and doesn't work on IE
- * need a .no-cssgradients variant for rules using background gradients
+ * spacing between message/errors and form is inconsistent with spacing between form and buttons
 
 ## Phase 2 - Re-design
 

@@ -30,7 +30,7 @@
             <g:form method="post" <%= multiPart ? ' enctype="multipart/form-data"' : '' %>>
                 <g:hiddenField name="id" value="\${${propertyName}?.id}" />
                 <g:hiddenField name="version" value="\${${propertyName}?.version}" />
-                <ol>
+				<fieldset>
 				<%  excludedProps = Event.allEvents.toList() << 'version' << 'id' << 'dateCreated' << 'lastUpdated'
 					persistentPropNames = domainClass.persistentProperties*.name
 					props = domainClass.properties.findAll { persistentPropNames.contains(it.name) && !excludedProps.contains(it.name) }
@@ -45,13 +45,13 @@
 							required = (cp ? !(cp.propertyType in [boolean, Boolean]) && !cp.nullable : false)
 						}
 						if (display) { %>
-					<li class="\${hasErrors(bean: ${propertyName}, field: '${p.name}', 'error')} ${required ? 'required' : ''}">
+					<div data-role="fieldcontain" class="fieldcontain \${hasErrors(bean: ${propertyName}, field: '${p.name}', 'error')} ${required ? 'required' : ''}">
 						<label for="${p.name}"><g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}" /></label>
-						<% if (required) { %><span class="required-indicator">*</span><% } %>
 						${renderEditor(p)}
-					</li>
+						<% if (required) { %><span class="required-indicator">*</span><% } %>
+					</div>
 				<%  }   } %>
-                </ol>
+				</fieldset>
                 <fieldset class="buttons">
                     <g:actionSubmit class="save" action="update" value="\${message(code: 'default.button.update.label', default: 'Update')}" />
                     <g:actionSubmit class="delete" action="delete" value="\${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('\${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
