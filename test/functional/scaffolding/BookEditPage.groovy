@@ -14,11 +14,11 @@ class BookEditPage extends Page {
 	}
 
 	boolean hasError(String fieldName) {
-		book."$fieldName"().parent("li").hasClass("error")
+		book."$fieldName"().parent(".fieldcontain").hasClass("error")
 	}
 
 	boolean isRequired(String fieldName) {
-		book."$fieldName"().parent("li").hasClass("required")
+		book."$fieldName"().parent(".fieldcontain").hasClass("required")
 	}
 
 }

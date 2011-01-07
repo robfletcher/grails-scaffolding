@@ -13,6 +13,10 @@ a:link, a:visited, a:hover {
 	color: #48802c;
 }
 
+a:hover, a:active {
+	outline: none; /* prevents outline in webkit on active links but retains it for tab focus */
+}
+
 h1 {
 	color: #48802c;
 	font-weight: normal;
@@ -46,7 +50,7 @@ ul {
 /* NAVIGATION MENU */
 
 .nav {
-	background-color: #ffffff;
+	background-color: #efefef;
 	background-image: -moz-linear-gradient(top, #ffffff, #eaeaea);
 	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #ffffff),color-stop(1, #eaeaea));
 			  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea');
@@ -109,22 +113,18 @@ ul {
 
 /* FORMS */
 
-form ol,
+fieldset,
 dl {
 	border: 1px solid #CCCCCC;
-	padding: .5em 1.5em 1em;
+	padding: 0 1.5em 1.5em;
 	-moz-box-shadow: 0px 0px 3px #ccc;
  -webkit-box-shadow: 0px 0px 3px #ccc;
 		 box-shadow: 0px 0px 3px #ccc;
 }
 
-form ol {
-	list-style-type: none;
-}
-
-form li,
+form .fieldcontain,
 dt {
-	margin-top: .5em;
+	margin-top: .8em;
 }
 
 dt, dd {
@@ -138,16 +138,15 @@ dt {
 
 label {
 	cursor: pointer;
-	display: inline-block;
+	display: block;
 	font-size: 1.3em;
+	margin-bottom: .2em;
 }
 
 input, select, textarea {
 	background-color: #fcfcfc;
 	border: 1px solid #ccc;
-	display: block;
 	font-size: 1.2em;
-	margin: .2em 0 .8em;
 	padding: .2em .4em;
 }
 
@@ -158,11 +157,13 @@ select {
 textarea {
 	width: 250px;
 	height: 150px;
+	overflow: auto; /* IE always renders vertical scrollbar without this */
 	vertical-align: top;
 }
 
 input:focus, select:focus, textarea:focus {
 	border: 1px solid #b2d1ff;
+	outline: 0;
 	-moz-box-shadow: 0px 0px 3px #b2d1ff;
  -webkit-box-shadow: 0px 0px 3px #b2d1ff;
 		 box-shadow: 0px 0px 3px #b2d1ff;
@@ -170,9 +171,11 @@ input:focus, select:focus, textarea:focus {
 
 .required-indicator {
 	color: #48802C;
+	display: inline-block;
 	font-size: 1.3em;
 	font-weight: bold;
-	margin-left: .25em;
+	margin-left: .3em;
+	vertical-align: middle;
 }
 
 /* MESSAGES AND ERRORS */
@@ -217,9 +220,9 @@ input:focus, select:focus, textarea:focus {
 select:invalid,
 input:invalid,
 textarea:invalid,
-li.error select,
-li.error input,
-li.error textarea {
+.error select,
+.error input,
+.error textarea {
 	border: 1px solid red;
 }
 
@@ -227,9 +230,9 @@ li.error textarea {
 select:invalid:focus,
 input:invalid:focus,
 textarea:invalid:focus,
-li.error select:focus,
-li.error input:focus,
-li.error textarea:focus {
+.error select:focus,
+.error input:focus,
+.error textarea:focus {
 	   -moz-box-shadow: 0px 0px 3px red;
 	-webkit-box-shadow: 0px 0px 3px red;
             box-shadow: 0px 0px 3px red;
@@ -260,7 +263,7 @@ td, th {
 }
 
 th {
-	background-color: #ffffff;
+	background-color: #efefef;
 	background-image: -moz-linear-gradient(top, #ffffff, #eaeaea);
 	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #ffffff),color-stop(1, #eaeaea));
 			  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea');
@@ -313,7 +316,7 @@ th:hover, tr:hover {
 /* PAGINATION */
 
 .pagination {
-	background-color: #ffffff;
+	background-color: #efefef;
 	background-image: -moz-linear-gradient(top, #ffffff, #eaeaea);
 	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #ffffff),color-stop(1, #eaeaea));
 			  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea');
@@ -348,18 +351,14 @@ th:hover, tr:hover {
 /* ACTION BUTTONS */
 
 .buttons {
-	background-color: #ffffff;
+	background-color: #efefef;
 	background-image: -moz-linear-gradient(top, #ffffff, #eaeaea);
 	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #ffffff),color-stop(1, #eaeaea));
 			  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea');
 		  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea')";
-	border: 1px solid #ccc;
 	margin-top: 1em;
 	overflow: hidden;
 	padding: 0;
-	-moz-box-shadow: 0px 0px 3px #ccc;
- -webkit-box-shadow: 0px 0px 3px #ccc;
-		 box-shadow: 0px 0px 3px #ccc;
 }
 
 .buttons input {
