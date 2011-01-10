@@ -14,7 +14,7 @@
 		<g:layoutHead/>
 	</head>
 	<body>
-		<div id="grailsLogo"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a></div>
+		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a></div>
 		<g:layoutBody/>
 		<g:javascript src="jquery-1.4.4.min.js"/>
 		<g:javascript library="application"/>
