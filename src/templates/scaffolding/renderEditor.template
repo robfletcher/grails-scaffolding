@@ -38,21 +38,25 @@
         else {
             if ("textarea" == cp.widget || (cp.maxSize > 250 && !cp.password && !cp.inList)) {
                 return "<g:textArea name=\"${property.name}\" cols=\"40\" rows=\"5\" value=\"\${${domainInstance}?.${property.name}}\" />"
-            }
-            else {
-                if (cp.inList) {
-                    return "<g:select name=\"${property.name}\" from=\"\${${domainInstance}.constraints.${property.name}.inList}\" value=\"\${${domainInstance}?.${property.name}}\" valueMessagePrefix=\"${domainClass.propertyName}.${property?.name}\" ${renderNoSelection(property)} />"
-                }
-                else {
-                    def sb = new StringBuffer("<g:")
-                    cp.password ? sb << "passwordField " : sb << "textField "
-                    sb << "name=\"${property.name}\" "
-                    if (cp.maxSize) sb << "maxlength=\"${cp.maxSize}\" "
-                    if (!cp.editable) sb << "readonly=\"readonly\" "
-                    sb << "value=\"\${${domainInstance}?.${property.name}}\" />"
-                    return sb.toString()
-                }
-            }
+            } else if (cp.inList) {
+				return "<g:select name=\"${property.name}\" from=\"\${${domainInstance}.constraints.${property.name}.inList}\" value=\"\${${domainInstance}?.${property.name}}\" valueMessagePrefix=\"${domainClass.propertyName}.${property?.name}\" ${renderNoSelection(property)} />"
+			} else {
+				def sb = new StringBuffer("")
+				if (cp.password) {
+					sb << "<g:field type=\"password\" "
+				} else if (cp.url) {
+					sb << "<g:field type=\"url\" "
+				} else if (cp.email) {
+					sb << "<g:field type=\"email\" "
+				} else {
+					sb << "<g:textField "
+				}
+				sb << "name=\"${property.name}\" "
+				if (cp.maxSize) sb << "maxlength=\"${cp.maxSize}\" "
+				if (!cp.editable) sb << "readonly=\"readonly\" "
+				sb << "value=\"\${${domainInstance}?.${property.name}}\" />"
+				return sb.toString()
+			}
         }
     }
 

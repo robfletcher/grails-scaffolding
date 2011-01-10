@@ -3,23 +3,26 @@ package scaffolding
 import scaffolding.example.Genre
 import scaffolding.pages.BookCreatePage
 import spock.lang.*
+import scaffolding.pages.AuthorCreatePage
 
 class InputTypesSpec extends NoJavascriptSpec {
 
 	@Unroll("the #input input is type #expectedType")
 	def "appropriate input types are used"() {
 		given:
-		to BookCreatePage
+		to page
 
 		expect:
 		$(input).is("input")
 		$(input).@type == expectedType
 
 		where:
-		input            | expectedType
-		"#title"         | "text"
-		"#numberOfPages" | "number"
-		"#ebook"         | "checkbox"
+		page             | input            | expectedType
+		BookCreatePage   | "#title"         | "text"
+		BookCreatePage   | "#numberOfPages" | "number"
+		BookCreatePage   | "#ebook"         | "checkbox"
+		AuthorCreatePage | "#email"         | "email"
+		AuthorCreatePage | "#website"       | "url"
 	}
 
 	@Ignore("only valid for webkit and opera")

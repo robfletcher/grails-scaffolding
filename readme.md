@@ -27,7 +27,6 @@ This is a sample project for prototyping changes to Grails scaffolding.
  * required="required" on mandatory fields
  * autofocus - 1st field in error or 1st in form
  * Radio groups for enums (use select when more than x values?)
- * URL & email inputs when constraints present
  * Dates using type="date" with 3-field JS enhanced version?
  * Proper buttons
  * Is there a good alternative to multi-selects? (JS enhanced add & remove single selects?)
