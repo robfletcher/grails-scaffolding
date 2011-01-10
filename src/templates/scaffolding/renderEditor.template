@@ -34,8 +34,7 @@
     private renderStringEditor(domainClass, property) {
         if (!cp) {
             return "<g:textField name=\"${property.name}\" value=\"\${${domainInstance}?.${property.name}}\" />"
-        }
-        else {
+        } else {
             if ("textarea" == cp.widget || (cp.maxSize > 250 && !cp.password && !cp.inList)) {
                 return "<g:textArea name=\"${property.name}\" cols=\"40\" rows=\"5\" value=\"\${${domainInstance}?.${property.name}}\" />"
             } else if (cp.inList) {
@@ -91,19 +90,15 @@
         if (!cp) {
             if (property.type == Byte) {
                 return "<g:select name=\"${property.name}\" from=\"\${-128..127}\" class=\"range\" value=\"\${fieldValue(bean: ${domainInstance}, field: '${property.name}')}\" />"
-            }
-            else {
+            } else {
                 return "<g:field type=\"number\" name=\"${property.name}\" value=\"\${fieldValue(bean: ${domainInstance}, field: '${property.name}')}\" />"
             }
-        }
-        else {
+        } else {
             if (cp.range) {
                 return "<g:select name=\"${property.name}\" from=\"\${${cp.range.from}..${cp.range.to}}\" class=\"range\" value=\"\${fieldValue(bean: ${domainInstance}, field: '${property.name}')}\" ${renderNoSelection(property)} />"
-            }
-            else if (cp.inList) {
+            } else if (cp.inList) {
                 return "<g:select name=\"${property.name}\" from=\"\${${domainInstance}.constraints.${property.name}.inList}\" value=\"\${fieldValue(bean: ${domainInstance}, field: '${property.name}')}\" valueMessagePrefix=\"${domainClass.propertyName}.${property?.name}\" ${renderNoSelection(property)} />"
-            }            
-            else {
+            } else {
                 return "<g:field type=\"number\" name=\"${property.name}\" value=\"\${fieldValue(bean: ${domainInstance}, field: '${property.name}')}\" />"
             }
         }
@@ -112,8 +107,7 @@
     private renderBooleanEditor(domainClass, property) {
         if (!cp) {
             return "<g:checkBox name=\"${property.name}\" value=\"\${${domainInstance}?.${property.name}}\" />"
-        }
-        else {
+        } else {
             def sb = new StringBuffer("<g:checkBox name=\"${property.name}\" ")
             if (cp.widget) sb << "widget=\"${cp.widget}\" ";
             cp.attributes.each { k, v ->
@@ -128,12 +122,10 @@
         def precision = (property.type == Date || property.type == java.sql.Date || property.type == Calendar) ? "day" : "minute";
         if (!cp) {
             return "<g:datePicker name=\"${property.name}\" precision=\"${precision}\" value=\"\${${domainInstance}?.${property.name}}\" />"
-        }
-        else {
+        } else {
             if (!cp.editable) {
                 return "\${${domainInstance}?.${property.name}?.toString()}"
-            }
-            else {
+            } else {
                 def sb = new StringBuffer("<g:datePicker name=\"${property.name}\" ")
                 if (cp.format) sb << "format=\"${cp.format}\" "
                 if (cp.widget) sb << "widget=\"${cp.widget}\" "
@@ -149,8 +141,7 @@
     private renderSelectTypeEditor(type, domainClass,property) {
         if (!cp) {
             return "<g:${type}Select name=\"${property.name}\" value=\"\${${domainInstance}?.${property.name}}\" />"
-        }
-        else {
+        } else {
             def sb = new StringBuffer("<g:${type}Select name=\"${property.name}\" ")
             if (cp.widget) sb << "widget=\"${cp.widget}\" ";
             cp.attributes.each { k, v ->
@@ -165,11 +156,9 @@
         if (property.optional) {
             if (property.manyToOne || property.oneToOne) {
                 return "noSelection=\"['null': '']\""
-            }
-            else if (property.type == Date || property.type == java.sql.Date || property.type == java.sql.Time || property.type == Calendar) {
+            } else if (property.type == Date || property.type == java.sql.Date || property.type == java.sql.Time || property.type == Calendar) {
                 return "default=\"none\" noSelection=\"['': '']\""
-            }
-            else {
+            } else {
                 return "noSelection=\"['': '']\""
             }
         }
