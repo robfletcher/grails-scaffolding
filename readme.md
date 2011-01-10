@@ -33,11 +33,12 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ### Mobile
 
- * Test on iOS, Android, Blackberry
+ * Test on iOS, Android, Blackberry, Kindle
+ * compatible with jQuery-mobile (i.e. any necessary markup conventions followed)
 
 ### Accessibility
 
- * WAI-ARIA roles
+ * "Skip to content" link
  * Error messages act as labels for form fields
 
 ### Enhanced experience
