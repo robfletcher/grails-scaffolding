@@ -26,7 +26,7 @@ h1 {
 	color: #48802c;
 	font-weight: normal;
 	font-size: 1.8em;
-	margin: .8em 0 .3em 0;
+	margin: 0.555555556em 0;
 }
 
 ul {
@@ -67,7 +67,7 @@ img {
 	border-width: 1px;
 	border-color: #ccc;
 	border-style: solid none solid none;
-	padding: .7em 1.2em;
+	padding: 0.7em 1.2em;
 	zoom: 1;
 	-moz-box-shadow: -3px 0px 3px #ccc; /* firefox will render a horizontal scrollbar without the h-offset -3px */
  -webkit-box-shadow: 0px 0px 3px #ccc;
@@ -84,7 +84,7 @@ img {
 	display: block;
 	float: left;
 	list-style-type: none;
-	padding: .4em 1.1em;
+	padding: 0.4em 1.1em;
 }
 
 .nav a {
@@ -125,6 +125,7 @@ img {
 fieldset,
 dl {
 	border: 1px solid #CCCCCC;
+	margin-bottom: 1em;
 	padding: 0 1.5em 1.5em;
 	-moz-box-shadow: 0px 0px 3px #ccc;
  -webkit-box-shadow: 0px 0px 3px #ccc;
@@ -133,7 +134,7 @@ dl {
 
 form .fieldcontain,
 dt {
-	margin-top: .8em;
+	margin-top: 0.8em;
 }
 
 dt, dd {
@@ -149,18 +150,18 @@ label {
 	cursor: pointer;
 	display: block;
 	font-size: 1.3em;
-	margin-bottom: .2em;
+	margin-bottom: 0.2em;
 }
 
 input, output, select, textarea {
 	background-color: #fcfcfc;
 	border: 1px solid #ccc;
 	font-size: 1.2em;
-	padding: .2em .4em;
+	padding: 0.2em 0.4em;
 }
 
 select {
-	padding: .2em .2em .2em 0;
+	padding: 0.2em 0.2em 0.2em 0;
 }
 
 textarea {
@@ -183,7 +184,7 @@ input:focus, select:focus, textarea:focus {
 	display: inline-block;
 	font-size: 1.3em;
 	font-weight: bold;
-	margin-left: .3em;
+	margin-left: 0.3em;
 	vertical-align: middle;
 }
 
@@ -201,16 +202,13 @@ input[type=range] {
 
 input[type=range]:focus {
 	border: 1px solid transparent;
-	/*-moz-box-shadow: none;*/
- /*-webkit-box-shadow: 0;*/
-		 /*box-shadow: 0;*/
 }
 
 
 output {
 	display: inline-block;
 	font-size: 1.2em;
-	margin-right: .5em;
+	margin-right: 0.5em;
 	text-align: center;
 	width: 2em;
 	vertical-align: middle;
@@ -222,8 +220,8 @@ output {
 .message {
 	font-size: 1.2em;
 	line-height: 1.6em;
-	margin: 1em 0 .5em 0;
-	padding: .5em;
+	margin-bottom: 0.833em;
+	padding: 0.5em;
 }
 
 .message {
@@ -295,7 +293,7 @@ td, th {
 	border-left: 1px solid #ddd;
 	font-size: 1.3em;
 	line-height: 1.3em;
-	padding: .5em .6em;
+	padding: 0.5em 0.6em;
 	text-align: left;
 	vertical-align: top;
 }
@@ -309,7 +307,7 @@ th {
 	color: #666;
 	font-weight: bold;
 	line-height: 1.7em;
-	padding: .2em .6em;
+	padding: 0.2em 0.6em;
 }
 
 th a {
@@ -361,7 +359,7 @@ th:hover, tr:hover {
 		  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea')";
 	border: 1px solid #ccc;
 	border-top: 0;
-	padding: 1em .3em;
+	padding: 1em 0.3em;
 	text-align: center;
 	-moz-box-shadow: 0px 0px 3px #ccc;
  -webkit-box-shadow: 0px 0px 3px #ccc;
@@ -372,8 +370,8 @@ th:hover, tr:hover {
 .pagination .currentStep {
 	color: #666;
 	font-size: 1.1em;
-	margin: 0 .3em;
-	padding: .2em;
+	margin: 0 0.3em;
+	padding: 0.2em;
 	text-decoration: none;
 }
 
@@ -394,7 +392,6 @@ th:hover, tr:hover {
 	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #ffffff),color-stop(1, #eaeaea));
 			  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea');
 		  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea')";
-	margin-top: 1em;
 	overflow: hidden;
 	padding: 0;
 }
@@ -407,9 +404,9 @@ th:hover, tr:hover {
 	display: inline-block;
 	font-size: 1.3em;
 	font-weight: bold;
-	margin: .2em 0 .2em .3em;
+	margin: 0.2em 0 0.2em 0.3em;
 	overflow: visible;
-	padding: .2em .6em;
+	padding: 0.2em 0.6em;
 }
 
 .buttons input:hover, .buttons input:focus {
