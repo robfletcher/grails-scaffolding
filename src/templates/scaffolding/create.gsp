@@ -4,7 +4,6 @@
 <!doctype html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="layout" content="main">
         <g:set var="entityName" value="\${message(code: '${domainClass.propertyName}.label', default: '${className}')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
@@ -42,7 +41,7 @@
 							required = (cp ? !cp.nullable : false)
 						}
 						if (display) { %>
-					<div data-role="fieldcontain" class="fieldcontain \${hasErrors(bean: ${propertyName}, field: '${p.name}', 'error')} ${required ? 'required' : ''}">
+					<div role="fieldcontain" class="fieldcontain \${hasErrors(bean: ${propertyName}, field: '${p.name}', 'error')} ${required ? 'required' : ''}">
 						<label for="${p.name}"><g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}" /></label>
 						${renderEditor(p)}
 						<% if (required) { %><span class="required-indicator">*</span><% } %>
