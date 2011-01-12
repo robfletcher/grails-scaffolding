@@ -1,10 +1,10 @@
+<!doctype html>
 <html>
     <head>
-        <title>Welcome to Grails</title>
-        <meta name="layout" content="main" />
+		<meta name="layout" content="main" />
+		<title>Welcome to Grails</title>
         <style type="text/css" media="screen">
-
-        #nav {
+        #status {
 			background-color: #eee;
 			border: .3em solid #fff;
             margin: 1.5em;
@@ -18,23 +18,29 @@
 	   -webkit-border-radius: 1em; 
 	           border-radius: 1em; 
         }
-		.ie6 #nav {
+		.boxshadow #status {
+			margin: 1.5em 3.5em;
+		}
+		.ie6 #status {
 			display: inline; /* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
 		}
-		#nav ul {
+		#status ul {
 			font-size: 1.3em;
             list-style-type: none;
             margin-bottom: 1em;
         }
-        #nav h1 {
+        #status h1 {
             text-transform: uppercase;
             font-size: 1.5em;
             margin: 0 0 .5em;
         }
-        #pageBody {
-            margin-left: 26.5em;
+        #page-body {
+            margin-left: 25.6em;
             margin-right: 1.5em;
         }
+		.boxshadow #page-body {
+			margin-left: 29.6em;
+		}
         h2 {
             margin-top: 1em;
             margin-bottom: .5em;
@@ -49,7 +55,7 @@
         </style>
     </head>
     <body>
-        <div id="nav">
+        <div id="status" role="complementary">
 	        <h1>Application Status</h1>
 	        <ul>
 	            <li>App version: <g:meta name="app.version"></g:meta></li>
@@ -63,23 +69,20 @@
 	        </ul>
 	        <h1>Installed Plugins</h1>
 	        <ul>
-	            <g:set var="pluginManager"
-	                   value="${applicationContext.getBean('pluginManager')}"></g:set>
-
+	            <g:set var="pluginManager" value="${applicationContext.getBean('pluginManager')}"/>
 	            <g:each var="plugin" in="${pluginManager.allPlugins}">
 	                <li>${plugin.name} - ${plugin.version}</li>
 	            </g:each>
-
 	        </ul>
         </div>
-        <div id="pageBody">
+        <div id="page-body" role="main">
             <h1>Welcome to Grails</h1>
             <p>Congratulations, you have successfully started your first Grails application! At the moment
             this is the default page, feel free to modify it to either redirect to a controller or display whatever
             content you may choose. Below is a list of controllers that are currently deployed in this application,
             click on each to execute its default action:</p>
 
-            <div id="controllerList" class="dialog">
+            <div id="controller-list" class="dialog" role="navigation">
                 <h2>Available Controllers:</h2>
                 <ul>
                     <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
