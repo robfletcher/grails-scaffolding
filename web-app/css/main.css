@@ -28,6 +28,10 @@ ul {
 	padding-left: 15px;
 }
 
+img {
+	border: 0;
+}
+
 /* GENERAL */
 
 #grailsLogo a {
@@ -138,9 +142,18 @@ dt {
 
 label {
 	cursor: pointer;
-	display: block;
+	display: inline-block;
 	font-size: 1.3em;
-	margin-bottom: .2em;
+	margin-right: .5em;
+	text-align: right;
+	vertical-align: baseline;
+	width: 8em;
+}
+
+.ie6 label,
+.ie7 label {
+	display: inline;
+	zoom: 1;
 }
 
 input, select, textarea {
