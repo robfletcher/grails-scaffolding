@@ -3,7 +3,7 @@
 <!doctype html>
 <html>
     <head>
-        <meta name="layout" content="main">
+        <g:if test="\${!request.xhr}"><meta name="layout" content="main"></g:if>
         <g:set var="entityName" value="\${message(code: '${domainClass.propertyName}.label', default: '${className}')}" />
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
@@ -14,7 +14,7 @@
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
         </div>
-        <div class="content list-${domainClass.propertyName}" role="main">
+        <div id="list-${domainClass.propertyName}" class="content scaffold-list" role="main">
             <h1><g:message code="default.list.label" args="[entityName]" /></h1>
             <g:if test="\${flash.message}">
             <div class="message">\${flash.message}</div>

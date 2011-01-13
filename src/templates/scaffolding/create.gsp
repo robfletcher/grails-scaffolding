@@ -15,7 +15,7 @@
 				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 			</ul>
         </div>
-        <div class="content create-${domainClass.propertyName}" role="form">
+        <div id="create-${domainClass.propertyName}" class="content scaffold-create" role="form">
             <h1><g:message code="default.create.label" args="[entityName]" /></h1>
             <g:if test="\${flash.message}">
             <div class="message">\${flash.message}</div>
