@@ -23,6 +23,8 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ### Form inputs
 
+ * use data-constraint-range="0..5" etc. so we can enhance and validate inputs based on constraints
+ * use size attribute where appropriate
  * required="required" on mandatory fields
  * autofocus - 1st field in error or 1st in form
  * Radio groups for enums (use select when more than x values?)
