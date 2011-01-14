@@ -20,22 +20,22 @@ $(document).ready(function() {
 $.fn.grailsRangeInput = function() {
 	this.each(function() {
 		var select = $(this);
-		var min = select.find('option:first-child').attr('value');
+		var min = select.find('option[value!=""]:first').attr('value');
 		var max = select.find('option:last-child').attr('value');
 		var value = select.val();
 		var name = select.attr('name');
 		var id = select.attr('id');
 
 		// create a new range input with min & max based on the first & last options in the select
-		var range = $('<input>', {
+		var input = $('<input>', {
 			type: 'range',
 			name: name,
 			id: id,
 			min: min,
-			max: max,
-			onchange: function() {
-				$('output[for=' + this.id + ']').html($(this).val());
-			}
+			max: max
+		});
+		input.bind('change', function() {
+			$('output[for=' + this.id + ']').html($(this).val());
 		});
 
 		// create an output element to echo back the current range value (tabindex -1 is needed for Opera)
@@ -43,16 +43,16 @@ $.fn.grailsRangeInput = function() {
 
 		// if there's a current selection set the range value and the initial output text
 		if (value) {
-			range.val(value);
+			input.val(value);
 			output.html(value);
 		} else {
-			range.val(min);
+			input.val(min);
 			output.html(min);
 		}
 
 		// replace the select with the range input and insert the output before it
-		select.replaceWith(range);
-		range.before(output);
+		select.replaceWith(input);
+		input.before(output);
 	});
 };
 
