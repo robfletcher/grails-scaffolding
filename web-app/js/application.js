@@ -47,7 +47,7 @@ $.fn.grailsRangeInput = function() {
 			output.html(value);
 		} else {
 			range.val(min);
-			output.html(max);
+			output.html(min);
 		}
 
 		// replace the select with the range input and insert the output before it
