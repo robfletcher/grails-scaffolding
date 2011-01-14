@@ -150,6 +150,10 @@ label {
 	width: 8em;
 }
 
+label + select {
+	vertical-align: top;
+}
+
 .ie6 label,
 .ie7 label {
 	display: inline;
