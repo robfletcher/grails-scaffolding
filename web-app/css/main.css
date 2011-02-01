@@ -21,7 +21,7 @@ h1 {
 	color: #48802c;
 	font-weight: normal;
 	font-size: 1.8em;
-	margin: .8em 0 .3em 0;
+	margin: 0.8em 0 0.3em 0;
 }
 
 ul {
@@ -62,11 +62,11 @@ img {
 	border-width: 1px;
 	border-color: #ccc;
 	border-style: solid none solid none;
-	padding: .7em 1.2em;
+	padding: 0.7em 1.2em;
 	zoom: 1;
-	-moz-box-shadow: -3px 0px 3px #ccc; /* firefox will render a horizontal scrollbar without the h-offset -3px */
- -webkit-box-shadow: 0px 0px 3px #ccc;
-		 box-shadow: 0px 0px 3px #ccc;
+	-moz-box-shadow: -3px 0 3px #ccc; /* firefox will render a horizontal scrollbar without the h-offset -3px */
+ -webkit-box-shadow: 0 0 3px #ccc;
+		 box-shadow: 0 0 3px #ccc;
 }
 
 .nav ul {
@@ -79,7 +79,7 @@ img {
 	display: block;
 	float: left;
 	list-style-type: none;
-	padding: .4em 1.1em;
+	padding: 0.4em 1.1em;
 }
 
 .nav a {
@@ -120,15 +120,15 @@ img {
 fieldset,
 dl {
 	border: 1px solid #CCCCCC;
-	padding: 0 1.5em 1.5em;
-	-moz-box-shadow: 0px 0px 3px #ccc;
- -webkit-box-shadow: 0px 0px 3px #ccc;
-		 box-shadow: 0px 0px 3px #ccc;
+	padding: 0.5em 1.5em 1.5em;
+	-moz-box-shadow: 0 0 3px #ccc;
+ -webkit-box-shadow: 0 0 3px #ccc;
+		 box-shadow: 0 0 3px #ccc;
 }
 
 form .fieldcontain,
 dt {
-	margin-top: .8em;
+	margin-top: 1em;
 }
 
 dt, dd {
@@ -144,10 +144,10 @@ label {
 	cursor: pointer;
 	display: inline-block;
 	font-size: 1.3em;
-	margin-right: .5em;
+	margin-right: 0.5em;
 	text-align: right;
 	vertical-align: baseline;
-	width: 8em;
+	width: 6em;
 }
 
 label + select {
@@ -164,11 +164,11 @@ input, select, textarea {
 	background-color: #fcfcfc;
 	border: 1px solid #ccc;
 	font-size: 1.2em;
-	padding: .2em .4em;
+	padding: 0.2em 0.4em;
 }
 
 select {
-	padding: .2em .2em .2em 0;
+	padding: 0.2em 0.2em 0.2em 0;
 }
 
 textarea {
@@ -181,9 +181,9 @@ textarea {
 input:focus, select:focus, textarea:focus {
 	border: 1px solid #b2d1ff;
 	outline: 0;
-	-moz-box-shadow: 0px 0px 3px #b2d1ff;
- -webkit-box-shadow: 0px 0px 3px #b2d1ff;
-		 box-shadow: 0px 0px 3px #b2d1ff;
+	-moz-box-shadow: 0 0 3px #b2d1ff;
+ -webkit-box-shadow: 0 0 3px #b2d1ff;
+		 box-shadow: 0 0 3px #b2d1ff;
 }
 
 .required-indicator {
@@ -191,7 +191,7 @@ input:focus, select:focus, textarea:focus {
 	display: inline-block;
 	font-size: 1.3em;
 	font-weight: bold;
-	margin-left: .3em;
+	margin-left: 0.3em;
 	vertical-align: middle;
 }
 
@@ -201,8 +201,8 @@ input:focus, select:focus, textarea:focus {
 .message {
 	font-size: 1.2em;
 	line-height: 1.6em;
-	margin: 1em 0 .5em 0;
-	padding: .5em;
+	margin: 1em 0 0.5em 0;
+	padding: 0.5em;
 }
 
 .message {
@@ -210,18 +210,18 @@ input:focus, select:focus, textarea:focus {
 	border: 1px solid #b2d1ff;
 	color: #006dba;
 	text-indent: 19px;
-	-moz-box-shadow: 0px 0px 3px #b2d1ff;
- -webkit-box-shadow: 0px 0px 3px #b2d1ff;
-		 box-shadow: 0px 0px 3px #b2d1ff;
+	-moz-box-shadow: 0 0 3px #b2d1ff;
+ -webkit-box-shadow: 0 0 3px #b2d1ff;
+		 box-shadow: 0 0 3px #b2d1ff;
 }
 
 .errors {
 	background: #fff3f3;
 	border: 1px solid #faa;
 	color: #c00;
-	-moz-box-shadow: 0px 0px 3px #faa;
- -webkit-box-shadow: 0px 0px 3px #faa;
-		 box-shadow: 0px 0px 3px #faa;
+	-moz-box-shadow: 0 0 3px #faa;
+ -webkit-box-shadow: 0 0 3px #faa;
+		 box-shadow: 0 0 3px #faa;
 }
 
 .errors ul {
@@ -230,7 +230,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .errors li {
-	background: url(../images/skin/exclamation.png) .5em 50% no-repeat;
+	background: url(../images/skin/exclamation.png) 0.5em 50% no-repeat;
 	padding-left: 30px;
 }
 
@@ -250,9 +250,9 @@ textarea:invalid:focus,
 .error select:focus,
 .error input:focus,
 .error textarea:focus {
-	   -moz-box-shadow: 0px 0px 3px red;
-	-webkit-box-shadow: 0px 0px 3px red;
-            box-shadow: 0px 0px 3px red;
+	   -moz-box-shadow: 0 0 3px red;
+	-webkit-box-shadow: 0 0 3px red;
+            box-shadow: 0 0 3px red;
 }
 
 /* TABLES */
@@ -261,9 +261,9 @@ table {
 	border: 1px solid #ccc;
 	border-collapse: collapse;
 	width: 100%;
-	-moz-box-shadow: 0px 0px 3px #ccc;
- -webkit-box-shadow: 0px 0px 3px #ccc;
-		 box-shadow: 0px 0px 3px #ccc;
+	-moz-box-shadow: 0 0 3px #ccc;
+ -webkit-box-shadow: 0 0 3px #ccc;
+		 box-shadow: 0 0 3px #ccc;
 }
 
 tr {
@@ -274,7 +274,7 @@ td, th {
 	border-left: 1px solid #ddd;
 	font-size: 1.3em;
 	line-height: 1.3em;
-	padding: .5em .6em;
+	padding: 0.5em 0.6em;
 	text-align: left;
 	vertical-align: top;
 }
@@ -288,7 +288,7 @@ th {
 	color: #666;
 	font-weight: bold;
 	line-height: 1.7em;
-	padding: .2em .6em;
+	padding: 0.2em 0.6em;
 }
 
 th a {
@@ -340,19 +340,19 @@ th:hover, tr:hover {
 		  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea')";
 	border: 1px solid #ccc;
 	border-top: 0;
-	padding: 1em .3em;
+	padding: 1em 0.3em;
 	text-align: center;
-	-moz-box-shadow: 0px 0px 3px #ccc;
- -webkit-box-shadow: 0px 0px 3px #ccc;
-		 box-shadow: 0px 0px 3px #ccc;
+	-moz-box-shadow: 0 0 3px #ccc;
+ -webkit-box-shadow: 0 0 3px #ccc;
+		 box-shadow: 0 0 3px #ccc;
 }
 
 .pagination a,
 .pagination .currentStep {
 	color: #666;
 	font-size: 1.1em;
-	margin: 0 .3em;
-	padding: .2em;
+	margin: 0 0.3em;
+	padding: 0.2em;
 	text-decoration: none;
 }
 
@@ -386,9 +386,9 @@ th:hover, tr:hover {
 	display: inline-block;
 	font-size: 1.3em;
 	font-weight: bold;
-	margin: .2em 0 .2em .3em;
+	margin: 0.2em 0 0.2em 0.3em;
 	overflow: visible;
-	padding: .2em .6em;
+	padding: 0.2em 0.6em;
 }
 
 .buttons input:hover, .buttons input:focus {
