@@ -201,7 +201,7 @@ input:focus, select:focus, textarea:focus {
 .message {
 	font-size: 1.2em;
 	line-height: 1.6em;
-	margin: 1em 0 0.5em 0;
+	margin: 1em 0 1em 0;
 	padding: 0.5em;
 }
 
