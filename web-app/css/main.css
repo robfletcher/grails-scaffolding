@@ -126,18 +126,31 @@ dl {
 		 box-shadow: 0 0 3px #ccc;
 }
 
-form .fieldcontain,
-dt {
+form .fieldcontain {
 	margin-top: 1em;
 }
 
+dl {
+	overflow: hidden;
+}
+
 dt, dd {
-	display: block;
 	font-size: 1.3em;
+	margin-top: 1em;
 }
 
 dt {
 	color: #666;
+	clear: both;
+	float: left;
+	text-align: right;
+	width: 6em;
+}
+
+dd {
+	float: right;
+	width: 24em;
+	padding-left: 1em;
 }
 
 label {
@@ -206,10 +219,10 @@ input:focus, select:focus, textarea:focus {
 }
 
 .message {
-	background: #f3f8fc url(../images/skin/information.png) 5px 50% no-repeat;
+	background: #f3f8fc url(../images/skin/information.png) 0.5em 50% no-repeat;
 	border: 1px solid #b2d1ff;
 	color: #006dba;
-	text-indent: 19px;
+	text-indent: 21px;
 	-moz-box-shadow: 0 0 3px #b2d1ff;
  -webkit-box-shadow: 0 0 3px #b2d1ff;
 		 box-shadow: 0 0 3px #b2d1ff;
@@ -230,8 +243,9 @@ input:focus, select:focus, textarea:focus {
 }
 
 .errors li {
-	background: url(../images/skin/exclamation.png) 0.5em 50% no-repeat;
-	padding-left: 30px;
+	background: url(../images/skin/exclamation.png) 0 50% no-repeat;
+	padding-left: 16px;
+	text-indent: 0.5em;
 }
 
 select:invalid,
