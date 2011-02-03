@@ -23,6 +23,9 @@ body {
 	margin: 0 auto;
 	max-width: 1140px;
 	min-height: 100%;
+    -moz-box-shadow: 0 -10px 10px #255b17;
+ -webkit-box-shadow: 0 0 10px #255b17;
+         box-shadow: 0 0 10px #255b17;
 }
 
 a:link, a:visited, a:hover {
@@ -128,7 +131,7 @@ img {
 fieldset,
 dl {
 	border: 1px solid #CCCCCC;
-	padding: 0.5em 0 1.5em;
+	padding: 0.5em 0 2em;
 	-moz-box-shadow: 0 0 3px #ccc;
  -webkit-box-shadow: 0 0 3px #ccc;
 		 box-shadow: 0 0 3px #ccc;
@@ -142,7 +145,12 @@ dl {
 
 .fieldcontain,
 dt {
-	margin: 1em 1.5em 0;
+	margin-top: 1em;
+	padding: 0 3em;
+	 /* change the box model to exclude the padding from the calculation of 100% height (IE8+) */
+	 -webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	         box-sizing: border-box;
 }
 
 dl {
@@ -169,29 +177,18 @@ dd {
 }
 
 label {
+	color: #666;
 	cursor: pointer;
-	display: inline-block;
-	font-size: 1.3em;
-	margin-right: 0.5em;
-	text-align: right;
-	vertical-align: baseline;
-	width: 6em;
-}
-
-label + select {
-	vertical-align: top;
-}
-
-.ie6 label,
-.ie7 label {
-	display: inline;
-	zoom: 1;
+	display: block;
+	font-size: 1.5em;
+	margin-bottom: 0.25em;
+	padding-left: 0.1em;
 }
 
 input, select, textarea {
 	background-color: #fcfcfc;
 	border: 1px solid #ccc;
-	font-size: 1.2em;
+	font-size: 1.5em;
 	padding: 0.2em 0.4em;
 }
 
@@ -206,6 +203,16 @@ textarea {
 	vertical-align: top;
 }
 
+fieldset.form input,
+fieldset.form select,
+fieldset.form textarea {
+	width: 100%;
+	 /* change the box model to exclude the padding from the calculation of height & width */
+	 -webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	         box-sizing: border-box;
+}
+
 input:focus, select:focus, textarea:focus {
 	border: 1px solid #b2d1ff;
 	outline: 0;
@@ -217,10 +224,10 @@ input:focus, select:focus, textarea:focus {
 .required-indicator {
 	color: #48802C;
 	display: inline-block;
-	font-size: 1.3em;
 	font-weight: bold;
 	margin-left: 0.3em;
-	vertical-align: middle;
+	position: relative;
+	top: 0.1em;
 }
 
 /* MESSAGES AND ERRORS */
