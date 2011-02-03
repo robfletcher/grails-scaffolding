@@ -34,7 +34,7 @@ ul {
 }
 
 img {
-	border: none;
+	border: 0;
 }
 
 /* GENERAL */
@@ -148,9 +148,22 @@ dt {
 
 label {
 	cursor: pointer;
-	display: block;
+	display: inline-block;
 	font-size: 1.3em;
-	margin-bottom: 0.2em;
+	margin-right: .5em;
+	text-align: right;
+	vertical-align: baseline;
+	width: 8em;
+}
+
+label + select {
+	vertical-align: top;
+}
+
+.ie6 label,
+.ie7 label {
+	display: inline;
+	zoom: 1;
 }
 
 input, output, select, textarea {
