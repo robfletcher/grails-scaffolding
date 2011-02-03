@@ -10,7 +10,6 @@ This is a sample project for prototyping changes to Grails scaffolding.
 ## Phase 2 - Re-design
 
  * FOUC prevention by fade-in with CSS transition
- * Center content & apply some background
 
 ### Navigation
 

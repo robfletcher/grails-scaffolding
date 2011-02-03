@@ -1,3 +1,16 @@
+html {
+	background-color: #758c3c;
+	background-image: -moz-linear-gradient(top, #758c3c, #fff); 
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #758c3c),color-stop(1, #ffffff)); 
+	background-image: linear-gradient(top, #758c3c, #ffffff);
+	          filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#758c3c', EndColorStr='#ffffff'); 
+	height: 100%;
+	 /* change the box model to exclude the padding from the calculation of 100% height (IE8+) */
+	 -webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	         box-sizing: border-box;
+}
+
 html * {
 	margin: 0;
 }
@@ -7,6 +20,9 @@ body {
 	color: #333;
 	font-size: 62.5%; /* this gives us a base font size of 10px in most browsers, ems calculations are then easy */
 	font-family: "Segoe UI",Tahoma,Helvetica,"Helvetica Neue",Arial,sans-serif;
+	margin: 0 auto;
+	max-width: 1140px;
+	min-height: 100%;
 }
 
 a:link, a:visited, a:hover {
@@ -40,31 +56,25 @@ img {
 }
 
 .content {
-	max-width: 960px;
-	margin: 0 auto 1em;
-	padding: 0 1.5em;
-}
-
-.ie6 .content {
-	width: 960px;
+	margin: 0 2em;
 }
 
 /* NAVIGATION MENU */
 
 .nav {
-	background-color: #efefef;
-	background-image: -moz-linear-gradient(top, #ffffff, #eaeaea);
-	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #ffffff),color-stop(1, #eaeaea));
-			  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea');
-		  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea')";
-	border-width: 1px;
-	border-color: #ccc;
-	border-style: solid none solid none;
-	padding: 0.7em 1.2em;
-	zoom: 1;
-	-moz-box-shadow: -3px 0 3px #ccc; /* firefox will render a horizontal scrollbar without the h-offset -3px */
+    background-color: #efefef;
+    background-image: -moz-linear-gradient(top, #ffffff, #eaeaea);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #ffffff),color-stop(1, #eaeaea));
+              filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea');
+          -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea')";
+    border-width: 1px;
+    border-color: #ccc;
+    border-style: solid none solid none;
+    padding: 0.7em 1.2em;
+    zoom: 1;
+    -moz-box-shadow: 0 0 3px #ccc;
  -webkit-box-shadow: 0 0 3px #ccc;
-		 box-shadow: 0 0 3px #ccc;
+         box-shadow: 0 0 3px #ccc;
 }
 
 .nav ul {
@@ -431,4 +441,12 @@ th:hover, tr:hover {
 .buttons input.save {
 	background: transparent url(../images/skin/database_save.png) 5px 50% no-repeat;
 	padding-left: 28px;
+}
+
+@media screen and (max-width: 767px) {
+	fieldset.form,
+	fieldset.buttons,
+	dl {
+		width: 100%;
+	}
 }
