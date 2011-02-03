@@ -29,7 +29,7 @@
             <g:form method="post" <%= multiPart ? ' enctype="multipart/form-data"' : '' %>>
                 <g:hiddenField name="id" value="\${${propertyName}?.id}" />
                 <g:hiddenField name="version" value="\${${propertyName}?.version}" />
-				<fieldset>
+				<fieldset class="form">
 				<%  excludedProps = Event.allEvents.toList() << 'version' << 'id' << 'dateCreated' << 'lastUpdated'
 					persistentPropNames = domainClass.persistentProperties*.name
 					props = domainClass.properties.findAll { persistentPropNames.contains(it.name) && !excludedProps.contains(it.name) }

@@ -40,15 +40,13 @@ img {
 }
 
 .content {
-	float: left;
-	margin: 0 1.5em 1em 1.5em;
+	max-width: 960px;
+	margin: 0 auto 1em;
+	padding: 0 1.5em;
 }
 
-.ie6 .content,
-.ie7 .content {
-	display: inline;
-	float: none;
-	zoom: 1;
+.ie6 .content {
+	width: 960px;
 }
 
 /* NAVIGATION MENU */
@@ -120,14 +118,21 @@ img {
 fieldset,
 dl {
 	border: 1px solid #CCCCCC;
-	padding: 0.5em 1.5em 1.5em;
+	padding: 0.5em 0 1.5em;
 	-moz-box-shadow: 0 0 3px #ccc;
  -webkit-box-shadow: 0 0 3px #ccc;
 		 box-shadow: 0 0 3px #ccc;
 }
 
-form .fieldcontain {
-	margin-top: 1em;
+fieldset.form,
+fieldset.buttons,
+dl {
+	width: 60%;
+}
+
+.fieldcontain,
+dt {
+	margin: 1em 1.5em 0;
 }
 
 dl {
