@@ -145,6 +145,7 @@ img {
 fieldset,
 dl {
 	border: 1px solid #CCCCCC;
+	margin-top: 1em;
 	padding: 0.5em 3em 2em;
 	-moz-box-shadow: 0 0 3px #ccc;
  -webkit-box-shadow: 0 0 3px #ccc;
