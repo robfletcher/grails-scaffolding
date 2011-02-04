@@ -6,7 +6,7 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"><!--<![endif]-->
 	<head>
 		<g:javascript src="modernizr-1.6.min.js"/>
-		<g:javascript src="jquery-1.4.4.min.js"/>
+		<g:javascript src="jquery-1.5.min.js"/>
 		<link rel="stylesheet" href="http://code.jquery.com/qunit/git/qunit.css" type="text/css" media="screen"/>
 		<script src="http://code.jquery.com/qunit/git/qunit.js"></script>
 		<g:layoutHead/>
