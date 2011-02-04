@@ -39,7 +39,6 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ### Accessibility
 
- * "Skip to content" link
  * Error messages act as labels for form fields
 
 ### Enhanced experience

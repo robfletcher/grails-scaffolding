@@ -464,3 +464,8 @@ th:hover, tr:hover {
 	background: transparent url(../images/skin/database_save.png) 5px 50% no-repeat;
 	padding-left: 28px;
 }
+
+a.skip {
+	position: absolute;
+	left: -9999px;
+}

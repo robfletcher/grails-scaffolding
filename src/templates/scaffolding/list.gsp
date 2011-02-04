@@ -7,7 +7,8 @@
         <g:set var="entityName" value="\${message(code: '${domainClass.propertyName}.label', default: '${className}')}" />
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
-    <body>
+	<body>
+		<a href="#list-${domainClass.propertyName}" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="\${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
