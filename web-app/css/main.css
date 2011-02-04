@@ -135,44 +135,24 @@ img {
 fieldset,
 dl {
 	border: 1px solid #CCCCCC;
-	padding: 0.5em 0 2em;
+	padding: 0.5em 3em 2em;
 	-moz-box-shadow: 0 0 3px #ccc;
  -webkit-box-shadow: 0 0 3px #ccc;
 		 box-shadow: 0 0 3px #ccc;
 }
 
-fieldset.form,
-fieldset.buttons,
-dl {
-}
-
 .fieldcontain,
 dt {
 	margin-top: 1em;
-	padding: 0 3em;
-}
-
-dl {
-	overflow: hidden;
 }
 
 dt, dd {
 	font-size: 1.5em;
-	margin-top: 1em;
 }
 
 dt {
 	color: #666;
-	clear: both;
-	float: left;
-	text-align: right;
-	width: 6em;
-}
-
-dd {
-	float: right;
-	width: 24em;
-	padding-left: 1em;
+	margin-top: 1em;
 }
 
 label {
