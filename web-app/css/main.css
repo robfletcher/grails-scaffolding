@@ -28,6 +28,10 @@ body {
          box-shadow: 0 0 10px #255b17;
 }
 
+.ie6 body {
+	height: 100%;
+}
+
 a:link, a:visited, a:hover {
 	color: #48802c;
 }
@@ -39,7 +43,7 @@ a:hover, a:active {
 h1 {
 	color: #48802c;
 	font-weight: normal;
-	font-size: 1.8em;
+	font-size: 2em;
 	margin: 0.8em 0 0.3em 0;
 }
 
@@ -96,7 +100,7 @@ img {
 .nav a {
 	color: #666;
 	display: block;
-	font-size: 1.3em;
+	font-size: 1.5em;
 	font-weight: bold;
 	line-height: 1.3em;
 	text-decoration: none;
@@ -140,17 +144,12 @@ dl {
 fieldset.form,
 fieldset.buttons,
 dl {
-	width: 60%;
 }
 
 .fieldcontain,
 dt {
 	margin-top: 1em;
 	padding: 0 3em;
-	 /* change the box model to exclude the padding from the calculation of 100% height (IE8+) */
-	 -webkit-box-sizing: border-box;
-	    -moz-box-sizing: border-box;
-	         box-sizing: border-box;
 }
 
 dl {
@@ -158,7 +157,7 @@ dl {
 }
 
 dt, dd {
-	font-size: 1.3em;
+	font-size: 1.5em;
 	margin-top: 1em;
 }
 
@@ -206,8 +205,8 @@ textarea {
 fieldset.form input,
 fieldset.form select,
 fieldset.form textarea {
-	width: 100%;
-	 /* change the box model to exclude the padding from the calculation of height & width */
+	width: 40em;
+	 /* change the box model to exclude the padding from the calculation of width */
 	 -webkit-box-sizing: border-box;
 	    -moz-box-sizing: border-box;
 	         box-sizing: border-box;
@@ -234,7 +233,7 @@ input:focus, select:focus, textarea:focus {
 
 .errors,
 .message {
-	font-size: 1.2em;
+	font-size: 1.3em;
 	line-height: 1.6em;
 	margin: 1em 0 1em 0;
 	padding: 0.5em;
@@ -308,8 +307,8 @@ tr {
 
 td, th {
 	border-left: 1px solid #ddd;
-	font-size: 1.3em;
-	line-height: 1.3em;
+	font-size: 1.5em;
+	line-height: 1.5em;
 	padding: 0.5em 0.6em;
 	text-align: left;
 	vertical-align: top;
@@ -386,7 +385,7 @@ th:hover, tr:hover {
 .pagination a,
 .pagination .currentStep {
 	color: #666;
-	font-size: 1.1em;
+	font-size: 1.2em;
 	margin: 0 0.3em;
 	padding: 0.2em;
 	text-decoration: none;
@@ -420,7 +419,7 @@ th:hover, tr:hover {
 	color: #666;
 	cursor: pointer;
 	display: inline-block;
-	font-size: 1.3em;
+	font-size: 1.5em;
 	font-weight: bold;
 	margin: 0.2em 0 0.2em 0.3em;
 	overflow: visible;
