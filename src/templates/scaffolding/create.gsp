@@ -26,7 +26,7 @@
             </div>
             </g:hasErrors>
             <g:form action="save" <%= multiPart ? ' enctype="multipart/form-data"' : '' %>>
-				<fieldset>
+				<fieldset class="form">
 				<%  excludedProps = Event.allEvents.toList() << 'version' << 'id' << 'dateCreated' << 'lastUpdated'
 					persistentPropNames = domainClass.persistentProperties*.name
 					props = domainClass.properties.findAll { persistentPropNames.contains(it.name) && !excludedProps.contains(it.name) }
@@ -42,9 +42,8 @@
 						}
 						if (display) { %>
 					<div role="fieldcontain" class="fieldcontain \${hasErrors(bean: ${propertyName}, field: '${p.name}', 'error')} ${required ? 'required' : ''}">
-						<label for="${p.name}"><g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}" /></label>
+						<label for="${p.name}"><g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}" /><% if (required) { %><span class="required-indicator">*</span><% } %></label>
 						${renderEditor(p)}
-						<% if (required) { %><span class="required-indicator">*</span><% } %>
 					</div>
 				<%  }   } %>
 				</fieldset>

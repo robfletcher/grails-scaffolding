@@ -1,3 +1,20 @@
+html {
+	background-color: #758c3c;
+	background-image: -moz-linear-gradient(top, #758c3c, #fff); 
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #758c3c),color-stop(1, #ffffff)); 
+	background-image: linear-gradient(top, #758c3c, #ffffff);
+	          filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#758c3c', EndColorStr='#ffffff'); 
+	height: 100%;
+	 /* change the box model to exclude the padding from the calculation of 100% height (IE8+) */
+	 -webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	         box-sizing: border-box;
+}
+
+.ie6 html {
+	height: 100%;
+}
+
 html * {
 	margin: 0;
 }
@@ -7,11 +24,21 @@ body {
 	color: #333;
 	font-size: 62.5%; /* this gives us a base font size of 10px in most browsers, ems calculations are then easy */
 	font-family: "Segoe UI",Tahoma,Helvetica,"Helvetica Neue",Arial,sans-serif;
+	margin: 0 auto;
+	max-width: 1140px;
+	min-height: 100%;
+    -moz-box-shadow: 0 -10px 10px #255b17;
+ -webkit-box-shadow: 0 0 10px #255b17;
+         box-shadow: 0 0 10px #255b17;
 	visibility: hidden;
 }
 
 .no-js body, body.ready {
 	visibility: visible;
+}
+
+.ie6 body {
+	height: 100%;
 }
 
 a:link, a:visited, a:hover {
@@ -25,8 +52,8 @@ a:hover, a:active {
 h1 {
 	color: #48802c;
 	font-weight: normal;
-	font-size: 1.8em;
-	margin: 0.555555556em 0;
+	font-size: 2em;
+	margin: 0.8em 0 0.3em 0;
 }
 
 ul {
@@ -45,33 +72,25 @@ img {
 }
 
 .content {
-	float: left;
-	margin: 0 1.5em 1em 1.5em;
-}
-
-.ie6 .content,
-.ie7 .content {
-	display: inline;
-	float: none;
-	zoom: 1;
+	margin: 0 2em;
 }
 
 /* NAVIGATION MENU */
 
 .nav {
-	background-color: #efefef;
-	background-image: -moz-linear-gradient(top, #ffffff, #eaeaea);
-	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #ffffff),color-stop(1, #eaeaea));
-			  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea');
-		  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea')";
-	border-width: 1px;
-	border-color: #ccc;
-	border-style: solid none solid none;
-	padding: 0.7em 1.2em;
-	zoom: 1;
-	-moz-box-shadow: -3px 0px 3px #ccc; /* firefox will render a horizontal scrollbar without the h-offset -3px */
- -webkit-box-shadow: 0px 0px 3px #ccc;
-		 box-shadow: 0px 0px 3px #ccc;
+    background-color: #efefef;
+    background-image: -moz-linear-gradient(top, #ffffff, #eaeaea);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #ffffff),color-stop(1, #eaeaea));
+              filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea');
+          -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea')";
+    border-width: 1px;
+    border-color: #ccc;
+    border-style: solid none solid none;
+    padding: 0.7em 1.2em;
+    zoom: 1;
+    -moz-box-shadow: 0 0 3px #ccc;
+ -webkit-box-shadow: 0 0 3px #ccc;
+         box-shadow: 0 0 3px #ccc;
 }
 
 .nav ul {
@@ -90,7 +109,7 @@ img {
 .nav a {
 	color: #666;
 	display: block;
-	font-size: 1.3em;
+	font-size: 1.5em;
 	font-weight: bold;
 	line-height: 1.3em;
 	text-decoration: none;
@@ -125,51 +144,39 @@ img {
 fieldset,
 dl {
 	border: 1px solid #CCCCCC;
-	margin-bottom: 1em;
-	padding: 0 1.5em 1.5em;
-	-moz-box-shadow: 0px 0px 3px #ccc;
- -webkit-box-shadow: 0px 0px 3px #ccc;
-		 box-shadow: 0px 0px 3px #ccc;
+	padding: 0.5em 3em 2em;
+	-moz-box-shadow: 0 0 3px #ccc;
+ -webkit-box-shadow: 0 0 3px #ccc;
+		 box-shadow: 0 0 3px #ccc;
 }
 
-form .fieldcontain,
+.fieldcontain,
 dt {
-	margin-top: 0.8em;
+	margin-top: 1em;
 }
 
 dt, dd {
-	display: block;
-	font-size: 1.3em;
+	font-size: 1.5em;
 }
 
 dt {
 	color: #666;
+	margin-top: 1em;
 }
 
 label {
+	color: #666;
 	cursor: pointer;
-	display: inline-block;
-	font-size: 1.3em;
-	margin-right: .5em;
-	text-align: right;
-	vertical-align: baseline;
-	width: 8em;
-}
-
-label + select {
-	vertical-align: top;
-}
-
-.ie6 label,
-.ie7 label {
-	display: inline;
-	zoom: 1;
+	display: block;
+	font-size: 1.5em;
+	margin-bottom: 0.25em;
+	padding-left: 0.1em;
 }
 
 input, output, select, textarea {
 	background-color: #fcfcfc;
 	border: 1px solid #ccc;
-	font-size: 1.2em;
+	font-size: 1.5em;
 	padding: 0.2em 0.4em;
 }
 
@@ -184,21 +191,31 @@ textarea {
 	vertical-align: top;
 }
 
+fieldset.form input,
+fieldset.form select,
+fieldset.form textarea {
+	width: 40em;
+	 /* change the box model to exclude the padding from the calculation of width */
+	 -webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	         box-sizing: border-box;
+}
+
 input:focus, select:focus, textarea:focus {
 	border: 1px solid #b2d1ff;
 	outline: 0;
-	-moz-box-shadow: 0px 0px 3px #b2d1ff;
- -webkit-box-shadow: 0px 0px 3px #b2d1ff;
-		 box-shadow: 0px 0px 3px #b2d1ff;
+	-moz-box-shadow: 0 0 3px #b2d1ff;
+ -webkit-box-shadow: 0 0 3px #b2d1ff;
+		 box-shadow: 0 0 3px #b2d1ff;
 }
 
 .required-indicator {
 	color: #48802C;
 	display: inline-block;
-	font-size: 1.3em;
 	font-weight: bold;
 	margin-left: 0.3em;
-	vertical-align: middle;
+	position: relative;
+	top: 0.1em;
 }
 
 /*
@@ -231,29 +248,29 @@ output {
 
 .errors,
 .message {
-	font-size: 1.2em;
+	font-size: 1.3em;
 	line-height: 1.6em;
-	margin-bottom: 0.833em;
+	margin: 1em 0 1em 0;
 	padding: 0.5em;
 }
 
 .message {
-	background: #f3f8fc url(../images/skin/information.png) 5px 50% no-repeat;
+	background: #f3f8fc url(../images/skin/information.png) 0.5em 50% no-repeat;
 	border: 1px solid #b2d1ff;
 	color: #006dba;
-	text-indent: 19px;
-	-moz-box-shadow: 0px 0px 3px #b2d1ff;
- -webkit-box-shadow: 0px 0px 3px #b2d1ff;
-		 box-shadow: 0px 0px 3px #b2d1ff;
+	text-indent: 21px;
+	-moz-box-shadow: 0 0 3px #b2d1ff;
+ -webkit-box-shadow: 0 0 3px #b2d1ff;
+		 box-shadow: 0 0 3px #b2d1ff;
 }
 
 .errors {
 	background: #fff3f3;
 	border: 1px solid #faa;
 	color: #c00;
-	-moz-box-shadow: 0px 0px 3px #faa;
- -webkit-box-shadow: 0px 0px 3px #faa;
-		 box-shadow: 0px 0px 3px #faa;
+	-moz-box-shadow: 0 0 3px #faa;
+ -webkit-box-shadow: 0 0 3px #faa;
+		 box-shadow: 0 0 3px #faa;
 }
 
 .errors ul {
@@ -262,8 +279,9 @@ output {
 }
 
 .errors li {
-	background: url(../images/skin/exclamation.png) .5em 50% no-repeat;
-	padding-left: 30px;
+	background: url(../images/skin/exclamation.png) 0 50% no-repeat;
+	padding-left: 16px;
+	text-indent: 0.5em;
 }
 
 select:invalid,
@@ -282,9 +300,9 @@ textarea:invalid:focus,
 .error select:focus,
 .error input:focus,
 .error textarea:focus {
-	   -moz-box-shadow: 0px 0px 3px red;
-	-webkit-box-shadow: 0px 0px 3px red;
-            box-shadow: 0px 0px 3px red;
+	   -moz-box-shadow: 0 0 3px red;
+	-webkit-box-shadow: 0 0 3px red;
+            box-shadow: 0 0 3px red;
 }
 
 /* TABLES */
@@ -293,9 +311,9 @@ table {
 	border: 1px solid #ccc;
 	border-collapse: collapse;
 	width: 100%;
-	-moz-box-shadow: 0px 0px 3px #ccc;
- -webkit-box-shadow: 0px 0px 3px #ccc;
-		 box-shadow: 0px 0px 3px #ccc;
+	-moz-box-shadow: 0 0 3px #ccc;
+ -webkit-box-shadow: 0 0 3px #ccc;
+		 box-shadow: 0 0 3px #ccc;
 }
 
 tr {
@@ -304,8 +322,8 @@ tr {
 
 td, th {
 	border-left: 1px solid #ddd;
-	font-size: 1.3em;
-	line-height: 1.3em;
+	font-size: 1.5em;
+	line-height: 1.5em;
 	padding: 0.5em 0.6em;
 	text-align: left;
 	vertical-align: top;
@@ -374,15 +392,15 @@ th:hover, tr:hover {
 	border-top: 0;
 	padding: 1em 0.3em;
 	text-align: center;
-	-moz-box-shadow: 0px 0px 3px #ccc;
- -webkit-box-shadow: 0px 0px 3px #ccc;
-		 box-shadow: 0px 0px 3px #ccc;
+	-moz-box-shadow: 0 0 3px #ccc;
+ -webkit-box-shadow: 0 0 3px #ccc;
+		 box-shadow: 0 0 3px #ccc;
 }
 
 .pagination a,
 .pagination .currentStep {
 	color: #666;
-	font-size: 1.1em;
+	font-size: 1.2em;
 	margin: 0 0.3em;
 	padding: 0.2em;
 	text-decoration: none;
@@ -415,7 +433,7 @@ th:hover, tr:hover {
 	color: #666;
 	cursor: pointer;
 	display: inline-block;
-	font-size: 1.3em;
+	font-size: 1.5em;
 	font-weight: bold;
 	margin: 0.2em 0 0.2em 0.3em;
 	overflow: visible;
@@ -443,4 +461,12 @@ th:hover, tr:hover {
 .buttons input.save {
 	background: transparent url(../images/skin/database_save.png) 5px 50% no-repeat;
 	padding-left: 28px;
+}
+
+@media screen and (max-width: 767px) {
+	fieldset.form,
+	fieldset.buttons,
+	dl {
+		width: 100%;
+	}
 }

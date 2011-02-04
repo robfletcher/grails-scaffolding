@@ -4,13 +4,11 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ## Phase 1 - slightly slicker version of current Grails L&F
 
- * .body { float: left; } is horrible and doesn't work on IE
  * put required class (and HTML5 attribute) on the input itself rather than the container
 
 ## Phase 2 - Re-design
 
  * FOUC prevention by fade-in with CSS transition
- * Center content & apply some background
  * Form panel background #f7f7f7?
  * Hide null/blank values in show view
 
