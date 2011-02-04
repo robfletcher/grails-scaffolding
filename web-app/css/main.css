@@ -1,9 +1,10 @@
 html {
-	background-color: #758c3c;
+	background-color: #fff;
 	background-image: -moz-linear-gradient(top, #758c3c, #fff); 
 	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #758c3c),color-stop(1, #ffffff)); 
 	background-image: linear-gradient(top, #758c3c, #ffffff);
 	          filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#758c3c', EndColorStr='#ffffff'); 
+	background-repeat: no-repeat;
 	height: 100%;
 	 /* change the box model to exclude the padding from the calculation of 100% height (IE8+) */
 	 -webkit-box-sizing: border-box;
