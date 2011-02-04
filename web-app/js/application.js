@@ -83,5 +83,7 @@ $.fn.grailsList = function() {
 				container.html(event.state.html);
 			}
 		};
+
+		this.attr('role', 'liveregion');
 	}
 };

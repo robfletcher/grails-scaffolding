@@ -16,13 +16,13 @@
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
         </div>
-        <div id="edit-${domainClass.propertyName}" class="content scaffold-edit" role="form">
+        <div id="edit-${domainClass.propertyName}" class="content scaffold-edit" role="main">
             <h1><g:message code="default.edit.label" args="[entityName]" /></h1>
             <g:if test="\${flash.message}">
-            <div class="message">\${flash.message}</div>
+            <div class="message" role="alert">\${flash.message}</div>
             </g:if>
             <g:hasErrors bean="\${${propertyName}}">
-            <div class="errors">
+            <div class="errors" role="alert">
                 <g:renderErrors bean="\${${propertyName}}" as="list" />
             </div>
             </g:hasErrors>
@@ -44,7 +44,7 @@
 							required = (cp ? !(cp.propertyType in [boolean, Boolean]) && !cp.nullable : false)
 						}
 						if (display) { %>
-					<div role="fieldcontain" class="fieldcontain \${hasErrors(bean: ${propertyName}, field: '${p.name}', 'error')} ${required ? 'required' : ''}">
+					<div class="fieldcontain \${hasErrors(bean: ${propertyName}, field: '${p.name}', 'error')} ${required ? 'required' : ''}">
 						<label for="${p.name}"><g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}" /><% if (required) { %><span class="required-indicator">*</span><% } %></label>
 						${renderEditor(p)}
 					</div>
