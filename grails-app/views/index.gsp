@@ -25,13 +25,13 @@
 			display: inline; /* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
 		}
 		#status ul {
-			font-size: 1.3em;
+			font-size: 1.5em;
             list-style-type: none;
             margin-bottom: 1em;
         }
         #status h1 {
             text-transform: uppercase;
-            font-size: 1.5em;
+            font-size: 1.8em;
             margin: 0 0 .5em;
         }
         #page-body {
@@ -43,14 +43,14 @@
 		}
         h2 {
             margin-top: 1em;
-            margin-bottom: .5em;
+            margin-bottom: 0.5em;
             font-size: 1.3em;
         }
 		p {
-			font-size: 1.3em;
+			font-size: 1.5em;
 		}
 		li.controller {
-			font-size: 1.3em;
+			font-size: 1.5em;
 		}
         </style>
     </head>
