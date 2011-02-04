@@ -5,6 +5,7 @@ This is a sample project for prototyping changes to Grails scaffolding.
 ## Phase 1 - slightly slicker version of current Grails L&F
 
  * put required class (and HTML5 attribute) on the input itself rather than the container
+ * date / time format for show & list pages
 
 ## Phase 2 - Re-design
 
