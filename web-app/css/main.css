@@ -27,9 +27,9 @@ body {
 	font-family: "Segoe UI",Tahoma,Helvetica,"Helvetica Neue",Arial,sans-serif;
 	margin: 0 auto;
 	max-width: 1140px;
-    -moz-box-shadow: 0 0 10px #255b17;
- -webkit-box-shadow: 0 0 10px #255b17;
-         box-shadow: 0 0 10px #255b17;
+    -moz-box-shadow: 0 0 5px #255b17;
+ -webkit-box-shadow: 0 0 5px #255b17;
+         box-shadow: 0 0 5px #255b17;
 	visibility: hidden;
 }
 
@@ -181,7 +181,7 @@ label {
 	padding-left: 0.1em;
 }
 
-input, output, select, textarea {
+input, select, textarea {
 	background-color: #fcfcfc;
 	border: 1px solid #ccc;
 	font-size: 1.5em;
@@ -197,16 +197,6 @@ textarea {
 	height: 150px;
 	overflow: auto; /* IE always renders vertical scrollbar without this */
 	vertical-align: top;
-}
-
-fieldset.form input,
-fieldset.form select,
-fieldset.form textarea {
-	width: 40em;
-	 /* change the box model to exclude the padding from the calculation of width */
-	 -webkit-box-sizing: border-box;
-	    -moz-box-sizing: border-box;
-	         box-sizing: border-box;
 }
 
 input:focus, select:focus, textarea:focus {
@@ -234,17 +224,12 @@ input[type=range]:before { content: attr(min); padding-right: 0.5em; }
 input[type=range]:after { content: attr(max); padding-left: 0.5em; }
 
 input[type=range] {
-	border: 1px solid transparent;
 	vertical-align: middle;
-}
-
-input[type=range]:focus {
-	border: 1px solid transparent;
 }
 
 output {
 	display: inline-block;
-	font-size: 1.2em;
+	font-size: 1.5em;
 	margin-right: 0.5em;
 	text-align: center;
 	width: 2em;
