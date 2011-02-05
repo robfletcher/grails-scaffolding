@@ -35,8 +35,7 @@
             margin: 0 0 .5em;
         }
         #page-body {
-            margin-left: 25.6em;
-            margin-right: 1.5em;
+            margin: 0 1.5em 2em 25.6em;
         }
 		.boxshadow #page-body {
 			margin-left: 29.6em;
