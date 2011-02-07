@@ -55,7 +55,7 @@ $.fn.grailsAutocompleteInput = function() {
 
 		select.after(output).after(autocompleter);
 		select.trigger('change');
-//		select.hide();
+		select.hide();
 	});
 };
 
