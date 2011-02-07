@@ -7,7 +7,7 @@ $(document).ready(function() {
 		$('.scaffold-list').grailsList();
 	}
 
-	$('select').grailsAutocompleteInput(); // TODO: less broad selector
+	$('select.many-to-many').grailsAutocompleteInput();
 
 	// prevent FOUC by only making body visible once document is ready
 	$('body').addClass('ready');
@@ -26,16 +26,35 @@ $.fn.grailsAutocompleteInput = function() {
 		select.find('option').each(function() {
 			listdata.push({id: $(this).attr('value'), value: $(this).text()});
 		});
-		var autocompleter = $('<input type="search">');
-		select.after(autocompleter);
-		autocompleter.autocomplete({
+
+		// create an autocomplete element to proxy the select
+		var autocompleter = $('<input>', {
+			id: select.attr('id') + '-autocompleter',
+			type: 'search'
+		}).autocomplete({
 			source: listdata,
 			select: function(event, ui) {
-				select.find('option').attr('selected', false);
 				var matchingOption = select.find('option[value=' + ui.item.id + ']');
 				matchingOption.attr('selected', true);
+				select.trigger('change');
 			}
 		});
+
+		// create an output element that mirrors the content of the select when it changes
+		var output = $('<output for="' + select.attr('id') + '"></output>');
+		select.bind('change', function() {
+			var selectedOptions = [];
+			$(this).find('option:selected').each(function() {
+				selectedOptions.push($(this).text());
+			});
+			$('output[for=' + this.id + ']').html(selectedOptions.join(', '));
+		});
+
+		// point the label for the select at the autocompleter instead
+		$('label[for=' + select.attr('id') + ']').attr('for', autocompleter.attr('id'));
+
+		select.after(output).after(autocompleter);
+		select.trigger('change');
 //		select.hide();
 	});
 };
