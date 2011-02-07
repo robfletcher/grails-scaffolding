@@ -41,13 +41,24 @@ $.fn.grailsAutocompleteInput = function() {
 		});
 
 		// create an output element that mirrors the content of the select when it changes
-		var output = $('<output for="' + select.attr('id') + '"></output>');
+		var output = $('<output for="' + select.attr('id') + '"></output>').data('for', select.attr('id'));
 		select.bind('change', function() {
-			var selectedOptions = [];
+			var selectedOptions = '<ul>';
 			$(this).find('option:selected').each(function() {
-				selectedOptions.push($(this).text());
+				selectedOptions += '<li data-id="' + $(this).val() + '">' + $(this).text() + '<a class="autocomplete-delete-button" href="#">X</a></li>';
 			});
-			$('output[for=' + this.id + ']').html(selectedOptions.join(', '));
+			selectedOptions += '</ul>';
+			$('output[for=' + this.id + ']').html(selectedOptions);
+		});
+
+		$('.autocomplete-delete-button').live('click', function() {
+			var id = $(this).parent('li').data('id');
+			var o = $(this).parents('output');
+			var selectId = o.data('for');
+			var select = $('select#' + selectId);
+			select.find('option[value=' + id + ']').attr('selected', false);
+			select.trigger('change');
+			return false;
 		});
 
 		// point the label for the select at the autocompleter instead
@@ -55,7 +66,7 @@ $.fn.grailsAutocompleteInput = function() {
 
 		select.after(output).after(autocompleter);
 		select.trigger('change');
-		select.hide();
+//		select.hide();
 	});
 };
 
