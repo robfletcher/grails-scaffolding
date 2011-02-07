@@ -22,21 +22,21 @@ $(document).ready(function() {
 $.fn.grailsAutocompleteInput = function() {
 	this.each(function() {
 		var select = $(this);
-		var listurl = select.data('listurl');
-		if (listurl) {
-			var autocompleter = $('<input type="search">');
-			select.after(autocompleter);
-			autocompleter.autocomplete({
-				source: listurl,
-				select: function(event, ui) {
-					select.find('option').attr('selected', false);
-					var matchingOption = select.find('option[value='+ui.item.id+']');
-					console.log("option", ui.item, ui.item.id, matchingOption);
-					matchingOption.attr('selected', true);
-				}
-			});
-//			select.hide();
-		}
+		var listdata = [];
+		select.find('option').each(function() {
+			listdata.push({id: $(this).attr('value'), value: $(this).text()});
+		});
+		var autocompleter = $('<input type="search">');
+		select.after(autocompleter);
+		autocompleter.autocomplete({
+			source: listdata,
+			select: function(event, ui) {
+				select.find('option').attr('selected', false);
+				var matchingOption = select.find('option[value=' + ui.item.id + ']');
+				matchingOption.attr('selected', true);
+			}
+		});
+//		select.hide();
 	});
 };
 
