@@ -7,12 +7,38 @@ $(document).ready(function() {
 		$('.scaffold-list').grailsList();
 	}
 
+	$('select').grailsAutocompleteInput(); // TODO: less broad selector
+
 	// prevent FOUC by only making body visible once document is ready
 	$('body').addClass('ready');
 
 	// focus first error field (this only works once page content is visible)
 	$('.error:first').find('input, select, textarea').focus();
 });
+
+/**
+ * Decorates many-to-many multiple selects with autocomplete controls.
+ */
+$.fn.grailsAutocompleteInput = function() {
+	this.each(function() {
+		var select = $(this);
+		var listurl = select.data('listurl');
+		if (listurl) {
+			var autocompleter = $('<input type="search">');
+			select.after(autocompleter);
+			autocompleter.autocomplete({
+				source: listurl,
+				select: function(event, ui) {
+					select.find('option').attr('selected', false);
+					var matchingOption = select.find('option[value='+ui.item.id+']');
+					console.log("option", ui.item, ui.item.id, matchingOption);
+					matchingOption.attr('selected', true);
+				}
+			});
+//			select.hide();
+		}
+	});
+};
 
 /**
  * Replaces range selects with an HTML5 range control.

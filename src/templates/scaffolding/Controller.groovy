@@ -1,4 +1,6 @@
-<%=packageName ? "package ${packageName}\n\n" : ''%>class ${className}Controller {
+<%=packageName ? "package ${packageName}\n\n" : ''%>import grails.converters.JSON
+
+class ${className}Controller {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -8,7 +10,20 @@
 
     def list = {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
-        [${propertyName}List: ${className}.list(params), ${propertyName}Total: ${className}.count()]
+		def ${propertyName}List = ${className}.list(params)
+		withFormat {
+			html {
+				def ${propertyName}Total = ${className}.count()
+        		[${propertyName}List: ${propertyName}List, ${propertyName}Total: ${propertyName}Total]
+			}
+			json {
+				render(contentType: "text/json") {
+					${propertyName}List.each {
+						element([id: it.id, label: it.toString()])
+					}
+				}
+			}
+		}
     }
 
     def create = {

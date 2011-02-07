@@ -70,7 +70,7 @@
     }
 
     private renderManyToMany(domainClass, property) {
-        return "<g:select name=\"${property.name}\" from=\"\${${property.referencedDomainClass.fullName}.list()}\" multiple=\"multiple\" optionKey=\"id\" size=\"5\" value=\"\${${domainInstance}?.${property.name}*.id}\" />"
+        return "<g:select name=\"${property.name}\" from=\"\${${property.referencedDomainClass.fullName}.list()}\" multiple=\"multiple\" optionKey=\"id\" size=\"5\" value=\"\${${domainInstance}?.${property.name}*.id}\" data-listurl=\"\${createLink(controller: '${property.referencedDomainClass.propertyName}', action: 'list')}.json\" />"
     }
 
     private renderOneToMany(domainClass, property) {
