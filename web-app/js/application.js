@@ -36,12 +36,14 @@ $.fn.grailsAutocompleteInput = function() {
 			select: function(event, ui) {
 				var matchingOption = select.find('option[value=' + ui.item.id + ']');
 				matchingOption.attr('selected', true);
+				$(this).val('');
 				select.trigger('change');
+				return false;
 			}
 		});
 
 		// create an output element that mirrors the content of the select when it changes
-		var output = $('<output for="' + select.attr('id') + '"></output>').data('for', select.attr('id'));
+		var output = $('<output for="' + select.attr('id') + '"></output>');
 		select.bind('change', function() {
 			var selectedOptions = '<ul>';
 			$(this).find('option:selected').each(function() {
@@ -53,8 +55,7 @@ $.fn.grailsAutocompleteInput = function() {
 
 		$('.autocomplete-delete-button').live('click', function() {
 			var id = $(this).parent('li').data('id');
-			var o = $(this).parents('output');
-			var selectId = o.data('for');
+			var selectId = $(this).parents('output')[0].getAttribute('for');
 			var select = $('select#' + selectId);
 			select.find('option[value=' + id + ']').attr('selected', false);
 			select.trigger('change');
