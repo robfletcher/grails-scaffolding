@@ -20,6 +20,9 @@
 		<div class="footer" role="contentinfo"></div>
 		<g:javascript src="jquery-1.5.min.js"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+		<g:javascript library="grails.autocomplete"/>
+		<g:javascript library="grails.list"/>
+		<g:javascript library="grails.range"/>
 		<g:javascript library="application"/>
 	</body>
 </html>

@@ -2,11 +2,15 @@
 <html>
 	<head>
 		<meta name="layout" content="qunit">
-		<g:javascript library="application"/>
+		<g:javascript library="grails.range"/>
 		<script>
 			$(document).ready(function() {
 
-				module('grailsRangeInput');
+				module('grailsRange', {
+					setup: function() {
+						$('select.range').grailsRange();
+					}
+				});
 
 				if (Modernizr.inputtypes.range) {
 
