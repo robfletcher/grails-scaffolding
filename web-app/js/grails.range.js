@@ -17,27 +17,22 @@
 				name: name,
 				id: id,
 				min: min,
-				max: max
-			});
-			input.bind('change', function() {
-				$('output[for=' + this.id + ']').html($(this).val());
+				max: max,
+				change: function() {
+					$('output[for=' + this.id + ']').html($(this).val());
+				}
 			});
 
 			// create an output element to echo back the current range value (tabindex -1 is needed for Opera)
 			var output = $('<output for="' + id + '"></output>').attr('tabindex', '-1');
 
 			// if there's a current selection set the range value and the initial output text
-			if (value) {
-				input.val(value);
-				output.html(value);
-			} else {
-				input.val(min);
-				output.html(min);
-			}
+			input.val(value ? value : min);
 
 			// replace the select with the range input and insert the output before it
 			select.replaceWith(input);
 			input.before(output);
+			input.trigger('change');
 		});
 	};
 })(jQuery);

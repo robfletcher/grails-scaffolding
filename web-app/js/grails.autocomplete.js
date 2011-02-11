@@ -13,6 +13,7 @@
 			}).autocomplete({
 				source: function(ui, callback) {
 					var term = ui.term.toLowerCase();
+					// get all unselected options and filter by the search term entered
 					var options = select.find('option:not(:selected)').filter(function() {
 						return $(this).text().toLowerCase().indexOf(term) != -1;
 					}).map(function(index, option) {
@@ -21,10 +22,12 @@
 					callback(options);
 				},
 				select: function(event, ui) {
+					// select the corresponding option in the original select element
 					var matchingOption = select.find('option[value=' + ui.item.id + ']');
 					matchingOption.attr('selected', true);
-					$(this).val('');
 					select.trigger('change');
+					// clear the search input and prevent default behaviour that completes the term
+					$(this).val('');
 					return false;
 				}
 			});
@@ -40,6 +43,7 @@
 				$('#' + this.id + '-output').html(selectedOptions);
 			});
 
+			// each selected element has a button that can be used to remove it from the selection
 			$('.autocomplete-delete-button').live('click', function() {
 				var objectId = $(this).parent('li').data('object-id');
 				var selectId = $(this).parents('.output').data('for');
