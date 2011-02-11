@@ -13,9 +13,9 @@
 				});
 
 				test('output field is initialized with selected values', function() {
-					var output = $('output[for=pre-selected]');
+					var output = $('#pre-selected-output');
 
-					ok(output.is('output'), 'output element should exist');
+					ok(output.is('div#pre-selected-output'), 'output element should exist');
 					equal(output.find('li .value').length, 2, 'number of selected options');
 					equal(output.find('li .value').eq(0).text(), 'Catflap', 'output text');
 					equal(output.find('li .value').eq(1).text(), 'Marzipan', 'output text');
@@ -33,7 +33,6 @@
 				test('typing in an autocompleter triggers option popup', function() {
 					var select = $('select#many-to-many');
 					var autocompleter = $('input#many-to-many-autocompleter');
-					var output = $('output[for=many-to-many]');
 
 					autocompleter.autocomplete('search', 'a');
 
@@ -44,10 +43,10 @@
 					equal(results.eq(2).text(), 'Marzipan', 'search results');
 				});
 
-				test('option list is filtered by autocomplete value', function() {
+				test('option list is filtered by entered term', function() {
 					var select = $('select#many-to-many');
 					var autocompleter = $('input#many-to-many-autocompleter');
-					var output = $('output[for=many-to-many]');
+					var output = $('#many-to-many-output');
 
 					autocompleter.autocomplete('search', 'an');
 
@@ -57,10 +56,21 @@
 					equal(results.eq(1).text(), 'Marzipan', 'search results');
 				});
 
+				test('option list is filtered by currently selected items', function() {
+					var select = $('select#pre-selected');
+					var autocompleter = $('input#pre-selected-autocompleter');
+
+					autocompleter.autocomplete('search', 'a');
+
+					var results = $('.ui-autocomplete .ui-menu-item');
+					equal(results.length, 1, 'items in search results');
+					equal(results.text(), 'Rubberplant', 'search results');
+				});
+
 				test('selecting an autocomplete option adds to output', function() {
 					var select = $('select#many-to-many');
 					var autocompleter = $('input#many-to-many-autocompleter');
-					var output = $('output[for=many-to-many]');
+					var output = $('#many-to-many-output');
 
 					autocompleter.autocomplete('search', 'a');
 					$('.ui-autocomplete .ui-menu-item a').eq(1).trigger('mouseover').click();
@@ -70,9 +80,18 @@
 					equal(selectedItems.text(), 'Rubberplant', 'selected item');
 				});
 
-				test('remove a selected item', function() {
+				test('selecting an autocomplete option clears term from input', function() {
+					var autocompleter = $('input#many-to-many-autocompleter');
+
+					autocompleter.autocomplete('search', 'a');
+					$('.ui-autocomplete .ui-menu-item a').eq(1).trigger('mouseover').click();
+
+					equal(autocompleter.val(), '', 'autocompleter value');
+				});
+
+				test('selected item can be removed by clicking delete button', function() {
 					var select = $('select#pre-selected');
-					var output = $('output[for=pre-selected]');
+					var output = $('#pre-selected-output');
 
 					output.find('a.autocomplete-delete-button').eq(1).click();
 
