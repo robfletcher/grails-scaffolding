@@ -30,7 +30,6 @@ This is a sample project for prototyping changes to Grails scaffolding.
  * Dates using type="date" with 3-field JS enhanced version?
  * Proper buttons
  * Is there a good alternative to multi-selects? (JS enhanced add & remove single selects?)
- * JS enhance single select as auto-completer
 
 ### Mobile
 
