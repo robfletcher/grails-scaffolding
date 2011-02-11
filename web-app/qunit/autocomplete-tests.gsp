@@ -63,15 +63,11 @@
 					var output = $('output[for=many-to-many]');
 
 					autocompleter.autocomplete('search', 'a');
-					stop();
+					$('.ui-autocomplete .ui-menu-item a').eq(1).trigger('mouseover').click();
 
-					setTimeout(function() {
-						$('.ui-autocomplete .ui-menu-item a').eq(1).trigger('mouseover').click();
-						var selectedItems = $('output[for=many-to-many li .value');
-						equal(selectedItems.length, 1, 'selected items');
-						equal(selectedItems.text(), 'Rubberplant', 'selected item');
-						start();
-					}, 200);
+					var selectedItems = output.find('li .value');
+					equal(selectedItems.length, 1, 'selected items');
+					equal(selectedItems.text(), 'Rubberplant', 'selected item');
 				});
 
 				test('remove a selected item', function() {
