@@ -1,6 +1,6 @@
 (function($) {
 	/**
-	 * Decorates many-to-many multiple selects with autocomplete controls.
+	 * Decorates many-to-one and many-to-many multiple selects with autocomplete controls.
 	 */
 	$.fn.grailsAutocomplete = function() {
 		return this.each(function() {

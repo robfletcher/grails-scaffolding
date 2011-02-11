@@ -109,6 +109,46 @@
 					equal(select.find('option:selected').length, 1, 'remaining selected items');
 					equal(select.find('option:selected').text(), 'Catflap', 'remaining selected item');
 				});
+				
+				test('only one option can be selected in a many-to-one autocompleter', function() {
+					var select = $('select#many-to-one');
+					var autocompleter = $('input#many-to-one-autocompleter');
+					var output = $('#many-to-one-output');
+					
+					// search and select once
+					autocompleter.autocomplete('search', 'cat');
+					$('.ui-autocomplete .ui-menu-item a').trigger('mouseover').click();
+					
+					equal(select.val(), '1', 'selected option');
+					equal(output.find('li .value').text(), 'Catflap', 'selected item');
+					
+					// search and select again should replace existing selection
+					autocompleter.autocomplete('search', 'rub');
+					$('.ui-autocomplete .ui-menu-item a').trigger('mouseover').click();
+					
+					equal(select.val(), '2', 'selected option');
+					equal(output.find('li .value').text(), 'Rubberplant', 'selected item');
+				})
+				
+				test('multiple options can be selected in a many-to-many autocompleter', function() {
+					var select = $('select#many-to-many');
+					var autocompleter = $('input#many-to-many-autocompleter');
+					var output = $('#many-to-many-output');
+					
+					// search and select once
+					autocompleter.autocomplete('search', 'cat');
+					$('.ui-autocomplete .ui-menu-item a').trigger('mouseover').click();
+					
+					deepEqual(select.val(), ['1'], 'selected option');
+					equal(output.find('li .value').text(), 'Catflap', 'selected item');
+					
+					// search and select again should add to existing selection
+					autocompleter.autocomplete('search', 'rub');
+					$('.ui-autocomplete .ui-menu-item a').trigger('mouseover').click();
+					
+					deepEqual(select.val(), ['1', '2'], 'selected option');
+					deepEqual(output.find('li .value').map(function() { return $(this).text(); }).toArray(), ['Catflap', 'Rubberplant'], 'selected item');
+				})
 			});
 		</script>
 	</head>
