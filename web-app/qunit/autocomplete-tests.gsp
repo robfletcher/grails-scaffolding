@@ -46,7 +46,6 @@
 				test('option list is filtered by entered term', function() {
 					var select = $('select#many-to-many');
 					var autocompleter = $('input#many-to-many-autocompleter');
-					var output = $('#many-to-many-output');
 
 					autocompleter.autocomplete('search', 'an');
 
@@ -54,6 +53,17 @@
 					equal(results.length, 2, 'items in search results');
 					equal(results.eq(0).text(), 'Rubberplant', 'search results');
 					equal(results.eq(1).text(), 'Marzipan', 'search results');
+				});
+
+				test('autocomplete is case-insensetive', function() {
+					var select = $('select#many-to-many');
+					var autocompleter = $('input#many-to-many-autocompleter');
+
+					autocompleter.autocomplete('search', 'cat');
+
+					var results = $('.ui-autocomplete .ui-menu-item');
+					equal(results.length, 1, 'items in search results');
+					equal(results.eq(0).text(), 'Catflap', 'search results');
 				});
 
 				test('option list is filtered by currently selected items', function() {

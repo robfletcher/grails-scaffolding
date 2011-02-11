@@ -12,7 +12,10 @@
 				type: 'search'
 			}).autocomplete({
 				source: function(ui, callback) {
-					var options = select.find('option:contains(' + ui.term + '):not(:selected)').map(function(index, option) {
+					var term = ui.term.toLowerCase();
+					var options = select.find('option:not(:selected)').filter(function() {
+						return $(this).text().toLowerCase().indexOf(term) != -1;
+					}).map(function(index, option) {
 						return { id: $(option).attr('value'), value: $(option).text() };
 					});
 					callback(options);
