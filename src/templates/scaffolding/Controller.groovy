@@ -1,4 +1,6 @@
-<%=packageName ? "package ${packageName}\n\n" : ''%>class ${className}Controller {
+<%=packageName ? "package ${packageName}\n\n" : ''%>import grails.converters.JSON
+
+class ${className}Controller {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -6,10 +8,10 @@
         redirect(action: "list", params: params)
     }
 
-    def list = {
-        params.max = Math.min(params.max ? params.int('max') : 10, 100)
-        [${propertyName}List: ${className}.list(params), ${propertyName}Total: ${className}.count()]
-    }
+	def list = {
+		params.max = Math.min(params.max ? params.int('max') : 10, 100)
+		[${propertyName}List: ${className}.list(params), ${propertyName}Total: ${className}.count()]
+	}
 
     def create = {
         def ${propertyName} = new ${className}()
