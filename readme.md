@@ -34,7 +34,6 @@ This is a sample project for prototyping changes to Grails scaffolding.
 ### Mobile
 
  * Test on iOS, Android, Blackberry, Kindle
- * compatible with jQuery-mobile (i.e. any necessary markup conventions followed)
 
 ### Accessibility
 
@@ -44,3 +43,22 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
  * Light-box show, edit, create direct from list page
  * Functional tests to ensure non-JS and JS versions work consistently
+ * Autcomplete:
+    * stack selected options
+    * animate
+    * aria roles where appropriate
+    * autocomplete for enums & inList constraint?
+    * autocomplete from entire list without typing
+ * AJAX lists
+    * can the pages slide in from right? Or left when using back button?
+
+## Integration
+
+ * Depend on resources plugin & export appropriate resource declarations
+ * Depend on jQuery & jQuery-UI (can we make the latter optional & disable autocomplete without it?)
+ * Does modernizr need a plugin?
+ * Should the scaffolding enhancements be a plugin so they can be removed if using non-jQuery framework?
+
+## Misc
+
+ * Test the use of many-to-many on create as it might not work
