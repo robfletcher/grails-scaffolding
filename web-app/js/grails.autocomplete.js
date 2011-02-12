@@ -37,7 +37,7 @@
 			select.bind('change', function() {
 				var selectedOptions = '<ul>';
 				$(this).find('option:selected').each(function() {
-					selectedOptions += '<li data-object-id="' + $(this).val() + '"><span class="value">' + $(this).text() + '</span><a class="autocomplete-delete-button" href="#">X</a></li>';
+					selectedOptions += '<li data-object-id="' + $(this).val() + '"><span class="value">' + $(this).text() + '</span><a class="autocomplete-delete-button" href="#"></a></li>';
 				});
 				selectedOptions += '</ul>';
 				$('#' + this.id + '-output').html(selectedOptions);

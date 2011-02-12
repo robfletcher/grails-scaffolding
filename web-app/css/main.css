@@ -216,26 +216,6 @@ input:focus, select:focus, textarea:focus {
 	top: 0.1em;
 }
 
-/*
-	found here http://net.tutsplus.com/tutorials/html-css-techniques/25-html5-features-tips-and-techniques-you-must-know/
-	doesn't seem to work in latest Chrome but does in Opera
-*/
-input[type=range]:before { content: attr(min); padding-right: 0.5em; }
-input[type=range]:after { content: attr(max); padding-left: 0.5em; }
-
-input[type=range] {
-	vertical-align: middle;
-}
-
-output {
-	display: inline-block;
-	font-size: 1.5em;
-	margin-right: 0.5em;
-	text-align: center;
-	width: 2em;
-	vertical-align: middle;
-}
-
 /* MESSAGES AND ERRORS */
 
 .errors,
@@ -460,3 +440,59 @@ a.skip {
 	position: absolute;
 	left: -9999px;
 }
+
+/* Styles for progressively enhanced form components */
+
+/* range input */
+/*
+	found here http://net.tutsplus.com/tutorials/html-css-techniques/25-html5-features-tips-and-techniques-you-must-know/
+	doesn't seem to work in latest Chrome but does in Opera
+*/
+input[type=range]:before { content: attr(min); padding-right: 0.5em; }
+input[type=range]:after { content: attr(max); padding-left: 0.5em; }
+
+input[type=range] {
+	vertical-align: middle;
+}
+
+output {
+	display: inline-block;
+	font-size: 1.5em;
+	margin-right: 0.5em;
+	text-align: center;
+	width: 2em;
+	vertical-align: middle;
+}
+
+/* autocompleter for many-to-one and many-to-many */
+.output ul {
+	list-style-type: none;
+	margin-top: 0.5em;
+	padding: 0;
+}
+
+.output li {
+	background-color: #eee;
+	border: 1px dashed #ccc;
+	display: inline-block;
+	margin-right: 0.2em;
+	padding: 0.5em;
+}
+
+.output .value {
+	display: inline-block;
+	font-size: 1.2em;
+	vertical-align: middle;
+}
+
+.output a.autocomplete-delete-button {
+	background: url(/images/skin/database_delete.png);
+	display: inline-block;
+	font-size: 1.2em;
+	height: 16px;
+	margin-left: 0.5em;
+	text-decoration: none;
+	vertical-align: middle;
+	width: 16px;
+}
+
