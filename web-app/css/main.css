@@ -474,15 +474,19 @@ output {
 .output li {
 	background-color: #eee;
 	border: 1px dashed #ccc;
-	display: inline-block;
-	margin-right: 0.2em;
+	margin-bottom: 0.2em;
+	overflow: hidden;
 	padding: 0.5em;
+	position: relative;
 }
 
 .output .value {
 	display: inline-block;
 	font-size: 1.2em;
+	margin-right: 16px;
+	padding-right: 0.5em;
 	vertical-align: middle;
+	white-space: nowrap;
 }
 
 .output a.autocomplete-delete-button {
@@ -490,8 +494,10 @@ output {
 	display: inline-block;
 	font-size: 1.2em;
 	height: 16px;
-	margin-left: 0.5em;
+	position: absolute;
+	right: 0.5em;
 	text-decoration: none;
+	top: 0.5em;
 	vertical-align: middle;
 	width: 16px;
 }
