@@ -33,34 +33,36 @@
 			});
 
 			// create an output element that mirrors the content of the select when it changes
-			var output = $('<div/>', { 
-				id: select.attr('id') + '-output', 
-				class: 'output' 
-			}).data('for', select.attr('id')).html("<ul></ul>");
+			var selectedList = $('<ul/>', { 
+				id: select.attr('id') + '-selected', 
+				class: 'autocomplete-selected' 
+			});
 			
-			// whenever selection changes (whether due to autocompleter or any other trigger) update the output list
+			// whenever selection changes (whether due to autocompleter or any other trigger) update the selected list
 			select.bind('change', function() {
-				var outputItems = output.find('li');
+				var selectedItems = selectedList.find('li');
 				$(this).find('option').each(function(index) {
 					var option = $(this);
 					var optionId = option.attr('value');
 					var optionText = option.text();
 					
-					var matchingOutputItem = outputItems.filter(function() {
+					var matchingItem = selectedItems.filter(function() {
 						return $(this).data('object-id') == optionId;
 					});
 					
-					if (matchingOutputItem.length > 0 && option.is(':not(:selected)')) {
-						matchingOutputItem.remove();
-					} else if (matchingOutputItem.length === 0 && option.is(':selected')) {
-						var newOutputItem = $('<li><span class="value">' + optionText + '</span><a class="autocomplete-delete-button" href="#"></a></li>').data('object-id', optionId);
-						output.find('ul').append(newOutputItem);
+					if (matchingItem.length > 0 && option.is(':not(:selected)')) {
+						matchingItem.slideUp(50, function() {
+							$(this).remove();
+						});
+					} else if (matchingItem.length === 0 && option.is(':selected')) {
+						var newItem = $('<li><span class="value">' + optionText + '</span><a class="autocomplete-remove-selection" href="#" role="button"></a></li>').data('object-id', optionId);
+						newItem.hide().appendTo(selectedList).slideDown(50);
 					}
 				});
 			});
 
-			// each element in the output list has a button that can be used to remove it from the selection
-			$('.autocomplete-delete-button').live('click', function() {
+			// each element in the selected list has a button that can be used to remove it from the selection
+			$('.autocomplete-remove-selection').live('click', function() {
 				var objectId = $(this).parent('li').data('object-id');
 				select.find('option[value=' + objectId + ']').attr('selected', false);
 				select.trigger('change');
@@ -71,7 +73,7 @@
 			$('label[for=' + select.attr('id') + ']').attr('for', autocompleter.attr('id'));
 
 			autocompleter.insertAfter(select);
-			output.insertAfter(autocompleter).width(autocompleter.outerWidth());
+			selectedList.insertAfter(autocompleter).width(autocompleter.outerWidth());
 			select.trigger('change');
 			select.hide();
 		});

@@ -465,13 +465,13 @@ output {
 }
 
 /* autocompleter for many-to-one and many-to-many */
-.output ul {
+ul.autocomplete-selected {
 	list-style-type: none;
 	margin-top: 0.5em;
 	padding: 0;
 }
 
-.output li {
+ul.autocomplete-selected li {
 	background-color: #eee;
 	border: 1px dashed #ccc;
 	margin-bottom: 0.2em;
@@ -480,7 +480,7 @@ output {
 	position: relative;
 }
 
-.output .value {
+ul.autocomplete-selected .value {
 	display: inline-block;
 	font-size: 1.3em;
 	margin-right: 16px;
@@ -489,7 +489,7 @@ output {
 	white-space: nowrap;
 }
 
-.output a.autocomplete-delete-button {
+ul.autocomplete-selected a.autocomplete-remove-selection {
 	background: url(/images/skin/database_delete.png);
 	display: inline-block;
 	height: 16px;

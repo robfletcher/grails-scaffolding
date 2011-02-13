@@ -8,14 +8,15 @@
 			$(document).ready(function() {
 				module('grailsAutocompleteInput', {
 					setup: function() {
+						$.fx.off = true;
 						$('select').grailsAutocomplete();
 					}
 				});
 
 				test('output field is initialized with selected values', function() {
-					var output = $('#pre-selected-output');
+					var output = $('#pre-selected-selected');
 
-					ok(output.is('div#pre-selected-output'), 'output element should exist');
+					ok(output.is('ul#pre-selected-selected'), 'output element should exist');
 					equal(output.find('li .value').length, 2, 'number of selected options');
 					equal(output.find('li .value').eq(0).text(), 'Catflap', 'output text');
 					equal(output.find('li .value').eq(1).text(), 'Marzipan', 'output text');
@@ -80,7 +81,7 @@
 				test('selecting an autocomplete option adds to output', function() {
 					var select = $('select#many-to-many');
 					var autocompleter = $('input#many-to-many-autocompleter');
-					var output = $('#many-to-many-output');
+					var output = $('#many-to-many-selected');
 
 					autocompleter.autocomplete('search', 'a');
 					$('.ui-autocomplete .ui-menu-item a').eq(1).trigger('mouseover').click();
@@ -101,9 +102,9 @@
 
 				test('selected item can be removed by clicking delete button', function() {
 					var select = $('select#pre-selected');
-					var output = $('#pre-selected-output');
+					var output = $('#pre-selected-selected');
 
-					output.find('a.autocomplete-delete-button').eq(1).click();
+					output.find('a.autocomplete-remove-selection').eq(1).click();
 
 					equal(output.find('li').length, 1, 'items remaining in output');
 					equal(select.find('option:selected').length, 1, 'remaining selected items');
@@ -113,7 +114,7 @@
 				test('only one option can be selected in a many-to-one autocompleter', function() {
 					var select = $('select#many-to-one');
 					var autocompleter = $('input#many-to-one-autocompleter');
-					var output = $('#many-to-one-output');
+					var output = $('#many-to-one-selected');
 					
 					// search and select once
 					autocompleter.autocomplete('search', 'cat');
@@ -133,7 +134,7 @@
 				test('multiple options can be selected in a many-to-many autocompleter', function() {
 					var select = $('select#many-to-many');
 					var autocompleter = $('input#many-to-many-autocompleter');
-					var output = $('#many-to-many-output');
+					var output = $('#many-to-many-selected');
 					
 					// search and select once
 					autocompleter.autocomplete('search', 'cat');
