@@ -18,7 +18,7 @@
 			var selectId = select.attr('id');
 		
 			// create an autocomplete element to proxy the select
-			var autocompleter = $('<input type="search" id="' + selectId + '-autocompleter">').autocomplete({
+			var autocompleter = $('<input id="' + selectId + '-autocompleter">').autocomplete({
 				minLength: 0,
 				// the data source for the autocompleter is all the unselected options from the select filtered by the entered text
 				source: function(ui, callback) {
