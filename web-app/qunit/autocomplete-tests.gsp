@@ -16,10 +16,10 @@
 				test('output field is initialized with selected values', function() {
 					var output = $('#pre-selected-selected');
 
-					ok(output.is('ul#pre-selected-selected'), 'output element should exist');
-					equal(output.find('li .value').length, 2, 'number of selected options');
-					equal(output.find('li .value').eq(0).text(), 'Catflap', 'output text');
-					equal(output.find('li .value').eq(1).text(), 'Marzipan', 'output text');
+					ok(output.is('ul#pre-selected-selected'), 'selected list element should exist');
+					equal(output.find('li .value').length, 2, 'number of selected items');
+					equal(output.find('li .value').eq(0).text(), 'Catflap', 'selected item text');
+					equal(output.find('li .value').eq(1).text(), 'Marzipan', 'selected item text');
 				});
 
 				test('label for select is re-directed to autocompleter', function() {
@@ -88,7 +88,7 @@
 
 					var selectedItems = output.find('li .value');
 					equal(selectedItems.length, 1, 'selected items');
-					equal(selectedItems.text(), 'Rubberplant', 'selected item');
+					equal(selectedItems.text(), 'Rubberplant', 'selected item text');
 				});
 
 				test('selecting an autocomplete option clears term from input', function() {
@@ -108,7 +108,7 @@
 
 					equal(output.find('li').length, 1, 'items remaining in output');
 					equal(select.find('option:selected').length, 1, 'remaining selected items');
-					equal(select.find('option:selected').text(), 'Catflap', 'remaining selected item');
+					equal(select.find('option:selected').text(), 'Catflap', 'remaining selected item text');
 				});
 				
 				test('only one option can be selected in a many-to-one autocompleter', function() {
