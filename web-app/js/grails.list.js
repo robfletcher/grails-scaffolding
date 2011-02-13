@@ -12,7 +12,9 @@
 			// decorate list pagination & sorting controls with AJAX
 			links.live('click', function() {
 				var url = $(this).attr('href');
+				container.trigger('grails:list:loading');
 				container.load(url + ' .scaffold-list > *', function() {
+					container.trigger('grails:list:complete');
 					// put the new content into history and update the URL
 					history.pushState({html: container.html()}, '', url);
 				});
@@ -23,7 +25,9 @@
 			window.onpopstate = function(event) {
 				// retrieve previous content from history if there is any
 				if (event.state) {
+					container.trigger('grails:list:loading');
 					container.html(event.state.html);
+					container.trigger('grails:list:complete');
 				}
 			};
 
