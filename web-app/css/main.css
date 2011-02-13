@@ -493,9 +493,11 @@ ul.autocomplete-selected a.autocomplete-remove-selection {
 	background: url(/images/skin/database_delete.png);
 	display: inline-block;
 	height: 16px;
+	overflow: hidden;
 	position: absolute;
 	right: 0.5em;
 	text-decoration: none;
+	text-indent: -9999px;
 	top: 0.5em;
 	vertical-align: middle;
 	width: 16px;

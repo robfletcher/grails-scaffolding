@@ -2,7 +2,15 @@
 	/**
 	 * Decorates many-to-one and many-to-many multiple selects with autocomplete controls.
 	 */
-	$.fn.grailsAutocomplete = function() {
+	$.fn.grailsAutocomplete = function(options) {
+
+		// settings that can be overridden with arguments
+		var settings = {
+			removeLabel: 'Remove', // label for the remove button that appears next to each selected item
+			speed: 50
+		};
+		if (options) $.extend(settings, options);
+		
 		return this.each(function() {
 			var select = $(this);
 
@@ -51,18 +59,19 @@
 					});
 					
 					if (matchingItem.length > 0 && option.is(':not(:selected)')) {
-						matchingItem.slideUp(50, function() {
+						matchingItem.slideUp(settings.speed, function() {
 							$(this).remove();
 						});
 					} else if (matchingItem.length === 0 && option.is(':selected')) {
-						var newItem = $('<li><span class="value">' + optionText + '</span><a class="autocomplete-remove-selection" href="#" role="button"></a></li>').data('object-id', optionId);
-						newItem.hide().appendTo(selectedList).slideDown(50);
+						var newItem = $('<li><span class="value">' + optionText + '</span></li>').data('object-id', optionId);
+						$('<a class="autocomplete-remove-selection" href="#" role="button"></a>').appendTo(newItem).attr('title', settings.removeLabel).text(settings.removeLabel);
+						newItem.hide().appendTo(selectedList).slideDown(settings.speed);
 					}
 				});
 			});
 
 			// each element in the selected list has a button that can be used to remove it from the selection
-			$('.autocomplete-remove-selection').live('click', function() {
+			$('a.autocomplete-remove-selection').live('click', function() {
 				var objectId = $(this).parent('li').data('object-id');
 				select.find('option[value=' + objectId + ']').attr('selected', false);
 				select.trigger('change');
