@@ -27,7 +27,7 @@
 					var autocompleter = $('input#many-to-many-autocompleter');
 					var label = select.prev();
 
-					ok(autocompleter.is('input[type=search]'), 'autocompleter should exist');
+					ok(autocompleter.is('input'), 'autocompleter should exist');
 					equal(label.attr('for'), autocompleter.attr('id'), 'label should point to autocompleter');
 				});
 

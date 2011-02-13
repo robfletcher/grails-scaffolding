@@ -3,22 +3,23 @@
 	 * Decorates many-to-one and many-to-many multiple selects with autocomplete controls.
 	 */
 	$.fn.grailsAutocomplete = function(options) {
-
 		// settings that can be overridden with arguments
 		var settings = {
+			minLength: 0,          // as per same property on jQuery UI autocomplete
 			removeLabel: 'Remove', // label for the remove button that appears next to each selected item
-			speed: 50
+			speed: 50              // speed of animation used when selected items are added and removed
 		};
-		if (options) $.extend(settings, options);
+		if (options) {
+			$.extend(settings, options);
+		}
 		
 		return this.each(function() {
 			var select = $(this);
-
+			var selectId = select.attr('id');
+		
 			// create an autocomplete element to proxy the select
-			var autocompleter = $('<input>', {
-				id: select.attr('id') + '-autocompleter',
-				type: 'search'
-			}).autocomplete({
+			var autocompleter = $('<input type="search" id="' + selectId + '-autocompleter">').autocomplete({
+				minLength: 0,
 				// the data source for the autocompleter is all the unselected options from the select filtered by the entered text
 				source: function(ui, callback) {
 					var term = ui.term.toLowerCase();
@@ -39,37 +40,42 @@
 					return false;
 				}
 			});
-
+		
 			// create an output element that mirrors the content of the select when it changes
 			var selectedList = $('<ul/>', { 
-				id: select.attr('id') + '-selected', 
-				class: 'autocomplete-selected' 
+				'id': selectId + '-selected', 
+				'class': 'autocomplete-selected' 
 			});
-			
-			// whenever selection changes (whether due to autocompleter or any other trigger) update the selected list
-			select.bind('change', function() {
+
+			// function that can update the selected item list based on the current state of the original select element
+			function updateSelection(event, speed) {
+				if (speed === undefined) speed = settings.speed;
+				
 				var selectedItems = selectedList.find('li');
-				$(this).find('option').each(function(index) {
+				select.find('option').each(function(index) {
 					var option = $(this);
 					var optionId = option.attr('value');
 					var optionText = option.text();
-					
+				
 					var matchingItem = selectedItems.filter(function() {
 						return $(this).data('object-id') == optionId;
 					});
 					
 					if (matchingItem.length > 0 && option.is(':not(:selected)')) {
-						matchingItem.slideUp(settings.speed, function() {
+						matchingItem.slideUp(speed, function() {
 							$(this).remove();
 						});
 					} else if (matchingItem.length === 0 && option.is(':selected')) {
 						var newItem = $('<li><span class="value">' + optionText + '</span></li>').data('object-id', optionId);
 						$('<a class="autocomplete-remove-selection" href="#" role="button"></a>').appendTo(newItem).attr('title', settings.removeLabel).text(settings.removeLabel);
-						newItem.hide().appendTo(selectedList).slideDown(settings.speed);
+						newItem.hide().appendTo(selectedList).slideDown(speed);
 					}
 				});
-			});
-
+			}
+					
+			// whenever selection changes update the selected list
+			select.bind('change', updateSelection);
+		
 			// each element in the selected list has a button that can be used to remove it from the selection
 			$('a.autocomplete-remove-selection').live('click', function() {
 				var objectId = $(this).parent('li').data('object-id');
@@ -77,13 +83,13 @@
 				select.trigger('change');
 				return false;
 			});
-
+		
 			// point the label for the select at the autocompleter instead
-			$('label[for=' + select.attr('id') + ']').attr('for', autocompleter.attr('id'));
-
+			$('label[for=' + selectId + ']').attr('for', autocompleter.attr('id'));
+		
 			autocompleter.insertAfter(select);
 			selectedList.insertAfter(autocompleter).width(autocompleter.outerWidth());
-			select.trigger('change');
+			updateSelection(null, 0);
 			select.hide();
 		});
 	};

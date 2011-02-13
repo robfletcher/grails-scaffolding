@@ -46,7 +46,6 @@ This is a sample project for prototyping changes to Grails scaffolding.
  * Autcomplete:
     * aria roles where appropriate
     * autocomplete for enums & inList constraint?
-    * autocomplete from entire list without typing
  * AJAX lists
     * can the pages slide in from right? Or left when using back button?
 
