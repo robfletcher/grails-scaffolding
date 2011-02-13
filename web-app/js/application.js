@@ -8,7 +8,9 @@
 			$('.scaffold-list').grailsList();
 		}
 
-		$('select.many-to-many').grailsAutocomplete();
+		if ($().autocomplete != undefined) {
+			$('select.many-to-many').grailsAutocomplete();
+		}
 
 		// prevent FOUC by only making body visible once document is ready
 		$('body').addClass('ready');
