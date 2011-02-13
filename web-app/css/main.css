@@ -455,7 +455,7 @@ input[type=range] {
 	vertical-align: middle;
 }
 
-output {
+output.range-output {
 	display: inline-block;
 	font-size: 1.5em;
 	margin-right: 0.5em;

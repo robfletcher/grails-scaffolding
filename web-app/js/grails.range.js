@@ -24,7 +24,7 @@
 			});
 
 			// create an output element to echo back the current range value (tabindex -1 is needed for Opera)
-			var output = $('<output for="' + id + '"></output>').attr('tabindex', '-1');
+			var output = $('<output for="' + id + '" class="range-output"></output>').attr('tabindex', '-1');
 
 			// if there's a current selection set the range value and the initial output text
 			input.val(value ? value : min);
