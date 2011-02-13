@@ -482,7 +482,7 @@ output {
 
 .output .value {
 	display: inline-block;
-	font-size: 1.2em;
+	font-size: 1.3em;
 	margin-right: 16px;
 	padding-right: 0.5em;
 	vertical-align: middle;
@@ -492,7 +492,6 @@ output {
 .output a.autocomplete-delete-button {
 	background: url(/images/skin/database_delete.png);
 	display: inline-block;
-	font-size: 1.2em;
 	height: 16px;
 	position: absolute;
 	right: 0.5em;

@@ -44,9 +44,11 @@ This is a sample project for prototyping changes to Grails scaffolding.
  * Light-box show, edit, create direct from list page
  * Functional tests to ensure non-JS and JS versions work consistently
  * Autcomplete:
-    * stack selected options
     * animate
     * aria roles where appropriate
+    * delete button accessibility
+       * needs hidden text & tooltip
+       * needs to be keyboard-accessible
     * autocomplete for enums & inList constraint?
     * autocomplete from entire list without typing
  * AJAX lists
