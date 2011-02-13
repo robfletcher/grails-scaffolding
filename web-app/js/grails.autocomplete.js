@@ -33,21 +33,30 @@
 			});
 
 			// create an output element that mirrors the content of the select when it changes
-			var output = $('<div/>', { id: select.attr('id') + '-output', class: 'output' }).data('for', select.attr('id'));
+			var output = $('<div/>', { id: select.attr('id') + '-output', class: 'output' }).data('for', select.attr('id')).html("<ul></ul>");
 			select.bind('change', function() {
-				var selectedOptions = '<ul>';
-				$(this).find('option:selected').each(function() {
-					selectedOptions += '<li data-object-id="' + $(this).val() + '"><span class="value">' + $(this).text() + '</span><a class="autocomplete-delete-button" href="#"></a></li>';
+				var outputItems = output.find('li');
+				$(this).find('option').each(function(index) {
+					var option = $(this);
+					var optionId = option.attr('value');
+					var optionText = option.text();
+					
+					var matchingOutputItem = outputItems.filter(function() {
+						return $(this).data('object-id') == optionId;
+					});
+					
+					if (matchingOutputItem.length > 0 && option.is(':not(:selected)')) {
+						matchingOutputItem.remove();
+					} else if (matchingOutputItem.length === 0 && option.is(':selected')) {
+						var newOutputItem = $('<li><span class="value">' + optionText + '</span><a class="autocomplete-delete-button" href="#"></a></li>').data('object-id', optionId);
+						output.find('ul').append(newOutputItem);
+					}
 				});
-				selectedOptions += '</ul>';
-				$('#' + this.id + '-output').html(selectedOptions);
 			});
 
 			// each selected element has a button that can be used to remove it from the selection
 			$('.autocomplete-delete-button').live('click', function() {
 				var objectId = $(this).parent('li').data('object-id');
-				var selectId = $(this).parents('.output').data('for');
-				var select = $('select#' + selectId);
 				select.find('option[value=' + objectId + ']').attr('selected', false);
 				select.trigger('change');
 				return false;
