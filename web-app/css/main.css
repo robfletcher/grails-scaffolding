@@ -501,7 +501,7 @@ ul.autocomplete-selected .value {
 }
 
 ul.autocomplete-selected a.autocomplete-remove-selection {
-	background: url(/images/skin/database_delete.png);
+	background: url(/images/skin/icon_delete.png) no-repeat 0 1px transparent;
 	display: inline-block;
 	height: 16px;
 	overflow: hidden;
