@@ -467,14 +467,14 @@ output.range-output {
 /* autocompleter for many-to-one and many-to-many */
 ul.autocomplete-selected {
 	list-style-type: none;
-	margin-top: 0.5em;
 	padding: 0;
 }
 
 ul.autocomplete-selected li {
 	background-color: #eee;
-	border: 1px dashed #ccc;
-	margin-bottom: 0.2em;
+	border-color: #ccc;
+	border-style: none solid solid;
+	border-width: 1px;
 	overflow: hidden;
 	padding: 0.5em;
 	position: relative;
