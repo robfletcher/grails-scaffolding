@@ -33,6 +33,12 @@ body {
 	visibility: hidden;
 }
 
+.no-boxshadow body {
+	border-color: #255b17;
+	border-style: solid;
+	border-width: 0 1px;
+}
+
 .no-js body, body.ready {
 	visibility: visible;
 }
@@ -78,7 +84,7 @@ img {
 .footer {
 	background: #758C3C;
 	clear: both;
-	margin: 2em 0;
+	margin-top: 2em;
 	min-height: 3em;
 }
 
