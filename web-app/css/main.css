@@ -12,6 +12,10 @@ html {
 	         box-sizing: border-box;
 }
 
+html.no-cssgradients {
+	background-color: #abbf78;
+}
+
 .ie6 html {
 	height: 100%;
 }
