@@ -45,6 +45,9 @@
             margin-bottom: 0.3em;
             font-size: 1em;
         }
+		#controller-list ul {
+			list-style-position: inside;
+		}
         </style>
     </head>
     <body>
@@ -75,7 +78,7 @@
             <p>Below is a list of controllers that are currently deployed in this application,
             click on each to execute its default action:</p>
 
-            <div id="controller-list" class="dialog" role="navigation">
+            <div id="controller-list" role="navigation">
                 <h2>Available Controllers:</h2>
                 <ul>
                     <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
