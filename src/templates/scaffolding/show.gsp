@@ -22,8 +22,8 @@
             <div class="message">\${flash.message}</div>
             </g:if>
 			<dl>
-			<%  excludedProps = Event.allEvents.toList() << 'version'
-				allowedNames = domainClass.persistentProperties*.name << 'id' << 'dateCreated' << 'lastUpdated'
+			<%  excludedProps = Event.allEvents.toList() << 'id' << 'version'
+				allowedNames = domainClass.persistentProperties*.name << 'dateCreated' << 'lastUpdated'
 				props = domainClass.properties.findAll { allowedNames.contains(it.name) && !excludedProps.contains(it.name) }
 				Collections.sort(props, comparator.constructors[0].newInstance([domainClass] as Object[]))
 				props.each { p -> %>
