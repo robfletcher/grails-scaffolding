@@ -86,9 +86,16 @@ img {
 
 .footer {
 	background: #758C3C;
+	color: #abbf78;
 	clear: both;
+	font-size: 0.8em;
 	margin-top: 1.25em;
-	min-height: 2em;
+	padding: 1em;
+	min-height: 1em;
+}
+
+.footer a {
+	color: #255b17;
 }
 
 /* NAVIGATION MENU */
