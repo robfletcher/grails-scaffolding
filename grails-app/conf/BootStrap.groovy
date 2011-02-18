@@ -1,11 +1,11 @@
-import grails.util.GrailsUtil
+import scaffolding.example.Book
 
 class BootStrap {
 
 	def fixtureLoader
 
 	def init = { servletContext ->
-		if (GrailsUtil.environment == "development") {
+		if (Book.count() == 0) {
 			fixtureLoader.load("books")
 		}
 	}

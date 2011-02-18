@@ -7,8 +7,8 @@ class Book {
 	String yearOfPublication
 	Integer averageRating
 	Integer numberOfPages
-	boolean ebook
 	Genre genre
+	boolean ebook
 	// date field
 	Date dateCreated
 	Date lastUpdated
@@ -22,10 +22,11 @@ class Book {
 		averageRating range: 1..5
 		numberOfPages nullable: true
 		genre nullable: true
+		ebook()
     }
 
 	static mapping = {
-		sort "yearOfPublication"
+		sort yearOfPublication: "desc"
 	}
 
 	String toString() {
@@ -34,5 +35,5 @@ class Book {
 }
 
 enum Genre {
-	biography, crime, fiction, reference, scifi
+	biography, crime, fiction, reference, scifi, comic, nonFiction
 }
