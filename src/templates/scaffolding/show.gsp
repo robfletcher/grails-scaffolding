@@ -8,6 +8,7 @@
         <title><g:message code="default.show.label" args="[entityName]" /></title>
     </head>
     <body>
+		<a href="#show-${domainClass.propertyName}" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="\${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
@@ -15,7 +16,7 @@
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
         </div>
-        <div class="content show-${domainClass.propertyName}" role="main">
+        <div id="show-${domainClass.propertyName}" class="content scaffold-show" role="main">
             <h1><g:message code="default.show.label" args="[entityName]" /></h1>
             <g:if test="\${flash.message}">
             <div class="message">\${flash.message}</div>
@@ -35,9 +36,9 @@
 					</g:each>
 				<%  } else if (p.manyToOne || p.oneToOne) { %>
 					<dd><g:link controller="${p.referencedDomainClass?.propertyName}" action="show" id="\${${propertyName}?.${p.name}?.id}">\${${propertyName}?.${p.name}?.encodeAsHTML()}</g:link></dd>
-				<%  } else if (p.type == Boolean.class || p.type == boolean.class) { %>
+				<%  } else if (p.type == Boolean || p.type == boolean) { %>
 					<dd><g:formatBoolean boolean="\${${propertyName}?.${p.name}}" /></dd>
-				<%  } else if (p.type == Date.class || p.type == java.sql.Date.class || p.type == java.sql.Time.class || p.type == Calendar.class) { %>
+				<%  } else if (p.type == Date || p.type == java.sql.Date || p.type == java.sql.Time || p.type == Calendar) { %>
 					<dd><g:formatDate date="\${${propertyName}?.${p.name}}" /></dd>
 				<%  } else if(!p.type.isArray()) { %>
 					<dd><g:fieldValue bean="\${${propertyName}}" field="${p.name}"/></dd>

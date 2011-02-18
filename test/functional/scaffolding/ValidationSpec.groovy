@@ -1,6 +1,7 @@
 package scaffolding
 
 import grails.plugin.geb.GebSpec
+import scaffolding.pages.*
 
 class ValidationSpec extends GebSpec {
 
@@ -17,6 +18,9 @@ class ValidationSpec extends GebSpec {
 		isRequired("title")
 		!isRequired("authors")
 		isRequired("yearOfPublication")
+
+		and: "no mandatory indicator is displayed on a checkbox"
+		!isRequired("ebook")
 	}
 
 	def "mandatory indicators are displayed on edit page"() {
@@ -32,6 +36,9 @@ class ValidationSpec extends GebSpec {
 		isRequired("title")
 		!isRequired("authors")
 		isRequired("yearOfPublication")
+
+		and: "no mandatory indicator is displayed on a checkbox"
+		!isRequired("ebook")
 
 		cleanup:
 		withConfirm {

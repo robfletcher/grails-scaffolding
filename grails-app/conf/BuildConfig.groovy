@@ -13,6 +13,9 @@ grails.project.dependency.resolution = {
         mavenCentral()
     }
     dependencies {
-		test "org.seleniumhq.selenium:selenium-firefox-driver:2.0a7"
+		test "org.seleniumhq.selenium:selenium-firefox-driver:2.0b1"
+		test("org.seleniumhq.selenium:selenium-htmlunit-driver:2.0b1") {
+			exclude "xml-apis"
+		}
     }
 }

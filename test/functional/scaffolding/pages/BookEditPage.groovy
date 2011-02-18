@@ -1,14 +1,15 @@
-package scaffolding
+package scaffolding.pages
 
 import geb.Page
 
-class BookCreatePage extends Page {
+class BookEditPage extends Page {
 
-	static url = "/book/create"
-	static at = { title == "Create Book" }
+	static url = "/book/edit"
+	static at = { title == "Edit Book" }
 	static content = {
 		book { $("form") }
-		createButton(to: BookShowPage) { $("input.save") }
+		updateButton(to: BookShowPage) { $("input.save") }
+		deleteButton(to: BookListPage) { $("input.delete") }
 		errors(required: false) { $(".errors li")*.text() }
 	}
 

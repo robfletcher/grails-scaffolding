@@ -12,6 +12,14 @@ html {
 	         box-sizing: border-box;
 }
 
+html.no-cssgradients {
+	background-color: #abbf78;
+}
+
+.ie6 html {
+	height: 100%;
+}
+
 html * {
 	margin: 0;
 }
@@ -19,14 +27,23 @@ html * {
 body {
 	background: #fff;
 	color: #333;
-	font-size: 62.5%; /* this gives us a base font size of 10px in most browsers, ems calculations are then easy */
 	font-family: "Segoe UI",Tahoma,Helvetica,"Helvetica Neue",Arial,sans-serif;
 	margin: 0 auto;
 	max-width: 1140px;
-	min-height: 100%;
-    -moz-box-shadow: 0 -10px 10px #255b17;
- -webkit-box-shadow: 0 0 10px #255b17;
-         box-shadow: 0 0 10px #255b17;
+    -moz-box-shadow: 0 0 0.5em #255b17;
+ -webkit-box-shadow: 0 0 0.5em #255b17;
+         box-shadow: 0 0 0.5em #255b17;
+	visibility: hidden;
+}
+
+.no-boxshadow body {
+	border-color: #255b17;
+	border-style: solid;
+	border-width: 0 1px;
+}
+
+.no-js body, body.ready {
+	visibility: visible;
 }
 
 .ie6 body {
@@ -44,12 +61,12 @@ a:hover, a:active {
 h1 {
 	color: #48802c;
 	font-weight: normal;
-	font-size: 2em;
+	font-size: 1.25em;
 	margin: 0.8em 0 0.3em 0;
 }
 
 ul {
-	padding-left: 15px;
+	padding: 0;
 }
 
 img {
@@ -60,11 +77,18 @@ img {
 
 #grailsLogo a {
 	display: inline-block;
-	margin: 1.5em;
+	margin: 1em;
 }
 
 .content {
-	margin: 0 2em;
+	margin: 0 1.25em 1.25em;
+}
+
+.footer {
+	background: #758C3C;
+	clear: both;
+	margin-top: 1.25em;
+	min-height: 2em;
 }
 
 /* NAVIGATION MENU */
@@ -78,15 +102,15 @@ img {
     border-width: 1px;
     border-color: #ccc;
     border-style: solid none solid none;
-    padding: 0.7em 1.2em;
+    padding: 0.5em 0.75em;
     zoom: 1;
-    -moz-box-shadow: 0 0 3px #ccc;
- -webkit-box-shadow: 0 0 3px #ccc;
-         box-shadow: 0 0 3px #ccc;
+    -moz-box-shadow: 0 0 0.25em #ccc;
+ -webkit-box-shadow: 0 0 0.25em #ccc;
+         box-shadow: 0 0 0.25em #ccc;
 }
 
 .nav ul {
-	overflow: auto;
+	overflow: hidden;
 	padding-left: 0;
 	zoom: 1;
 }
@@ -95,15 +119,13 @@ img {
 	display: block;
 	float: left;
 	list-style-type: none;
-	padding: 0.4em 1.1em;
+	padding: 0.25em 0.7em;
 }
 
 .nav a {
 	color: #666;
 	display: block;
-	font-size: 1.5em;
 	font-weight: bold;
-	line-height: 1.3em;
 	text-decoration: none;
 }
 
@@ -136,31 +158,27 @@ img {
 fieldset,
 dl {
 	border: 1px solid #CCCCCC;
-	padding: 0.5em 3em 2em;
-	-moz-box-shadow: 0 0 3px #ccc;
- -webkit-box-shadow: 0 0 3px #ccc;
-		 box-shadow: 0 0 3px #ccc;
+	margin-top: 0.6em;
+	padding: 0.3em 1.8em 1.25em;
+	-moz-box-shadow: 0 0 0.25em #ccc;
+ -webkit-box-shadow: 0 0 0.25em #ccc;
+		 box-shadow: 0 0 0.25em #ccc;
 }
 
 .fieldcontain,
 dt {
-	margin-top: 1em;
-}
-
-dt, dd {
-	font-size: 1.5em;
+	margin-top: 0.6em;
 }
 
 dt {
 	color: #666;
-	margin-top: 1em;
+	margin-top: 0.6em;
 }
 
 label {
 	color: #666;
 	cursor: pointer;
 	display: block;
-	font-size: 1.5em;
 	margin-bottom: 0.25em;
 	padding-left: 0.1em;
 }
@@ -168,7 +186,7 @@ label {
 input, select, textarea {
 	background-color: #fcfcfc;
 	border: 1px solid #ccc;
-	font-size: 1.5em;
+	font-size: 1em;
 	padding: 0.2em 0.4em;
 }
 
@@ -183,22 +201,13 @@ textarea {
 	vertical-align: top;
 }
 
-fieldset.form input,
-fieldset.form select,
-fieldset.form textarea {
-	width: 40em;
-	 /* change the box model to exclude the padding from the calculation of width */
-	 -webkit-box-sizing: border-box;
-	    -moz-box-sizing: border-box;
-	         box-sizing: border-box;
-}
-
 input:focus, select:focus, textarea:focus {
+	background-color: #fff;
 	border: 1px solid #b2d1ff;
 	outline: 0;
-	-moz-box-shadow: 0 0 3px #b2d1ff;
- -webkit-box-shadow: 0 0 3px #b2d1ff;
-		 box-shadow: 0 0 3px #b2d1ff;
+	-moz-box-shadow: 0 0 0.25em #fff;
+ -webkit-box-shadow: 0 0 0.25em #fff;
+		 box-shadow: 0 0 0.25em #fff;
 }
 
 .required-indicator {
@@ -214,7 +223,7 @@ input:focus, select:focus, textarea:focus {
 
 .errors,
 .message {
-	font-size: 1.3em;
+	font-size: 0.8em;
 	line-height: 1.6em;
 	margin: 1em 0 1em 0;
 	padding: 0.5em;
@@ -225,18 +234,18 @@ input:focus, select:focus, textarea:focus {
 	border: 1px solid #b2d1ff;
 	color: #006dba;
 	text-indent: 21px;
-	-moz-box-shadow: 0 0 3px #b2d1ff;
- -webkit-box-shadow: 0 0 3px #b2d1ff;
-		 box-shadow: 0 0 3px #b2d1ff;
+	-moz-box-shadow: 0 0 0.25em #b2d1ff;
+ -webkit-box-shadow: 0 0 0.25em #b2d1ff;
+		 box-shadow: 0 0 0.25em #b2d1ff;
 }
 
 .errors {
 	background: #fff3f3;
 	border: 1px solid #faa;
 	color: #c00;
-	-moz-box-shadow: 0 0 3px #faa;
- -webkit-box-shadow: 0 0 3px #faa;
-		 box-shadow: 0 0 3px #faa;
+	-moz-box-shadow: 0 0 0.25em #faa;
+ -webkit-box-shadow: 0 0 0.25em #faa;
+		 box-shadow: 0 0 0.25em #faa;
 }
 
 .errors ul {
@@ -266,9 +275,9 @@ textarea:invalid:focus,
 .error select:focus,
 .error input:focus,
 .error textarea:focus {
-	   -moz-box-shadow: 0 0 3px red;
-	-webkit-box-shadow: 0 0 3px red;
-            box-shadow: 0 0 3px red;
+	   -moz-box-shadow: 0 0 0.25em red;
+	-webkit-box-shadow: 0 0 0.25em red;
+            box-shadow: 0 0 0.25em red;
 }
 
 /* TABLES */
@@ -277,9 +286,9 @@ table {
 	border: 1px solid #ccc;
 	border-collapse: collapse;
 	width: 100%;
-	-moz-box-shadow: 0 0 3px #ccc;
- -webkit-box-shadow: 0 0 3px #ccc;
-		 box-shadow: 0 0 3px #ccc;
+	-moz-box-shadow: 0 0 0.25em #ccc;
+ -webkit-box-shadow: 0 0 0.25em #ccc;
+		 box-shadow: 0 0 0.25em #ccc;
 }
 
 tr {
@@ -288,7 +297,6 @@ tr {
 
 td, th {
 	border-left: 1px solid #ddd;
-	font-size: 1.5em;
 	line-height: 1.5em;
 	padding: 0.5em 0.6em;
 	text-align: left;
@@ -356,17 +364,17 @@ th:hover, tr:hover {
 		  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea')";
 	border: 1px solid #ccc;
 	border-top: 0;
-	padding: 1em 0.3em;
+	margin: 0;
+	padding: 0.6em 0.2em;
 	text-align: center;
-	-moz-box-shadow: 0 0 3px #ccc;
- -webkit-box-shadow: 0 0 3px #ccc;
-		 box-shadow: 0 0 3px #ccc;
+	-moz-box-shadow: 0 0 0.25em #ccc;
+ -webkit-box-shadow: 0 0 0.25em #ccc;
+		 box-shadow: 0 0 0.25em #ccc;
 }
 
 .pagination a,
 .pagination .currentStep {
 	color: #666;
-	font-size: 1.2em;
 	margin: 0 0.3em;
 	padding: 0.2em;
 	text-decoration: none;
@@ -389,7 +397,6 @@ th:hover, tr:hover {
 	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #ffffff),color-stop(1, #eaeaea));
 			  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea');
 		  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaeaea')";
-	margin-top: 1em;
 	overflow: hidden;
 	padding: 0;
 }
@@ -400,7 +407,6 @@ th:hover, tr:hover {
 	color: #666;
 	cursor: pointer;
 	display: inline-block;
-	font-size: 1.5em;
 	font-weight: bold;
 	margin: 0.2em 0 0.2em 0.3em;
 	overflow: visible;
@@ -430,10 +436,86 @@ th:hover, tr:hover {
 	padding-left: 28px;
 }
 
-@media screen and (max-width: 767px) {
-	fieldset.form,
-	fieldset.buttons,
-	dl {
-		width: 100%;
-	}
+a.skip {
+	position: absolute;
+	left: -9999px;
+}
+
+/* Styles for progressively enhanced form components */
+
+/* range input */
+/*
+	found here http://net.tutsplus.com/tutorials/html-css-techniques/25-html5-features-tips-and-techniques-you-must-know/
+	doesn't seem to work in latest Chrome but does in Opera
+*/
+input[type=range]:before { content: attr(min); padding-right: 0.5em; }
+input[type=range]:after { content: attr(max); padding-left: 0.5em; }
+
+input[type=range] {
+	vertical-align: middle;
+}
+
+output.range-output {
+	display: inline-block;
+	margin-right: 0.5em;
+	text-align: center;
+	width: 2em;
+	vertical-align: middle;
+}
+
+/* autocompleter for many-to-one and many-to-many */
+ul.autocomplete-selected {
+	list-style-type: none;
+	padding: 0;
+}
+
+ul.autocomplete-selected li {
+	background-color: #eee;
+	border-color: #ccc;
+	border-style: none solid solid;
+	border-width: 1px;
+	overflow: hidden;
+	padding: 0.3em;
+	position: relative;
+}
+
+.ie6 ul.autocomplete-selected li,
+.ie7 ul.autocomplete-selected li {
+	zoom: 1;
+}
+
+ul.autocomplete-selected .value {
+	font-size: 0.8em;
+	margin-right: 16px;
+	padding-right: 0.5em;
+	white-space: nowrap;
+}
+
+.ie6 ul.autocomplete-selected .value,
+.ie7 ul.autocomplete-selected .value {
+	display: inline;
+	zoom: 1;
+}
+
+ul.autocomplete-selected a.autocomplete-remove-selection {
+	background: url(/images/skin/icon_delete.png) no-repeat 0 1px transparent;
+	display: inline-block;
+	height: 16px;
+	overflow: hidden;
+	position: absolute;
+	right: 0.5em;
+	text-decoration: none;
+	text-indent: -9999px;
+	top: 0.5em;
+	width: 16px;
+}
+
+.ie6 ul.autocomplete-selected a.autocomplete-remove-selection,
+.ie7 ul.autocomplete-selected a.autocomplete-remove-selection {
+	display: inline;
+	zoom: 1;
+}
+
+body .ui-widget {
+	font-size: 0.9em;
 }

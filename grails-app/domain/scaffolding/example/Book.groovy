@@ -5,9 +5,10 @@ class Book {
 	String title
 	List<Author> authors
 	String yearOfPublication
-	// numeric field
-	// boolean field
-	// enum field
+	Integer averageRating
+	Integer numberOfPages
+	boolean ebook
+	Genre genre
 	// date field
 	Date dateCreated
 	Date lastUpdated
@@ -18,9 +19,20 @@ class Book {
 		title blank: false
 		authors minSize: 1
 		yearOfPublication blank: false, matches: /\d{4}/
+		averageRating range: 1..5
+		numberOfPages nullable: true
+		genre nullable: true
     }
+
+	static mapping = {
+		sort "yearOfPublication"
+	}
 
 	String toString() {
 		title
 	}
+}
+
+enum Genre {
+	biography, crime, fiction, reference, scifi
 }

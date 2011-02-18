@@ -4,12 +4,14 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ## Phase 1 - slightly slicker version of current Grails L&F
 
- * .body { float: left; } is horrible and doesn't work on IE
- * spacing between message/errors and form is inconsistent with spacing between form and buttons
+ * put required class (and HTML5 attribute) on the input itself rather than the container
+ * date / time format for show & list pages
 
 ## Phase 2 - Re-design
 
  * FOUC prevention by fade-in with CSS transition
+ * Form panel background #f7f7f7?
+ * Hide null/blank values in show view
 
 ### Navigation
 
@@ -20,28 +22,39 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ### Form inputs
 
+ * use data-constraint-range="0..5" etc. so we can enhance and validate inputs based on constraints
+ * use size attribute where appropriate
+ * required="required" on mandatory fields
  * autofocus - 1st field in error or 1st in form
  * Radio groups for enums (use select when more than x values?)
- * URL & email inputs when constraints present
- * Numerics using type="number", type="range"
- * JS enhance range with slider (where not natively supported)
  * Dates using type="date" with 3-field JS enhanced version?
  * Proper buttons
  * Is there a good alternative to multi-selects? (JS enhanced add & remove single selects?)
- * JS enhance single select as auto-completer
 
 ### Mobile
 
  * Test on iOS, Android, Blackberry, Kindle
- * compatible with jQuery-mobile (i.e. any necessary markup conventions followed)
+ * Optimise inputs (e.g. not sure the autocomplete really works in iOS)
 
 ### Accessibility
 
- * "Skip to content" link
  * Error messages act as labels for form fields
 
 ### Enhanced experience
 
- * Sort & paginate list with AJAX (remember to support back button)
  * Light-box show, edit, create direct from list page
  * Functional tests to ensure non-JS and JS versions work consistently
+ * Autcomplete:
+    * suppress remove button on autocomplete for mandatory many-to-one
+    * autocomplete for enums & inList constraint?
+
+## Integration
+
+ * Depend on resources plugin & export appropriate resource declarations
+ * Depend on jQuery & jQuery-UI (can we make the latter optional & disable autocomplete without it?)
+ * Does modernizr need a plugin?
+ * Should the scaffolding enhancements be a plugin so they can be removed if using non-jQuery framework?
+
+## Misc
+
+ * Test the use of many-to-many on create as it might not work
