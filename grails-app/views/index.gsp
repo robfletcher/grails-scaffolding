@@ -6,51 +6,45 @@
         <style type="text/css" media="screen">
         #status {
 			background-color: #eee;
-			border: .3em solid #fff;
-            margin: 1.5em;
-			padding: 1.5em;
-            width: 19em;
+			border: .2em solid #fff;
+            margin: 1em;
+			padding: 1em;
+            width: 12em;
             float: left;
-		     -moz-box-shadow: 0px 0px 2em #ccc; 
-		  -webkit-box-shadow: 0px 0px 2em #ccc; 
-		          box-shadow: 0px 0px 2em #ccc; 
-          -moz-border-radius: 1em; 
-	   -webkit-border-radius: 1em; 
-	           border-radius: 1em; 
+		     -moz-box-shadow: 0px 0px 1.25em #ccc;
+		  -webkit-box-shadow: 0px 0px 1.25em #ccc;
+		          box-shadow: 0px 0px 1.25em #ccc;
+          -moz-border-radius: 0.6em;
+	   -webkit-border-radius: 0.6em;
+	           border-radius: 0.6em;
         }
 		.boxshadow #status {
-			margin: 1.5em 3.5em;
+			margin: 1em 2em;
 		}
 		.ie6 #status {
 			display: inline; /* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
 		}
 		#status ul {
-			font-size: 1.5em;
             list-style-type: none;
-            margin-bottom: 1em;
+            margin-bottom: 0.6em;
+			padding: 0;
         }
         #status h1 {
             text-transform: uppercase;
-            font-size: 1.8em;
-            margin: 0 0 .5em;
+            font-size: 1.1em;
+            margin: 0 0 0.3em;
         }
         #page-body {
-            margin: 0 1.5em 2em 25.6em;
+            margin: 0 1em 1.25em 16em;
         }
 		.boxshadow #page-body {
-			margin-left: 29.6em;
+			margin-left: 18em;
 		}
         h2 {
             margin-top: 1em;
-            margin-bottom: 0.5em;
-            font-size: 1.3em;
+            margin-bottom: 0.3em;
+            font-size: 1em;
         }
-		p {
-			font-size: 1.5em;
-		}
-		li.controller {
-			font-size: 1.5em;
-		}
         </style>
     </head>
     <body>
