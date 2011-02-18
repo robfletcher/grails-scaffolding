@@ -34,6 +34,7 @@ This is a sample project for prototyping changes to Grails scaffolding.
 ### Mobile
 
  * Test on iOS, Android, Blackberry, Kindle
+ * Optimise inputs (e.g. not sure the autocomplete really works in iOS)
 
 ### Accessibility
 
@@ -44,7 +45,7 @@ This is a sample project for prototyping changes to Grails scaffolding.
  * Light-box show, edit, create direct from list page
  * Functional tests to ensure non-JS and JS versions work consistently
  * Autcomplete:
-    * aria roles where appropriate
+    * suppress remove button on autocomplete for mandatory many-to-one
     * autocomplete for enums & inList constraint?
 
 ## Integration
