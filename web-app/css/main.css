@@ -30,9 +30,9 @@ body {
 	font-family: "Segoe UI",Tahoma,Helvetica,"Helvetica Neue",Arial,sans-serif;
 	margin: 0 auto;
 	max-width: 1140px;
-    -moz-box-shadow: 0 0 5px #255b17;
- -webkit-box-shadow: 0 0 5px #255b17;
-         box-shadow: 0 0 5px #255b17;
+    -moz-box-shadow: 0 0 0.5em #255b17;
+ -webkit-box-shadow: 0 0 0.5em #255b17;
+         box-shadow: 0 0 0.5em #255b17;
 	visibility: hidden;
 }
 
@@ -104,9 +104,9 @@ img {
     border-style: solid none solid none;
     padding: 0.5em 0.75em;
     zoom: 1;
-    -moz-box-shadow: 0 0 3px #ccc;
- -webkit-box-shadow: 0 0 3px #ccc;
-         box-shadow: 0 0 3px #ccc;
+    -moz-box-shadow: 0 0 0.25em #ccc;
+ -webkit-box-shadow: 0 0 0.25em #ccc;
+         box-shadow: 0 0 0.25em #ccc;
 }
 
 .nav ul {
@@ -160,9 +160,9 @@ dl {
 	border: 1px solid #CCCCCC;
 	margin-top: 0.6em;
 	padding: 0.3em 1.8em 1.25em;
-	-moz-box-shadow: 0 0 3px #ccc;
- -webkit-box-shadow: 0 0 3px #ccc;
-		 box-shadow: 0 0 3px #ccc;
+	-moz-box-shadow: 0 0 0.25em #ccc;
+ -webkit-box-shadow: 0 0 0.25em #ccc;
+		 box-shadow: 0 0 0.25em #ccc;
 }
 
 .fieldcontain,
@@ -202,11 +202,12 @@ textarea {
 }
 
 input:focus, select:focus, textarea:focus {
+	background-color: #fff;
 	border: 1px solid #b2d1ff;
 	outline: 0;
-	-moz-box-shadow: 0 0 3px #b2d1ff;
- -webkit-box-shadow: 0 0 3px #b2d1ff;
-		 box-shadow: 0 0 3px #b2d1ff;
+	-moz-box-shadow: 0 0 0.25em #fff;
+ -webkit-box-shadow: 0 0 0.25em #fff;
+		 box-shadow: 0 0 0.25em #fff;
 }
 
 .required-indicator {
@@ -233,18 +234,18 @@ input:focus, select:focus, textarea:focus {
 	border: 1px solid #b2d1ff;
 	color: #006dba;
 	text-indent: 21px;
-	-moz-box-shadow: 0 0 3px #b2d1ff;
- -webkit-box-shadow: 0 0 3px #b2d1ff;
-		 box-shadow: 0 0 3px #b2d1ff;
+	-moz-box-shadow: 0 0 0.25em #b2d1ff;
+ -webkit-box-shadow: 0 0 0.25em #b2d1ff;
+		 box-shadow: 0 0 0.25em #b2d1ff;
 }
 
 .errors {
 	background: #fff3f3;
 	border: 1px solid #faa;
 	color: #c00;
-	-moz-box-shadow: 0 0 3px #faa;
- -webkit-box-shadow: 0 0 3px #faa;
-		 box-shadow: 0 0 3px #faa;
+	-moz-box-shadow: 0 0 0.25em #faa;
+ -webkit-box-shadow: 0 0 0.25em #faa;
+		 box-shadow: 0 0 0.25em #faa;
 }
 
 .errors ul {
@@ -274,9 +275,9 @@ textarea:invalid:focus,
 .error select:focus,
 .error input:focus,
 .error textarea:focus {
-	   -moz-box-shadow: 0 0 3px red;
-	-webkit-box-shadow: 0 0 3px red;
-            box-shadow: 0 0 3px red;
+	   -moz-box-shadow: 0 0 0.25em red;
+	-webkit-box-shadow: 0 0 0.25em red;
+            box-shadow: 0 0 0.25em red;
 }
 
 /* TABLES */
@@ -285,9 +286,9 @@ table {
 	border: 1px solid #ccc;
 	border-collapse: collapse;
 	width: 100%;
-	-moz-box-shadow: 0 0 3px #ccc;
- -webkit-box-shadow: 0 0 3px #ccc;
-		 box-shadow: 0 0 3px #ccc;
+	-moz-box-shadow: 0 0 0.25em #ccc;
+ -webkit-box-shadow: 0 0 0.25em #ccc;
+		 box-shadow: 0 0 0.25em #ccc;
 }
 
 tr {
@@ -366,9 +367,9 @@ th:hover, tr:hover {
 	margin: 0;
 	padding: 0.6em 0.2em;
 	text-align: center;
-	-moz-box-shadow: 0 0 3px #ccc;
- -webkit-box-shadow: 0 0 3px #ccc;
-		 box-shadow: 0 0 3px #ccc;
+	-moz-box-shadow: 0 0 0.25em #ccc;
+ -webkit-box-shadow: 0 0 0.25em #ccc;
+		 box-shadow: 0 0 0.25em #ccc;
 }
 
 .pagination a,
