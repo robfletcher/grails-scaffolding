@@ -27,7 +27,6 @@ html * {
 body {
 	background: #fff;
 	color: #333;
-	font-size: 62.5%; /* this gives us a base font size of 10px in most browsers, ems calculations are then easy */
 	font-family: "Segoe UI",Tahoma,Helvetica,"Helvetica Neue",Arial,sans-serif;
 	margin: 0 auto;
 	max-width: 1140px;
@@ -62,7 +61,7 @@ a:hover, a:active {
 h1 {
 	color: #48802c;
 	font-weight: normal;
-	font-size: 2em;
+	font-size: 1.25em;
 	margin: 0.8em 0 0.3em 0;
 }
 
@@ -78,18 +77,18 @@ img {
 
 #grailsLogo a {
 	display: inline-block;
-	margin: 1.5em;
+	margin: 1em;
 }
 
 .content {
-	margin: 0 2em 2em;
+	margin: 0 1.25em 1.25em;
 }
 
 .footer {
 	background: #758C3C;
 	clear: both;
-	margin-top: 2em;
-	min-height: 3em;
+	margin-top: 1.25em;
+	min-height: 2em;
 }
 
 /* NAVIGATION MENU */
@@ -103,7 +102,7 @@ img {
     border-width: 1px;
     border-color: #ccc;
     border-style: solid none solid none;
-    padding: 0.7em 1.2em;
+    padding: 0.5em 0.75em;
     zoom: 1;
     -moz-box-shadow: 0 0 3px #ccc;
  -webkit-box-shadow: 0 0 3px #ccc;
@@ -120,15 +119,13 @@ img {
 	display: block;
 	float: left;
 	list-style-type: none;
-	padding: 0.4em 1.1em;
+	padding: 0.25em 0.7em;
 }
 
 .nav a {
 	color: #666;
 	display: block;
-	font-size: 1.5em;
 	font-weight: bold;
-	line-height: 1.3em;
 	text-decoration: none;
 }
 
@@ -161,8 +158,8 @@ img {
 fieldset,
 dl {
 	border: 1px solid #CCCCCC;
-	margin-top: 1em;
-	padding: 0.5em 3em 2em;
+	margin-top: 0.6em;
+	padding: 0.3em 1.8em 1.25em;
 	-moz-box-shadow: 0 0 3px #ccc;
  -webkit-box-shadow: 0 0 3px #ccc;
 		 box-shadow: 0 0 3px #ccc;
@@ -170,23 +167,18 @@ dl {
 
 .fieldcontain,
 dt {
-	margin-top: 1em;
-}
-
-dt, dd {
-	font-size: 1.5em;
+	margin-top: 0.6em;
 }
 
 dt {
 	color: #666;
-	margin-top: 1em;
+	margin-top: 0.6em;
 }
 
 label {
 	color: #666;
 	cursor: pointer;
 	display: block;
-	font-size: 1.5em;
 	margin-bottom: 0.25em;
 	padding-left: 0.1em;
 }
@@ -194,7 +186,7 @@ label {
 input, select, textarea {
 	background-color: #fcfcfc;
 	border: 1px solid #ccc;
-	font-size: 1.5em;
+	font-size: 1em;
 	padding: 0.2em 0.4em;
 }
 
@@ -230,7 +222,7 @@ input:focus, select:focus, textarea:focus {
 
 .errors,
 .message {
-	font-size: 1.3em;
+	font-size: 0.8em;
 	line-height: 1.6em;
 	margin: 1em 0 1em 0;
 	padding: 0.5em;
@@ -304,7 +296,6 @@ tr {
 
 td, th {
 	border-left: 1px solid #ddd;
-	font-size: 1.5em;
 	line-height: 1.5em;
 	padding: 0.5em 0.6em;
 	text-align: left;
@@ -373,7 +364,7 @@ th:hover, tr:hover {
 	border: 1px solid #ccc;
 	border-top: 0;
 	margin: 0;
-	padding: 1em 0.3em;
+	padding: 0.6em 0.2em;
 	text-align: center;
 	-moz-box-shadow: 0 0 3px #ccc;
  -webkit-box-shadow: 0 0 3px #ccc;
@@ -383,7 +374,6 @@ th:hover, tr:hover {
 .pagination a,
 .pagination .currentStep {
 	color: #666;
-	font-size: 1.5em;
 	margin: 0 0.3em;
 	padding: 0.2em;
 	text-decoration: none;
@@ -416,7 +406,6 @@ th:hover, tr:hover {
 	color: #666;
 	cursor: pointer;
 	display: inline-block;
-	font-size: 1.5em;
 	font-weight: bold;
 	margin: 0.2em 0 0.2em 0.3em;
 	overflow: visible;
@@ -467,7 +456,6 @@ input[type=range] {
 
 output.range-output {
 	display: inline-block;
-	font-size: 1.5em;
 	margin-right: 0.5em;
 	text-align: center;
 	width: 2em;
@@ -486,7 +474,7 @@ ul.autocomplete-selected li {
 	border-style: none solid solid;
 	border-width: 1px;
 	overflow: hidden;
-	padding: 0.5em;
+	padding: 0.3em;
 	position: relative;
 }
 
@@ -496,11 +484,9 @@ ul.autocomplete-selected li {
 }
 
 ul.autocomplete-selected .value {
-	display: inline-block;
-	font-size: 1.3em;
+	font-size: 0.8em;
 	margin-right: 16px;
 	padding-right: 0.5em;
-	vertical-align: middle;
 	white-space: nowrap;
 }
 
@@ -520,7 +506,6 @@ ul.autocomplete-selected a.autocomplete-remove-selection {
 	text-decoration: none;
 	text-indent: -9999px;
 	top: 0.5em;
-	vertical-align: middle;
 	width: 16px;
 }
 
@@ -528,4 +513,8 @@ ul.autocomplete-selected a.autocomplete-remove-selection {
 .ie7 ul.autocomplete-selected a.autocomplete-remove-selection {
 	display: inline;
 	zoom: 1;
+}
+
+body .ui-widget {
+	font-size: 0.9em;
 }
