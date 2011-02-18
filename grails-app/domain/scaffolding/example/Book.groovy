@@ -24,6 +24,10 @@ class Book {
 		genre nullable: true
     }
 
+	static mapping = {
+		sort "yearOfPublication"
+	}
+
 	String toString() {
 		title
 	}

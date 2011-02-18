@@ -14,6 +14,10 @@ class Author {
 		website nullable: true, url: true
     }
 
+	static mapping = {
+		sort "name"
+	}
+
 	String toString() {
 		name
 	}
