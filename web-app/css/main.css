@@ -408,19 +408,23 @@ th:hover, tr:hover {
 	padding: 0;
 }
 
-.buttons input {
+.buttons input,
+.buttons a {
 	background-color: transparent;
 	border: 0;
 	color: #666;
 	cursor: pointer;
 	display: inline-block;
+	font-family: "Helvetica Neue",Helvetica,Tahoma,Arial,sans-serif;
 	font-weight: bold;
 	margin: 0.2em 0 0.2em 0.3em;
 	overflow: visible;
 	padding: 0.2em 0.6em;
+	text-decoration: none;
 }
 
-.buttons input:hover, .buttons input:focus {
+.buttons input:hover, .buttons input:focus,
+.buttons a:hover, .buttons a:focus {
 	color: #333;
 	-moz-box-shadow: none;
  -webkit-box-shadow: none;
@@ -428,17 +432,17 @@ th:hover, tr:hover {
 	     text-shadow: 1px 1px 3px #ccc; 
 }
 
-.buttons input.delete {
+.buttons .delete {
 	background: transparent url(../images/skin/database_delete.png) 5px 50% no-repeat;
 	padding-left: 28px;
 }
 
-.buttons input.edit {
+.buttons .edit {
 	background: transparent url(../images/skin/database_edit.png) 5px 50% no-repeat;
 	padding-left: 28px;
 }
 
-.buttons input.save {
+.buttons .save {
 	background: transparent url(../images/skin/database_save.png) 5px 50% no-repeat;
 	padding-left: 28px;
 }
