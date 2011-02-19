@@ -2,12 +2,16 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 # To-Do
 
+## Browser issues
+
+ * Fonts look terrible in IE8 (oddly they look OK in IE6 & IE7)
+ * Left padding on buttons is wrong on iPhone
+ * Vertical position of autocomplete remove icon is inconsistent
+
 ## Data format
 
- * don't display id in list or show (user doesn't care)
  * date / time format for show & list pages
  * Hide null/blank values in show view
- * In example app why don't authors show in book list?
 
 ## Forms
 
