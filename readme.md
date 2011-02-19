@@ -5,8 +5,9 @@ This is a sample project for prototyping changes to Grails scaffolding.
 ## Browser issues
 
  * Fonts look terrible in IE8 (oddly they look OK in IE6 & IE7)
- * Left padding on buttons is wrong on iPhone
+ * Left padding on buttons is wrong on iPhone (might just be xcode emulator)
  * Vertical position of autocomplete remove icon is inconsistent
+ * Use `@media screen and (monochrome)` to optimise rendering on Kindle
 
 ## Data format
 
