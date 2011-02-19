@@ -75,6 +75,8 @@
         <div id="page-body" role="main">
             <h1>Welcome to Grails</h1>
 			<p>This is a sandbox application for the development of changes to scaffolding targetted at Grails 1.4.</p>
+			<p>The code for this application is hosted on <a href="https://github.com/robfletcher/grails-scaffolding">GitHub</a>.
+			Please feel free to fork, raise issues, etc.</p>
             <p>Below is a list of controllers that are currently deployed in this application,
             click on each to execute its default action:</p>
 

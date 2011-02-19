@@ -19,7 +19,7 @@
 		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a></div>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo">
-			<p>Version: <g:meta name="app.version"/> | <a href="https://github.com/robfletcher/grails-scaffolding">GitHub</a></p>
+			<p><g:message code="meta.app.version" default="Version: {0}" args="[meta(name: 'app.version')]"/></p>
 		</div>
 		<g:javascript src="jquery-1.5.min.js"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
