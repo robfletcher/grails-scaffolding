@@ -7,7 +7,7 @@
         #status {
 			background-color: #eee;
 			border: .2em solid #fff;
-            margin: 1em;
+            margin: 0 1em 1em;
 			padding: 1em;
             width: 12em;
             float: left;
@@ -19,7 +19,7 @@
 	           border-radius: 0.6em;
         }
 		.boxshadow #status {
-			margin: 1em 2em;
+			margin: 0 2em 1em;
 		}
 		.ie6 #status {
 			display: inline; /* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
@@ -45,8 +45,29 @@
             margin-bottom: 0.3em;
             font-size: 1em;
         }
+		p {
+			margin: 0.25em 0;
+		}
 		#controller-list ul {
 			list-style-position: inside;
+		}
+		#controller-list li {
+			list-style-position: inside;
+			margin: 0.25em 0;
+		}
+
+		@media screen and (max-width: 480px) {
+			#status {
+				display: none;
+			}
+
+			#page-body, .boxshadow #page-body {
+				margin: 0 1em 1em;
+			}
+
+			#page-body h1 {
+				margin-top: 0;
+			}
 		}
         </style>
     </head>

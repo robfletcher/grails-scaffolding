@@ -237,7 +237,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .message {
-	background: #f3f8fc url(../images/skin/information.png) 0.5em 50% no-repeat;
+	background: #f3f8fc url(../images/skin/information.png) 0.5em 0 no-repeat;
 	border: 1px solid #b2d1ff;
 	color: #006dba;
 	text-indent: 21px;
@@ -261,7 +261,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .errors li {
-	background: url(../images/skin/exclamation.png) 0 50% no-repeat;
+	background: url(../images/skin/exclamation.png) 0 0 no-repeat;
 	padding-left: 16px;
 	text-indent: 0.5em;
 }
@@ -446,6 +446,42 @@ th:hover, tr:hover {
 a.skip {
 	position: absolute;
 	left: -9999px;
+}
+
+/* Styles for mobile devices */
+
+@media screen and (max-width: 480px) {
+	.nav {
+		padding: 0.5em;
+	}
+
+	.nav li {
+		margin: 0 0.5em 0 0;
+		padding: 0.25em;
+	}
+
+	/* slightly smaller margin around content body */
+	.content {
+		margin: 0 0.5em 0.5em;
+	}
+
+	fieldset, dl {
+		padding: 0.5em;
+	}
+
+	input, select, textarea {
+		width: auto;
+	}
+
+	/* hide all but the first column of list tables */
+	.scaffold-list td:not(:first-child),
+	.scaffold-list th:not(:first-child) {
+		display: none;
+	}
+
+	.scaffold-list thead th {
+		text-align: center;
+	}
 }
 
 /* Styles for progressively enhanced form components */
