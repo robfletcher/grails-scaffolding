@@ -415,7 +415,7 @@ th:hover, tr:hover {
 	color: #666;
 	cursor: pointer;
 	display: inline-block;
-	font-family: "Helvetica Neue",Helvetica,Tahoma,Arial,sans-serif;
+	font-family: "Segoe UI",Tahoma,Helvetica,"Helvetica Neue",Arial,sans-serif;
 	font-weight: bold;
 	margin: 0.2em 0 0.2em 0.3em;
 	overflow: visible;
