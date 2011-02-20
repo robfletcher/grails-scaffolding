@@ -9,8 +9,8 @@ class BookShowPage extends Page {
 	static at = { title == "Show Book" }
 	static content = {
 		book { module BookDetail, $("dl") }
-		editButton(to: BookEditPage) { $("input.edit") }
-		deleteButton(to: BookListPage) { $("input.delete") }
+		editButton(to: BookEditPage) { $(".buttons .edit") }
+		deleteButton(to: BookListPage) { $(".buttons .delete") }
 	}
 }
 

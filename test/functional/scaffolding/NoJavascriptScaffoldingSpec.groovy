@@ -1,13 +1,18 @@
 package scaffolding
 
+import scaffolding.example.Author
+import spock.lang.Stepwise
 import scaffolding.pages.*
-import spock.lang.*
 
 @Stepwise
 class NoJavascriptScaffoldingSpec extends NoJavascriptSpec {
 
-	@Shared Map<String, Long> authorIds = [:]
-	@Shared Map<String, Long> bookIds = [:]
+	def cleanupSpec() {
+		Author.withNewSession { session ->
+			Author.list()*.delete()
+			session.flush()
+		}
+	}
 
 	def "set up a couple of authors"() {
 		given:
@@ -20,9 +25,6 @@ class NoJavascriptScaffoldingSpec extends NoJavascriptSpec {
 		then:
 		at AuthorShowPage
 		author.name == name
-
-		cleanup:
-		authorIds[name] = author.id
 
 		where:
 		name << ["William Gibson", "Bruce Sterling"]
@@ -42,7 +44,7 @@ class NoJavascriptScaffoldingSpec extends NoJavascriptSpec {
 
 		when:
 		book.title = "Neuromancer"
-		book.authors = [authorIds["William Gibson"].toString()] // TODO: this really sucks, should be able to set select by option text
+		book.authors().find("option").lastElement().setSelected() // TODO: not necessary in Geb 0.5.2
 		book.yearOfPublication = "1984"
 
 		and:
@@ -53,9 +55,6 @@ class NoJavascriptScaffoldingSpec extends NoJavascriptSpec {
 		book.title == "Neuromancer"
 		book.authors == ["William Gibson"]
 		book.yearOfPublication == 1984
-
-		cleanup:
-		bookIds["Neuromancer"] = book.id
 	}
 
 	def "view book list"() {
@@ -68,8 +67,7 @@ class NoJavascriptScaffoldingSpec extends NoJavascriptSpec {
 
 	def "show book"() {
 		when:
-//		books[0].showLink.click() // TODO: selenium 2.0a7 won't click properly
-		to BookShowPage, bookIds["Neuromancer"]
+		books[0].showLink.click()
 
 		then:
 		at BookShowPage
@@ -89,14 +87,14 @@ class NoJavascriptScaffoldingSpec extends NoJavascriptSpec {
 	def "edit book"() {
 		when:
 		book.title = "The Difference Engine"
-		book.authors = authorIds.values()*.toString()
+		book.authors().find("option").allElements()*.setSelected()
 		book.yearOfPublication = "1990"
 		updateButton.click()
 
 		then:
 		at BookShowPage
 		book.title == "The Difference Engine"
-		book.authors == ["William Gibson", "Bruce Sterling"]
+		book.authors == ["Bruce Sterling", "William Gibson"]
 		book.yearOfPublication == 1990
 	}
 
@@ -108,21 +106,6 @@ class NoJavascriptScaffoldingSpec extends NoJavascriptSpec {
 		at BookListPage
 		message ==~ /Book \d+ deleted/
 		books.empty
-	}
-
-	def "delete authors"() {
-		given:
-		to AuthorShowPage, id
-
-		when:
-		deleteButton.click()
-
-		then:
-		at AuthorListPage
-		message ==~ /Author \d+ deleted/
-
-		where:
-		id << authorIds.values()
 	}
 
 }

@@ -23,11 +23,11 @@ class BookListPage extends Page {
 class BookRow extends Module {
 	static content = {
 		cell { i -> $("td", i) }
-		id { cell(0).text().toLong() }
-		title { cell(1).text() }
-		yearOfPublication { cell(2).text().toInteger() }
-		dateCreated { new SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z").parse(cell(3).text()) }
-		lastUpdated { new SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z").parse(cell(4).text()) }
+		title { cell(0).text() }
+		yearOfPublication { cell(1).text().toInteger() }
+		averageRating { cell(2).text().toInteger() }
+		genre { cell(3).text() }
+		ebook { cell(4).text().toBoolean() }
 		showLink(to: BookShowPage) { cell(0).find("a") }
 	}
 
