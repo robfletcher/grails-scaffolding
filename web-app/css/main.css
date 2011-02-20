@@ -232,16 +232,16 @@ input:focus, select:focus, textarea:focus {
 .errors,
 .message {
 	font-size: 0.8em;
-	line-height: 1.6em;
+	line-height: 2;
 	margin: 1em 0 1em 0;
 	padding: 0.5em;
 }
 
 .message {
-	background: #f3f8fc url(../images/skin/information.png) 0.5em 0 no-repeat;
 	border: 1px solid #b2d1ff;
 	color: #006dba;
-	text-indent: 21px;
+	display: list-item;
+	list-style: inside url(../images/skin/information.png);
 	-moz-box-shadow: 0 0 0.25em #b2d1ff;
  -webkit-box-shadow: 0 0 0.25em #b2d1ff;
 		 box-shadow: 0 0 0.25em #b2d1ff;
@@ -262,9 +262,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .errors li {
-	background: url(../images/skin/exclamation.png) 0 0 no-repeat;
-	padding-left: 16px;
-	text-indent: 0.5em;
+	list-style: inside url(../images/skin/exclamation.png);
 }
 
 select:invalid,

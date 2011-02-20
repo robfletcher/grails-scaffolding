@@ -4,7 +4,7 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ## Bugs
 
- * Icon in message box is misplaced
+ * Bullets in message & error boxes should be better aligned vertically
 
 ## Browser issues
 
