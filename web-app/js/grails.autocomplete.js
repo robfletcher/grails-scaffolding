@@ -18,7 +18,7 @@
 			var selectId = select.attr('id');
 		
 			// create an autocomplete element to proxy the select
-			var autocompleter = $('<input id="' + selectId + '-autocompleter">').autocomplete({
+			var autocompleter = $('<input id="' + selectId + '-autocompleter" type="search">').autocomplete({
 				minLength: 0,
 				// the data source for the autocompleter is all the unselected options from the select filtered by the entered text
 				source: function(ui, callback) {
@@ -39,6 +39,8 @@
 					$(this).val('');
 					return false;
 				}
+			}).bind('blur', function() {
+				$(this).val('');
 			});
 		
 			// create an output element that mirrors the content of the select when it changes

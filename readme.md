@@ -2,12 +2,17 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 # To-Do
 
+## Bugs
+
+ * Icon in message box is misplaced
+
 ## Browser issues
 
  * Fonts look terrible in IE8 (oddly they look OK in IE6 & IE7)
  * Left padding on buttons is wrong on iPhone (might just be xcode emulator)
  * Vertical position of autocomplete remove icon is inconsistent
  * Use `@media screen and (monochrome)` to optimise rendering on Kindle
+ * Fieldset & dl are blacked out on Kindle
 
 ## Data format
 
@@ -28,15 +33,16 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ### Enhanced experience
 
+ * History manipulation breaks if you go back to the list page after paginating/sorting [GitHub](https://github.com/robfletcher/grails-scaffolding/issues/#issue/2)
  * Light-box show, edit, create direct from list page
  * Functional tests to ensure non-JS and JS versions work consistently
  * Autocomplete:
     * indicate that it's an autocompleter
-    * clear on blur if no selection made
     * open autocomplete with focus? Mouse double-click?
     * suppress remove button on autocomplete for mandatory many-to-one
     * autocomplete for enums & inList constraint?
  * FOUC prevention by fade-in with CSS transition
+ * Slicker version of confirmation on delete
 
 ## Navigation
 

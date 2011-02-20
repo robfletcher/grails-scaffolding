@@ -129,7 +129,7 @@
 					
 					equal(select.val(), '2', 'selected option');
 					equal(output.find('li .value').text(), 'Rubberplant', 'selected item');
-				})
+				});
 				
 				test('multiple options can be selected in a many-to-many autocompleter', function() {
 					var select = $('select#many-to-many');
@@ -149,7 +149,17 @@
 					
 					deepEqual(select.val(), ['1', '2'], 'selected option');
 					deepEqual(output.find('li .value').map(function() { return $(this).text(); }).toArray(), ['Catflap', 'Rubberplant'], 'selected item');
-				})
+				});
+
+				test('leaving the input without picking an option clears it', function() {
+					var autocompleter = $('input#many-to-many-autocompleter');
+
+					autocompleter.val('cat');
+					autocompleter.autocomplete('search');
+					autocompleter.trigger('blur');
+
+					equal(autocompleter.val(), '', 'autocompleter value should be cleared');
+				});
 			});
 		</script>
 	</head>
