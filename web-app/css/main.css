@@ -465,6 +465,19 @@ a.skip {
 		padding: 0.25em;
 	}
 
+	/* Hide individual steps in pagination, just have next & previous */
+	.pagination .step, .pagination .currentStep {
+		display: none;
+	}
+
+	.pagination .prevLink {
+		float: left;
+	}
+
+	.pagination .nextLink {
+		float: right;
+	}
+
 	/* slightly smaller margin around content body */
 	.content {
 		margin: 0 0.5em 0.5em;
