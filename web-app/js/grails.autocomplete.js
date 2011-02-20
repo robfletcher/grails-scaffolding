@@ -89,7 +89,7 @@
 			// point the label for the select at the autocompleter instead
 			$('label[for=' + selectId + ']').attr('for', autocompleter.attr('id'));
 		
-			autocompleter.insertAfter(select);
+			autocompleter.insertAfter(select).width(select.outerWidth());
 			selectedList.insertAfter(autocompleter).width(autocompleter.outerWidth());
 			updateSelection(null, 0);
 			select.hide();
