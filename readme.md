@@ -17,7 +17,6 @@ This is a sample project for prototyping changes to Grails scaffolding.
 ## Data format
 
  * date / time format for show & list pages
- * Hide null/blank values in show view
 
 ## Forms
 
