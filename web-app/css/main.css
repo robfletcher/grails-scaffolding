@@ -273,22 +273,36 @@ input:focus, select:focus, textarea:focus {
 	list-style: inside url(../images/skin/exclamation.png);
 }
 
-select:invalid,
-input:invalid,
-textarea:invalid,
 .error select,
 .error input,
 .error textarea {
-	border: 1px solid #f88;
+	background: #fff3f3;
+	border: 1px solid #faa;
 }
 
-
-select:invalid:focus,
-input:invalid:focus,
-textarea:invalid:focus,
 .error select:focus,
 .error input:focus,
 .error textarea:focus {
+	background: #fffafa;
+	border: 1px solid #fdd;
+	-moz-box-shadow: 0 0 0.25em #f88;
+ -webkit-box-shadow: 0 0 0.25em #f88;
+		 box-shadow: 0 0 0.25em #f88;
+}
+
+/* IE does not understand :invalid and will ignore rules combined with it, so these have to be separate */
+select:invalid,
+input:invalid,
+textarea:invalid {
+	background: #fff3f3;
+	border: 1px solid #faa;
+}
+
+select:invalid:focus,
+input:invalid:focus,
+textarea:invalid:focus {
+	background: #fffafa;
+	border: 1px solid #fdd;
 	-moz-box-shadow: 0 0 0.25em #f88;
  -webkit-box-shadow: 0 0 0.25em #f88;
 		 box-shadow: 0 0 0.25em #f88;
