@@ -18,7 +18,7 @@
 			var selectId = select.attr('id');
 		
 			// create an autocomplete element to proxy the select
-			var autocompleter = $('<input id="' + selectId + '-autocompleter" type="search">').autocomplete({
+			var autocompleter = $('<input id="' + selectId + '-autocompleter">').autocomplete({
 				minLength: 0,
 				// the data source for the autocompleter is all the unselected options from the select filtered by the entered text
 				source: function(ui, callback) {
@@ -86,13 +86,13 @@
 				return false;
 			});
 		
+			select.hide();
 			// point the label for the select at the autocompleter instead
 			$('label[for=' + selectId + ']').attr('for', autocompleter.attr('id'));
 		
 			autocompleter.insertAfter(select).width(select.outerWidth());
-			selectedList.insertAfter(autocompleter).width(autocompleter.outerWidth());
+			selectedList.insertAfter(autocompleter).width(autocompleter.outerWidth()).offset({left: autocompleter.offset().left});
 			updateSelection(null, 0);
-			select.hide();
 		});
 	};
 })(jQuery);

@@ -27,7 +27,7 @@ html * {
 body {
 	background: #fff;
 	color: #333;
-	font-family: "Segoe UI",Tahoma,Helvetica,"Helvetica Neue",Arial,sans-serif;
+	font-family: Arial,Tahoma,Helvetica,"Helvetica Neue",sans-serif;
 	margin: 0 auto;
 	max-width: 1140px;
 	overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 1140px wide */
@@ -165,6 +165,7 @@ img {
 
 fieldset,
 dl {
+	background-color: #F2F2F2;
 	border: 1px solid #CCCCCC;
 	margin-top: 0.6em;
 	padding: 0.3em 1.8em 1.25em;
@@ -175,7 +176,7 @@ dl {
 
 .fieldcontain,
 dt {
-	margin-top: 0.6em;
+	margin-top: 1em;
 }
 
 dt {
@@ -186,9 +187,10 @@ dt {
 label {
 	color: #666;
 	cursor: pointer;
-	display: block;
-	margin-bottom: 0.25em;
-	padding-left: 0.1em;
+	display: inline-block;
+	margin: 0 0.25em 0 0;
+	text-align: right;
+	width: 8em;
 }
 
 input, select, textarea {
@@ -209,13 +211,19 @@ textarea {
 	vertical-align: top;
 }
 
+input[type=checkbox], input[type=radio] {
+	background-color: transparent;
+	border: 0;
+	padding: 0;
+}
+
 input:focus, select:focus, textarea:focus {
 	background-color: #fff;
-	border: 1px solid #b2d1ff;
+	border: 1px solid #eee;
 	outline: 0;
-	-moz-box-shadow: 0 0 0.25em #b2d1ff;
- -webkit-box-shadow: 0 0 0.25em #b2d1ff;
-		 box-shadow: 0 0 0.25em #b2d1ff;
+	-moz-box-shadow: 0 0 0.5em #fff;
+ -webkit-box-shadow: 0 0 0.5em #fff;
+		 box-shadow: 0 0 0.5em #fff;
 }
 
 .required-indicator {
@@ -414,7 +422,7 @@ th:hover, tr:hover {
 	color: #666;
 	cursor: pointer;
 	display: inline-block;
-	font-family: "Segoe UI",Tahoma,Helvetica,"Helvetica Neue",Arial,sans-serif;
+	font-family: Arial,Tahoma,Helvetica,"Helvetica Neue",sans-serif;
 	font-weight: bold;
 	margin: 0.2em 0 0.2em 0.3em;
 	overflow: visible;
@@ -498,6 +506,19 @@ a.skip {
 	.scaffold-list thead th {
 		text-align: center;
 	}
+
+	/* stack form elements */
+	.fieldcontain,
+	dt {
+		margin-top: 0.6em;
+	}
+
+	label {
+		display: block;
+		margin: 0 0 0.25em 0;
+		text-align: left;
+		width: auto;
+	}
 }
 
 /* Styles for progressively enhanced form components */
@@ -510,15 +531,20 @@ a.skip {
 input[type=range]:before { content: attr(min); padding-right: 0.5em; }
 input[type=range]:after { content: attr(max); padding-left: 0.5em; }
 
+label + input[type=range],
+label + output.range-output {
+	vertical-align: middle;
+}
+
 input[type=range] {
+	border: 0;
+	padding: 0;
 	vertical-align: middle;
 }
 
 output.range-output {
 	display: inline-block;
-	margin-right: 0.5em;
-	text-align: center;
-	width: 2em;
+	margin-left: 1em;
 	vertical-align: middle;
 }
 
@@ -529,7 +555,7 @@ ul.autocomplete-selected {
 }
 
 ul.autocomplete-selected li {
-	background-color: #eee;
+	background-color: #FCFCFC;
 	border-color: #ccc;
 	border-style: none solid solid;
 	border-width: 1px;
@@ -565,7 +591,6 @@ ul.autocomplete-selected a.autocomplete-remove-selection {
 	right: 0.5em;
 	text-decoration: none;
 	text-indent: -9999px;
-	top: 0.5em;
 	width: 16px;
 }
 

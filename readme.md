@@ -4,13 +4,13 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ## Bugs
 
- * Bullets in message & error boxes should be better aligned vertically
+ * Blue mouseover highlight on list table looks wrong
+ * Autocompleted results need to re-position horizontally if window resized
 
 ## Browser issues
 
  * Fonts look terrible in IE8 (oddly they look OK in IE6 & IE7)
  * Left padding on buttons is wrong on iPhone (might just be xcode emulator)
- * Vertical position of autocomplete remove icon is inconsistent
  * Use `@media screen and (monochrome)` to optimise rendering on Kindle
  * Fieldset & dl are blacked out on Kindle
 
@@ -20,13 +20,10 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ## Forms
 
- * side-by-side display with stacking when viewport <= iPhone
  * put required class (and HTML5 attribute) on the input itself rather than the container
- * darker background with nice highlight effect for focused input (e.g. see tumblr sign up)
  * use data-constraint-range="0..5" etc. so we can enhance and validate inputs based on constraints
  * use size attribute where appropriate
  * required="required" on mandatory fields
- * autofocus - 1st field in error or 1st in form
  * Radio groups for enums (use select when more than x values?)
  * Dates using type="date" with 3-field JS enhanced version? Datepicker?
 

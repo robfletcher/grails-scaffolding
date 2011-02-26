@@ -31,8 +31,11 @@
 
 			// replace the select with the range input and insert the output before it
 			select.replaceWith(input);
-			input.before(output);
+			input.after(output);
 			input.trigger('change');
+
+			// align the label better with the input
+			$('label[for=' + id + ']').css({verticalAlign: 'middle'});
 		});
 	};
 })(jQuery);
