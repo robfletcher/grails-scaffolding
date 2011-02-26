@@ -607,6 +607,7 @@ ul.autocomplete-selected a.autocomplete-remove-selection {
 	overflow: hidden;
 	position: absolute;
 	right: 0.5em;
+	top: 0.5em;
 	text-decoration: none;
 	text-indent: -9999px;
 	width: 16px;
