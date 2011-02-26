@@ -27,6 +27,7 @@
 		<g:javascript library="grails.autocomplete"/>
 		<g:javascript library="grails.list"/>
 		<g:javascript library="grails.range"/>
+		<g:javascript library="grails.ajaxloader"/>
 		<g:javascript library="application"/>
 	</body>
 </html>

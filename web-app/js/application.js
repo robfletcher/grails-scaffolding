@@ -12,6 +12,8 @@
 			$('select.many-to-many').grailsAutocomplete();
 		}
 
+		$('body').grailsAjaxLoader();
+
 		// prevent FOUC by only making body visible once document is ready
 		$('body').addClass('ready');
 
