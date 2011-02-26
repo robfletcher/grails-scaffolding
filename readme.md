@@ -4,8 +4,12 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ## Bugs
 
- * Blue mouseover highlight on list table looks wrong
  * Autocompleted results need to re-position horizontally if window resized
+
+## Appearance
+
+ * Blue mouseover highlight on list table looks wrong
+ * Do messages with opaque full with bar like Songkick?
 
 ## Browser issues
 
