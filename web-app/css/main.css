@@ -27,7 +27,7 @@ html * {
 body {
 	background: #fff;
 	color: #333;
-	font-family: Arial,Tahoma,Helvetica,"Helvetica Neue",sans-serif;
+	font-family: Arial,Helvetica,"Helvetica Neue",Tahoma,Verdana,sans-serif;
 	margin: 0 auto;
 	max-width: 1140px;
 	overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 1140px wide */
@@ -440,7 +440,7 @@ th:hover, tr:hover {
 	color: #666;
 	cursor: pointer;
 	display: inline-block;
-	font-family: Arial,Tahoma,Helvetica,"Helvetica Neue",sans-serif;
+	font-family: Arial,Helvetica,"Helvetica Neue",Tahoma,Verdana,sans-serif;
 	font-weight: bold;
 	margin: 0.2em 0 0.2em 0.3em;
 	overflow: visible;
