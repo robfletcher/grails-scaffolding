@@ -144,7 +144,7 @@ img {
 
 .nav a:focus, .nav a:hover {
 	color: #333;
-    text-shadow: 1px 1px 3px #ccc; 
+    text-shadow: 1px 1px 3px #ccc;
 }
 
 .nav a.home {
@@ -162,10 +162,10 @@ img {
 	padding-left: 25px;
 }
 
-/* FORMS */
+/* CREATE/EDIT FORMS AND SHOW PAGES */
 
 fieldset,
-dl {
+.property-list {
 	background-color: #F2F2F2;
 	border: 1px solid #CCCCCC;
 	margin-top: 0.6em;
@@ -175,23 +175,35 @@ dl {
 		 box-shadow: 0 0 0.25em #ccc;
 }
 
-.fieldcontain,
-dt {
+.property-list .fieldcontain {
+	list-style: none;
+	overflow: hidden;
+}
+
+.fieldcontain {
 	margin-top: 1em;
 }
 
-dt {
+.fieldcontain label,
+.fieldcontain .label {
 	color: #666;
-	margin-top: 0.6em;
+	text-align: right;
+	width: 8em;
+}
+
+.fieldcontain .label {
+	float: left;
+}
+
+.fieldcontain .value {
+	display: block;
+	margin-left: 8.75em;
 }
 
 label {
-	color: #666;
 	cursor: pointer;
 	display: inline-block;
 	margin: 0 0.25em 0 0;
-	text-align: right;
-	width: 8em;
 }
 
 input, select, textarea {
@@ -446,7 +458,7 @@ th:hover, tr:hover {
 
 .pagination a:hover, .pagination a:focus {
 	color: #333;
-    text-shadow: 1px 1px 3px #ccc; 
+    text-shadow: 1px 1px 3px #ccc;
 }
 
 .pagination .currentStep {
@@ -486,7 +498,7 @@ th:hover, tr:hover {
 	-moz-box-shadow: none;
  -webkit-box-shadow: none;
 		 box-shadow: none;
-	     text-shadow: 1px 1px 3px #ccc; 
+	     text-shadow: 1px 1px 3px #ccc;
 }
 
 .buttons .delete {
@@ -539,8 +551,9 @@ a.skip {
 		margin: 0 0.5em 0.5em;
 	}
 
-	fieldset, dl {
-		padding: 0.5em;
+	fieldset,
+	.property-list {
+		padding: 0.5em 1em 1em;
 	}
 
 	input, select, textarea {
@@ -558,18 +571,20 @@ a.skip {
 	}
 
 	/* stack form elements */
-	.fieldcontain,
-	dt {
+	.fieldcontain {
 		margin-top: 0.6em;
 	}
 
-	label {
+	.fieldcontain label,
+	.fieldcontain .label,
+	.fieldcontain .value {
 		display: block;
+		float: none;
 		margin: 0 0 0.25em 0;
 		text-align: left;
 		width: auto;
 	}
-
+	
 	.errors ul,
 	.message p {
 		margin: 0.5em;
