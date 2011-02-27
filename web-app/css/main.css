@@ -128,14 +128,19 @@ img {
 	display: block;
 	float: left;
 	list-style-type: none;
-	padding: 0.25em 0.7em;
+	margin-right: 0.5em;
+	padding: 0;
 }
 
 .nav a {
 	color: #666;
 	display: block;
 	font-weight: bold;
+	padding: 0.25em 0.7em;
 	text-decoration: none;
+     -moz-border-radius: 1em; 
+  -webkit-border-radius: 1em; 
+          border-radius: 1em; 
 }
 
 .nav a:active, .nav a:visited {
@@ -143,23 +148,27 @@ img {
 }
 
 .nav a:focus, .nav a:hover {
-	color: #333;
-    text-shadow: 1px 1px 3px #ccc;
+	background-color: #999;
+	color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+.nav a.home, .nav a.list, .nav a.create {
+	background-position: 0.7em center;
+	background-repeat: no-repeat;
+	text-indent: 25px;
 }
 
 .nav a.home {
-	background: url(../images/skin/house.png) center left no-repeat;
-	padding-left: 25px;
+	background-image: url(../images/skin/house.png);
 }
 
 .nav a.list {
-	background: url(../images/skin/database_table.png) center left no-repeat;
-	padding-left: 25px;
+	background-image: url(../images/skin/database_table.png);
 }
 
 .nav a.create {
-	background: url(../images/skin/database_add.png) center left no-repeat;
-	padding-left: 25px;
+	background-image: url(../images/skin/database_add.png);
 }
 
 /* CREATE/EDIT FORMS AND SHOW PAGES */
