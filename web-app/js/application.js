@@ -28,8 +28,8 @@
 		$('body').addClass('ready');
 
 		// focus first field, or preferentially first error field (this only works once page content is visible)
-		$(':input:not(:hidden):first').focus();
-		$('.error:first').find('input, select, textarea').focus();
+		if ($('.error').length == 0) $(':input:not(:hidden):first').focus();
+		else $('.error:first :input').focus();
 
 	});
 })(jQuery);
