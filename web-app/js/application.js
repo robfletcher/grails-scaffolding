@@ -35,7 +35,7 @@
 		$('body').addClass('ready');
 
 		// focus first field, or preferentially first error field (this only works once page content is visible)
-		if ($('.error').length == 0) $(':input:not(:hidden):first').focus();
+		if ($('.error').length == 0) $(':input:not(:hidden):not(:button):not(:submit):not(:reset):first').focus();
 		else $('.error:first :input').focus();
 
 	});
