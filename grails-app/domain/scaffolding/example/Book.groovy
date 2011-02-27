@@ -20,7 +20,7 @@ class Book {
 		authors minSize: 1
 		yearOfPublication blank: false, matches: /\d{4}/
 		averageRating range: 1..5
-		numberOfPages nullable: true
+		numberOfPages nullable: true, min: 0
 		genre nullable: true
 		ebook()
     }

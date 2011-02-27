@@ -55,4 +55,12 @@ class InputTypesSpec extends NoJavascriptSpec {
 		$("#genre option")*.@value == [""] + Genre.values()*.toString()
 	}
 
+	def "numeric input with a min constraint has a min attribute"() {
+		given:
+		to BookCreatePage
+
+		expect:
+		$("#numberOfPages").@min == "0"
+	}
+
 }
