@@ -187,17 +187,17 @@ fieldset,
 }
 
 .fieldcontain label,
-.fieldcontain .label {
+.fieldcontain .property-label {
 	color: #666;
 	text-align: right;
 	width: 8em;
 }
 
-.fieldcontain .label {
+.fieldcontain .property-label {
 	float: left;
 }
 
-.fieldcontain .value {
+.fieldcontain .property-value {
 	display: block;
 	margin-left: 8.75em;
 }
@@ -578,8 +578,8 @@ a.skip {
 	}
 
 	.fieldcontain label,
-	.fieldcontain .label,
-	.fieldcontain .value {
+	.fieldcontain .property-label,
+	.fieldcontain .property-value {
 		display: block;
 		float: none;
 		margin: 0 0 0.25em 0;
