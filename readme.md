@@ -5,14 +5,18 @@ This is a sample project for prototyping changes to Grails scaffolding.
 ## Bugs
 
  * Autocompleted results need to re-position horizontally if window resized
+ * Text in elements added by JS needs to be i18nized
 
 ## Appearance
 
  * Blue mouseover highlight on list table looks wrong
  * Do messages with opaque full with bar like Songkick?
+ * Do something more interesting with h1 tags?
+ * Move mandatory indicator to right of form field (when not stacked)
 
 ## Browser issues
 
+ * Appears to be a double margin on left of button bar inputs in IE6 & 7
  * Fonts look terrible in IE8 (oddly they look OK in IE6 & IE7)
  * Left padding on buttons is wrong on iPhone (might just be xcode emulator)
  * Use `@media screen and (monochrome)` to optimise rendering on Kindle
@@ -31,7 +35,12 @@ This is a sample project for prototyping changes to Grails scaffolding.
  * Radio groups for enums (use select when more than x values?)
  * Dates using type="date" with 3-field JS enhanced version? Datepicker?
 
-### Enhanced experience
+## Errors & messages
+
+ * Display errors & messages in traditional position when no-js
+ * tooltip inputs with error message (on focus?)
+
+## Enhanced experience
 
  * History manipulation breaks if you go back to the list page after paginating/sorting [GitHub](https://github.com/robfletcher/grails-scaffolding/issues/#issue/2)
  * Light-box show, edit, create direct from list page

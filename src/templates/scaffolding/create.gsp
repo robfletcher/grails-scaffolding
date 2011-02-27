@@ -19,7 +19,7 @@
         <div id="create-${domainClass.propertyName}" class="content scaffold-create" role="main">
             <h1><g:message code="default.create.label" args="[entityName]" /></h1>
             <g:if test="\${flash.message}">
-            <div class="message" role="alert">\${flash.message}</div>
+            <div class="message" role="status"><p>\${flash.message}</p></div>
             </g:if>
             <g:hasErrors bean="\${${propertyName}}">
             <div class="errors" role="alert">
@@ -46,6 +46,9 @@
 						<label for="${p.name}"><g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}" /><% if (required) { %><span class="required-indicator">*</span><% } %></label>
 						${renderEditor(p)}
 					</div>
+					<g:hasErrors bean="\${${propertyName}}" field="${p.name}">
+						<div class="error"><g:renderErrors bean="\${${propertyName}}" field="${p.name}"/></div>
+					</g:hasErrors>
 				<%  }   } %>
 				</fieldset>
                 <fieldset class="buttons">

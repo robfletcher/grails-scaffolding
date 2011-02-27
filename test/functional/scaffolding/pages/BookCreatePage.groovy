@@ -20,4 +20,8 @@ class BookCreatePage extends Page {
 		book."$fieldName"().parent(".fieldcontain").hasClass("required")
 	}
 
+	String errorFor(String fieldName) {
+		book."$fieldName"().parent(".fieldcontain").next(".error").find("li").text()
+	}
+
 }

@@ -24,6 +24,13 @@
 		// respond to AJAX events with a visual indicator
 		$('body').grailsAjaxLoader();
 
+		// put close button on error and message alerts
+		$('.errors, .message').append('<a href="#" class="dismiss-alert" title="close">&times;</a>');
+		$('a.dismiss-alert').live('click', function() {
+			$(this).parent('.errors, .message').animate({height: 'hide'}, 'fast');
+			return false;
+		});
+
 		// prevent FOUC by only making body visible once document is ready
 		$('body').addClass('ready');
 

@@ -19,7 +19,7 @@
         <div id="show-${domainClass.propertyName}" class="content scaffold-show" role="main">
             <h1><g:message code="default.show.label" args="[entityName]" /></h1>
             <g:if test="\${flash.message}">
-            <div class="message">\${flash.message}</div>
+            <div class="message" role="status"><p>\${flash.message}</p></div>
             </g:if>
 			<dl>
 			<%  excludedProps = Event.allEvents.toList() << 'id' << 'version'
