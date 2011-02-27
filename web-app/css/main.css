@@ -567,6 +567,10 @@ output.range-output {
 }
 
 /* autocompleter for many-to-one and many-to-many */
+input[type="search"] {
+	-webkit-appearance: textfield;
+}
+
 ul.autocomplete-selected {
 	list-style-type: none;
 	padding: 0;
