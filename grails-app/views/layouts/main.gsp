@@ -9,11 +9,11 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title><g:layoutTitle default="Grails"/></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}"/>
+		<r:use modules="modernizr,jquery,scaffolding"/>
+		<r:layoutResources/>
 		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/ui-lightness/jquery-ui.css"/>
 		<link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon"/>
 		<link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
-		<g:javascript src="modernizr-1.6.min.js"/>
 		<g:layoutHead/>
 	</head>
 	<body>
@@ -22,12 +22,7 @@
 		<div class="footer" role="contentinfo">
 			<p><g:message code="meta.app.version" default="Version: {0}" args="[meta(name: 'app.version')]"/></p>
 		</div>
-		<g:javascript src="jquery-1.5.min.js"/>
+		<r:layoutResources/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
-		<g:javascript library="grails.autocomplete"/>
-		<g:javascript library="grails.list"/>
-		<g:javascript library="grails.range"/>
-		<g:javascript library="grails.ajaxloader"/>
-		<g:javascript library="application"/>
 	</body>
 </html>
