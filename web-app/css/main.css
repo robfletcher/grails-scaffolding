@@ -150,7 +150,14 @@ img {
 .nav a:focus, .nav a:hover {
 	background-color: #999;
 	color: #fff;
+	outline: none;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+.no-borderradius .nav a:focus, .no-borderradius .nav a:hover {
+	background-color: transparent;
+	color: #444;
+	text-decoration: underline;
 }
 
 .nav a.home, .nav a.list, .nav a.create {
