@@ -10,9 +10,9 @@
 			<key>name</key>
 			<string>grails-scaffolding</string>
 			<key>regexFileFilter</key>
-			<string>!.*\.(log|iml|script)|devDB.properties</string>
+			<string>!.*\.(log|iml|script|DS_Store)|devDB.properties|CodeNarcReport.html</string>
 			<key>regexFolderFilter</key>
-			<string>!.*/(\.[^/]*|target|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$</string>
+			<string>!.*/(\.[^/]*|out|target|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$</string>
 			<key>selected</key>
 			<true/>
 			<key>sourceDirectory</key>
@@ -26,6 +26,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{477, 75}, {1319, 1268}}</string>
+	<string>{{10, 4}, {1227, 874}}</string>
 </dict>
 </plist>

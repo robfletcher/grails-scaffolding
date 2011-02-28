@@ -1,7 +1,7 @@
 package scaffolding
 
-import scaffolding.example.Author
 import spock.lang.Stepwise
+import scaffolding.example.*
 import scaffolding.pages.*
 
 @Stepwise
@@ -9,6 +9,7 @@ class NoJavascriptScaffoldingSpec extends NoJavascriptSpec {
 
 	def cleanupSpec() {
 		Author.withNewSession { session ->
+			Book.list()*.delete()
 			Author.list()*.delete()
 			session.flush()
 		}

@@ -22,12 +22,12 @@ class ShowPageSpec extends NoJavascriptSpec {
 		go "/book/show/$book.id"
 
 		then: "non-null values are displayed"
-		$("dt", text: "Title").next("dd").text() == "Neuromancer"
+		$("#title-label").next(".property-value").text() == "Neuromancer"
 
 		and: "null values are not displayed"
-		$("dt", text: "Authors").empty
-		$("dt", text: "Genre").empty
-		$("dt", text: "Number Of Pages").empty
+		$("#authors-label").empty
+		$("#genre-label").empty
+		$("#numberOfPages-label").empty
 	}
 
 	def "fields are displayed when they have values"() {
@@ -41,10 +41,10 @@ class ShowPageSpec extends NoJavascriptSpec {
 		go "/book/show/$book.id"
 
 		then: "non-null values are displayed"
-		$("dt", text: "Title").next("dd").text() == "Count Zero"
-		$("dt", text: "Authors").next("dd").text() == "William Gibson"
-		$("dt", text: "Genre").next("dd").text() == "scifi"
-		$("dt", text: "Number Of Pages").next("dd").text() == "336"
+		$("#title-label").next(".property-value").text() == "Count Zero"
+		$("#authors-label").next(".property-value").text() == "William Gibson"
+		$("#genre-label").next(".property-value").text() == "scifi"
+		$("#numberOfPages-label").next(".property-value").text() == "336"
 	}
 
 }

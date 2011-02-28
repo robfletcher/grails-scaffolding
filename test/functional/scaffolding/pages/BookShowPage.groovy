@@ -1,6 +1,5 @@
 package scaffolding.pages
 
-import java.text.SimpleDateFormat
 import geb.*
 
 class BookShowPage extends Page {
@@ -8,7 +7,7 @@ class BookShowPage extends Page {
 	static url = "/book/show"
 	static at = { title == "Show Book" }
 	static content = {
-		book { module BookDetail, $("dl") }
+		book { module BookDetail, $("ol.book") }
 		editButton(to: BookEditPage) { $(".buttons .edit") }
 		deleteButton(to: BookListPage) { $(".buttons .delete") }
 	}
@@ -17,20 +16,17 @@ class BookShowPage extends Page {
 class BookDetail extends Module {
 
 	static content = {
-		id { $("dt", text: "Id").next("dd").text().toLong() }
-		title { $("dt", text: "Title").next("dd").text() }
+		title { $("#title-label").next(".property-value").text() }
 		authors {
-			def node = $("dt", text: "Authors")
-			def definitions = []
-			while (node.next().is("dd")) {
-				definitions << node.next().text()
+			def node = $("#authors-label").next()
+			def values = []
+			while (node.hasClass("property-value")) {
+				values << node.text()
 				node = node.next()
 			}
-			definitions
+			values
 		}
-		yearOfPublication { $("dt", text: "Year Of Publication").next("dd").text().toInteger() }
-		dateCreated { new SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z").parse($("dt", text: "Date Created").text()) }
-		lastUpdated { new SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z").parse($("dt", text: "Last Updated").text()) }
+		yearOfPublication { $("#yearOfPublication-label").next(".property-value").text().toInteger() }
 	}
 	
 }

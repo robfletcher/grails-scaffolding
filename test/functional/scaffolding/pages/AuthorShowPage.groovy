@@ -7,7 +7,7 @@ class AuthorShowPage extends Page {
 	static url = "/author/show"
 	static at = { title == "Show Author" }
 	static content = {
-		author { module AuthorDetail, $("dl") }
+		author { module AuthorDetail, $("ol.author") }
 		deleteButton(to: AuthorListPage) { $("input.delete") }
 	}
 
@@ -15,7 +15,6 @@ class AuthorShowPage extends Page {
 
 class AuthorDetail extends Module {
 	static content = {
-		id { $("dt", text: "Id").next("dd").text().toLong() }
-		name { $("dt", text: "Name").next("dd").text() }
+		name { $("#name-label").next(".property-value").text() }
 	}
 }
