@@ -57,6 +57,7 @@ environments {
     }
     development {
         grails.serverURL = "http://localhost:8080/${appName}"
+		grails.resources.debug = true
     }
     test {
         grails.serverURL = "http://localhost:8080/${appName}"
