@@ -475,18 +475,21 @@ th:hover, tr:hover {
 .pagination a,
 .pagination .currentStep {
 	color: #666;
-	margin: 0 0.3em;
-	padding: 0.2em;
+	display: inline-block;
+	margin: 0 0.1em;
+	padding: 0.25em 0.7em;
 	text-decoration: none;
+     -moz-border-radius: 1em; 
+  -webkit-border-radius: 1em; 
+          border-radius: 1em; 
 }
 
-.pagination a:hover, .pagination a:focus {
-	color: #333;
-    text-shadow: 1px 1px 3px #ccc;
-}
-
+.pagination a:hover, .pagination a:focus,
 .pagination .currentStep {
-	font-weight: bold;
+	background-color: #999;
+	color: #fff;
+	outline: none;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 }
 
 /* ACTION BUTTONS */
