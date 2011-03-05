@@ -21,7 +21,7 @@ class BookCreatePage extends Page {
 	}
 
 	String errorFor(String fieldName) {
-		book."$fieldName"().parent(".fieldcontain").next(".error").find("li").text()
+		book."$fieldName"().next(".error").find("li").text()
 	}
 
 }
