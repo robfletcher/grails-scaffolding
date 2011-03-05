@@ -365,15 +365,14 @@ a.dismiss-alert:hover, a.dismiss-alert:focus {
 
 /* form fields with errors */
 
-.error ul {
+.fieldcontain .error {
 	color: #ff4949;
-	list-style-type: none;
-	margin-left: 8.75em;
-	margin-top: 0.25em;
+	margin: 0.25em 0 0 8.75em;
 }
 
-.error li {
+.error ul {
 	font-size: 0.8em;
+	list-style-type: none;
 }
 
 /* TABLES */
@@ -560,4 +559,32 @@ th:hover, tr:hover {
 a.skip {
 	position: absolute;
 	left: -9999px;
+}
+
+/* ERROR TOOLTIPS */
+.fieldcontain .error-tooltip {
+	margin: 0;
+	max-width: 20em;
+	position: absolute;
+	background-color: rgba(255, 0, 0, 0.5);
+	color: #ffffff;
+	display: inline-block;
+	padding: 0.5em;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+	vertical-align: middle;
+	-moz-border-radius: 0.5em;
+ -webkit-border-radius: 0.5em;
+		 border-radius: 0.5em;
+}
+
+.fieldcontain .tooltip-pointer {
+	width: 0;
+	height: 0;
+	border-top: 0.5em solid transparent;
+	border-bottom: 0.5em solid transparent;
+	border-right: 0.5em solid rgba(255, 0, 0, 0.5);
+	border-left: 0.5em solid transparent;
+	position: absolute;
+	left: -1em;
+	top: 50%;
 }
