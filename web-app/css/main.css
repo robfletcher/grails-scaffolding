@@ -284,6 +284,7 @@ input:focus, select:focus, textarea:focus {
 	left: 0;
 	top: 0;
 	width: 100%;
+	z-index: 1;
 }
 
 .ie6 .errors,
