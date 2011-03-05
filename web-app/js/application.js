@@ -31,7 +31,7 @@
 			return false;
 		});
 
-		$('.fieldcontain .error').grailsErrors();
+		$('.field-error').grailsErrors();
 
 		// prevent FOUC by only making body visible once document is ready
 		$('body').addClass('ready');

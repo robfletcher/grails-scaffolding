@@ -49,7 +49,7 @@
 						<label for="${p.name}"><g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}" /><% if (required) { %><span class="required-indicator">*</span><% } %></label>
 						${renderEditor(p)}
 						<g:hasErrors bean="\${${propertyName}}" field="${p.name}">
-							<div class="error"><g:renderErrors bean="\${${propertyName}}" field="${p.name}"/></div>
+							<div class="field-error"><g:renderErrors bean="\${${propertyName}}" field="${p.name}"/></div>
 						</g:hasErrors>
 					</div>
 				<%  }   } %>

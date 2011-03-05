@@ -3,6 +3,14 @@
 	 * Turns field-specific errors into tooltips shown on focus.
 	 */
 	$.fn.grailsErrors = function(options) {
+		// settings that can be overridden with arguments
+		var settings = {
+			hide: true // if true, hides the tooltips until the corresponding input is focused
+		};
+		if (options) {
+			$.extend(settings, options);
+		}
+
 		this.each(function() {
 			// grab the error box and its input
 			var errorBox = $(this);
@@ -30,12 +38,14 @@
 			});
 
 			// hide the error box until its input is focused
-			errorBox.hide();
-			input.focus(function() {
-				errorBox.show();
-			}).blur(function() {
+			if (settings.hide) {
 				errorBox.hide();
-			});
+				input.focus(function() {
+					errorBox.show();
+				}).blur(function() {
+					errorBox.hide();
+				});
+			}
 		});
 	};
 })(jQuery);

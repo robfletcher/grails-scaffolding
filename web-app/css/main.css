@@ -192,6 +192,7 @@ fieldset,
 	border: 1px solid #CCCCCC;
 	margin-top: 0.6em;
 	padding: 0.3em 1.8em 1.25em;
+	position: relative;
 	zoom: 1;
 	-moz-box-shadow: 0 0 0.25em #ccc;
  -webkit-box-shadow: 0 0 0.25em #ccc;
@@ -366,12 +367,23 @@ a.dismiss-alert:hover, a.dismiss-alert:focus {
 
 /* form fields with errors */
 
-.fieldcontain .error {
+.error input, .error select, .error textarea {
+	background-color: rgba(255, 0, 0, 0.1);
+}
+
+.error input:focus, .error select:focus, .error textarea:focus {
+	background-color: rgba(255, 127, 127, 0.1);
+	-moz-box-shadow: 0 0 0.5em #ffaaaa;
+ -webkit-box-shadow: 0 0 0.5em #ffaaaa;
+		 box-shadow: 0 0 0.5em #ffaaaa;
+}
+
+.field-error {
 	color: #ff4949;
 	margin: 0.25em 0 0 8.75em;
 }
 
-.error ul {
+.field-error ul {
 	font-size: 0.8em;
 	list-style-type: none;
 }
@@ -563,29 +575,33 @@ a.skip {
 }
 
 /* ERROR TOOLTIPS */
-.fieldcontain .error-tooltip {
+.error-tooltip {
 	margin: 0;
 	max-width: 20em;
 	position: absolute;
 	background-color: rgba(255, 0, 0, 0.5);
 	color: #ffffff;
-	display: inline-block;
 	padding: 0.5em;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
-	vertical-align: middle;
 	-moz-border-radius: 0.5em;
  -webkit-border-radius: 0.5em;
 		 border-radius: 0.5em;
 }
 
-.fieldcontain .tooltip-pointer {
+.tooltip-pointer {
 	width: 0;
 	height: 0;
-	border-top: 0.5em solid transparent;
-	border-bottom: 0.5em solid transparent;
-	border-right: 0.5em solid rgba(255, 0, 0, 0.5);
-	border-left: 0.5em solid transparent;
+	border: 0.5em solid transparent;
+	border-right-color: rgba(255, 0, 0, 0.5);
 	position: absolute;
 	left: -1em;
-	top: 50%;
 }
+
+.no-rgba .error-tooltip {
+	background-color: #f87878;
+}
+
+.no-rgba .tooltip-pointer {
+	border-right-color: #f87878;
+}
+
