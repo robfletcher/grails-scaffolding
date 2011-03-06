@@ -16,7 +16,8 @@
 			var errorBox = $(this);
 			var input = errorBox.prev(':input');
 
-			errorBox.addClass('error-tooltip');
+			errorBox.addClass('error-tooltip').attr('aria-role', 'tooltip');
+			input.attr('aria-invalid', 'true');
 
 			// insert a pointer between the input and the tooltip
 			var pointer = $('<div class="tooltip-pointer"/>');
@@ -39,11 +40,11 @@
 
 			// hide the error box until its input is focused
 			if (settings.hide) {
-				errorBox.hide();
+				errorBox.hide().attr('aria-hidden', true);
 				input.focus(function() {
-					errorBox.show();
+					errorBox.show().removeAttr('aria-hidden');
 				}).blur(function() {
-					errorBox.hide();
+					errorBox.hide().attr('aria-hidden', true);
 				});
 			}
 		});
