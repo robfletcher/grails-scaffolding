@@ -2,7 +2,6 @@ package scaffolding
 
 import grails.plugin.geb.GebSpec
 import scaffolding.pages.*
-import scaffolding.example.Book
 
 class ValidationSpec extends GebSpec {
 
@@ -62,10 +61,7 @@ class ValidationSpec extends GebSpec {
 		at BookCreatePage
 
 		and: "errors are displayed in an alert dialog"
-		errors == [
-				"Property [title] of class [class scaffolding.example.Book] cannot be blank",
-				"Property [yearOfPublication] of class [class scaffolding.example.Book] cannot be blank"
-		]
+		errors == "Book could not be created. Please correct any errors and try again."
 
 		and: "errors are displayed next to the fields themselves"
 		hasError("title")
@@ -91,11 +87,7 @@ class ValidationSpec extends GebSpec {
 		at BookEditPage
 
 		and: "errors are displayed in an alert dialog"
-		errors == [
-				"Property [authors] of class [class scaffolding.example.Book] with value [[]] is less than the minimum size of [1]",
-				"Property [title] of class [class scaffolding.example.Book] cannot be blank",
-				"Property [yearOfPublication] of class [class scaffolding.example.Book] cannot be blank"
-		]
+		errors ==~ /Book \d+ could not be created. Please correct any errors and try again./
 
 		and: "errors are displayed next to the fields themselves"
 		hasError("title")

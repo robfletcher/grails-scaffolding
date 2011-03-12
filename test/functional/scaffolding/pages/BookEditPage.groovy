@@ -10,7 +10,7 @@ class BookEditPage extends Page {
 		book { $("form") }
 		updateButton(to: BookShowPage) { $("input.save") }
 		deleteButton(to: BookListPage) { $("input.delete") }
-		errors(required: false) { $(".errors li")*.text() }
+		errors(required: false) { $(".errors").text() }
 	}
 
 	boolean hasError(String fieldName) {

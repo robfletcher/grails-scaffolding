@@ -9,7 +9,7 @@ class BookCreatePage extends Page {
 	static content = {
 		book { $("form") }
 		createButton(to: BookShowPage) { $("input.save") }
-		errors(required: false) { $(".errors li")*.text() }
+		errors(required: false) { $(".errors").text() }
 	}
 
 	boolean hasError(String fieldName) {
