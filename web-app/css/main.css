@@ -504,6 +504,13 @@ th:hover, tr:hover {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 }
 
+.no-borderradius .pagination a:hover, .no-borderradius .pagination a:focus,
+.no-borderradius .pagination .currentStep {
+	background-color: transparent;
+	color: #444;
+	text-decoration: underline;
+}
+
 /* ACTION BUTTONS */
 
 .buttons {
