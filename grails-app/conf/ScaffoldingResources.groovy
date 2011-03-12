@@ -15,6 +15,7 @@ modules = {
 		resource 'js/grails.list.js'
 		resource 'js/grails.range.js'
 		resource 'js/grails.errors.js'
+		resource 'js/grails.alerts.js'
         resource 'js/application.js'
     }
 }
