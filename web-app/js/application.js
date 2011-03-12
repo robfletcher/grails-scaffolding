@@ -25,11 +25,7 @@
 		$('body').grailsAjaxLoader();
 
 		// put close button on error and message alerts
-		$('.errors, .message').hide().append('<a href="#" class="dismiss-alert" title="close">&times;</a>').animate({height: 'show'}, 'fast');
-		$('a.dismiss-alert').live('click', function() {
-			$(this).parent('.errors, .message').animate({height: 'hide'}, 'fast');
-			return false;
-		});
+		$('.errors, .message').grailsAlert();
 
 		$('.field-error').grailsErrors();
 
