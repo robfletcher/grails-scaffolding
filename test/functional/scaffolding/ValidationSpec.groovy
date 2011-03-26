@@ -16,10 +16,10 @@ class ValidationSpec extends GebSpec {
 
 		expect: "mandatory fields are marked with a mandatory indicator"
 		isRequired("title")
+		isRequired("yearOfPublication")
 
 		and: "non mandatory fields do not have a mandatory indicator"
 		!isRequired("authors")
-		isRequired("yearOfPublication")
 
 		and: "no mandatory indicator is displayed on a checkbox"
 		!isRequired("ebook")
@@ -36,10 +36,10 @@ class ValidationSpec extends GebSpec {
 		expect: "mandatory fields are marked with a mandatory indicator"
 		at BookEditPage
 		isRequired("title")
+		isRequired("yearOfPublication")
 
 		and: "non mandatory fields do not have a mandatory indicator"
 		!isRequired("authors")
-		isRequired("yearOfPublication")
 
 		and: "no mandatory indicator is displayed on a checkbox"
 		!isRequired("ebook")

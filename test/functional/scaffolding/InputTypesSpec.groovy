@@ -1,66 +1,107 @@
 package scaffolding
 
-import scaffolding.example.Genre
-import scaffolding.pages.BookCreatePage
+import grails.util.*
 import spock.lang.*
-import scaffolding.pages.AuthorCreatePage
 
 class InputTypesSpec extends NoJavascriptSpec {
 
+	def setup() {
+		go "/thing/create"
+	}
+	
 	@Unroll("the #input input is type #expectedType")
 	def "appropriate input types are used"() {
-		given:
-		to page
-
 		expect:
 		$(input).is("input")
 		$(input).@type == expectedType
 
 		where:
-		page             | input            | expectedType
-		BookCreatePage   | "#title"         | "text"
-		BookCreatePage   | "#numberOfPages" | "number"
-		BookCreatePage   | "#ebook"         | "checkbox"
-		AuthorCreatePage | "#email"         | "email"
-		AuthorCreatePage | "#website"       | "url"
+		input       | expectedType
+		"#name"     | "text"
+		"#email"    | "email"
+		"#website"  | "url"
+		"#password" | "password"
+		"#number"   | "number"
+		"#file"     | "file"
+		"#aBoolean" | "checkbox"
 	}
-
-	@Ignore("only valid for webkit and opera")
-	def "numeric properties with a range constraint are rendered as range inputs"() {
-		given:
-		to BookCreatePage
-
+	
+	@Unroll("the #input input is a #expectedType")
+	def "appropriate input tags are used"() {
 		expect:
-		$("#averageRating").is("input")
-		$("#averageRating").@type == "range"
-		$("#averageRating").@min == "1"
-		$("#averageRating").@max == "5"
+		$(input).is(expectedType)
+
+		where:
+		input               | expectedType
+		"#longText"         | "textarea"
+		"#optionalLongText" | "textarea"
 	}
-
-	def "many-to-many input is rendered as a multiple select"() {
-		given:
-		to BookCreatePage
-
+	
+	@Unroll("#input is a select with the options #options")
+	def "select inputs have the correct options"() {
 		expect:
-		$("#authors").is("select")
-		$("#authors").@multiple == "multiple"
+		$(input).is("select")
+		$(input).find("option")*.text() == options
+		
+		where:
+		input                 | options
+		"#inListText"         | ["catflap", "rubberplant", "marzipan"]
+		"#optionalInListText" | ["", "catflap", "rubberplant", "marzipan"]
+		"#numberInRange"      | ["1", "2", "3", "4", "5"]
+		"#numberInList"       | ["1", "2", "3", "5"]
+		"#anEnum"             | Environment.values()*.toString()
+		"#optionalEnum"       | [""] + Environment.values()*.toString()
 	}
-
-	def "enum input is a select"() {
-		given:
-		to BookCreatePage
-
+	
+	@Unroll("the #input input has #attribute='#value'")
+	def "inputs have correct attributes"() {
 		expect:
-		$("#genre").is("select")
-		$("#genre option")*.@value == [""] + Genre.values()*.toString()
+		$(input).@"$attribute" == value
+		
+		where:
+		input                  | attribute   | value
+		"#name"                | "maxlength" | "40"
+		"#numberWithMin"       | "min"       | "0"
+		"#numberWithMax"       | "max"       | "10"
+		"#numberWithMinAndMax" | "min"       | "1"
+		"#numberWithMinAndMax" | "max"       | "100"
 	}
-
-	def "numeric input with a min constraint has a min attribute"() {
-		given:
-		to BookCreatePage
-
+	
+	@Unroll("the #input input has the #attribute attribute")
+	def "inputs have correct boolean attributes"() {
 		expect:
-		$("#numberOfPages").@min == "0"
+		!($(input).@"$attribute" in [null, "", false, "false"]) // drivers handle boolean attributes differently
+		
+		and:
+		$(input).parent().hasClass("required")
+		
+		where:
+		input            | attribute
+		"#name"          | "required"
+		"#email"         | "required"
+		"#inListText"    | "required"
+		"#number"        | "required"
+		"#numberInRange" | "required"
+		"#numberInList"  | "required"
+		"#anEnum"        | "required"
 	}
-
+	
+	@Unroll("the #input input does not have the #attribute attribute")
+	def "inputs do not have inappropriate boolean attributes"() {
+		expect:
+		$(input).@"$attribute" in [null, "", false, "false"] // drivers handle boolean attributes differently
+		
+		and:
+		!$(input).parent().hasClass("required")
+		
+		where:
+		input                 | attribute
+		"#optionalText"       | "required"
+		"#website"            | "required"
+		"#optionalInListText" | "required"
+		"#file"               | "required"
+		"#optionalNumber"     | "required"
+		"#aBoolean"           | "required"
+		"#optionalEnum"       | "required"
+	}
 }

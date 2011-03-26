@@ -29,9 +29,9 @@ This is a sample project for prototyping changes to Grails scaffolding.
 ## Forms
 
  * put required class (and HTML5 attribute) on the input itself rather than the container
- * use data-constraint-range="0..5" etc. so we can enhance and validate inputs based on constraints
+ * use `data-constraint-range="0..5"` etc. so we can enhance and validate inputs based on constraints
  * use size attribute where appropriate
- * required="required" on mandatory fields
+ * add `pattern` attribute if text field has a `matches` constraint
  * Radio groups for enums (use select when more than x values?)
  * Dates using type="date" with 3-field JS enhanced version? Datepicker?
 

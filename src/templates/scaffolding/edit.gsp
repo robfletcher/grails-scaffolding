@@ -42,15 +42,12 @@
 						if (hasHibernate) {
 							cp = domainClass.constrainedProperties[p.name]
 							display = (cp?.display ?: true)
-							required = (cp ? !(cp.propertyType in [boolean, Boolean]) && !cp.nullable : false)
+							required = (cp ? !(cp.propertyType in [boolean, Boolean]) && !cp.nullable && (cp.propertyType != String || !cp.blank) : false)
 						}
 						if (display) { %>
 					<div class="fieldcontain \${hasErrors(bean: ${propertyName}, field: '${p.name}', 'error')} ${required ? 'required' : ''}">
 						<label for="${p.name}"><g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}" /><% if (required) { %><span class="required-indicator">*</span><% } %></label>
 						${renderEditor(p)}
-						<g:hasErrors bean="\${${propertyName}}" field="${p.name}">
-							<div class="field-error" aria-role="alert"><g:renderErrors bean="\${${propertyName}}" field="${p.name}"/></div>
-						</g:hasErrors>
 					</div>
 				<%  }   } %>
 				</fieldset>
