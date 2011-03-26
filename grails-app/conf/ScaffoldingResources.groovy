@@ -2,9 +2,6 @@ modules = {
 	'modernizr' {
 		resource url:'js/modernizr-1.6.min.js', disposition: 'head'
 	}
-    'jquery' { 
-        resource url:'js/jquery-1.5.min.js'
-    }
     'scaffolding' {
 		dependsOn 'modernizr', 'jquery'
         resource 'css/main.css'
