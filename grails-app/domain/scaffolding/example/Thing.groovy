@@ -12,6 +12,7 @@ class Thing {
 	String email
 	String website
 	String password
+	String textWithMatches
 	// textareas
 	String longText
 	String optionalLongText
@@ -39,6 +40,7 @@ class Thing {
 		email email: true, blank: false
 		website url: true
 		password password: true
+		textWithMatches matches: /\w+/
 		inListText inList: ["catflap", "rubberplant", "marzipan"], blank: false
 		optionalInListText inList: ["catflap", "rubberplant", "marzipan"]
 		longText maxSize: TEXTAREA_SIZE, blank: false

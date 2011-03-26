@@ -12,6 +12,7 @@ class InputValuesSpec extends NoJavascriptSpec {
 		email: "whoever@whatever.com",
 		website: "http://whatever.com/",
 		password: "whatever",
+		textWithMatches: "whatever",
 		longText: "whatever",
 		optionalLongText: "whatever",
 		number: 5,

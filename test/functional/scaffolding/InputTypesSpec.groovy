@@ -61,6 +61,7 @@ class InputTypesSpec extends NoJavascriptSpec {
 		where:
 		input                  | attribute   | value
 		"#name"                | "maxlength" | "40"
+		"#textWithMatches"     | "pattern"   | /\w+/
 		"#numberWithMin"       | "min"       | "0"
 		"#numberWithMax"       | "max"       | "10"
 		"#numberWithMinAndMax" | "min"       | "1"
