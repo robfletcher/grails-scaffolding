@@ -32,7 +32,7 @@
         sb << '<g:select name="' << property.name << '"'
  		sb << ' from="${' << "${property.type.name}?.values()" << '}"'
  		sb << ' keys="${' << property.type.name << '.values()*.name()}"'
-		if (isRequired()) sb << ' required="required"'
+		if (isRequired()) sb << ' required=""'
 		sb << ' value="${' << "${domainInstance}?.${property.name}?.name()" << '}"'
 		sb << renderNoSelection(property)
 		sb << '/>'
@@ -48,13 +48,13 @@
                 sb << '<g:textArea name="' << property.name << '"'
  				sb << ' cols="40" rows="5"'
 				if (cp.maxSize) sb << ' maxlength="' << cp.maxSize << '"'
-				if (isRequired()) sb << ' required="required"'
+				if (isRequired()) sb << ' required=""'
  				sb << ' value="${' << "${domainInstance}?.${property.name}" << '}"'
 				sb << '/>'
             } else if (cp.inList) {
 				sb << '<g:select name="' << property.name << '"'
 				sb << ' from="${' << "${domainInstance}.constraints.${property.name}.inList" << '}"'
-				if (isRequired()) sb << ' required="required"'
+				if (isRequired()) sb << ' required=""'
 				sb << ' value="${' << "${domainInstance}?.${property.name}" << '}"'
 				sb << ' valueMessagePrefix="' << "${domainClass.propertyName}.${property.name}" << '"'
 				sb << renderNoSelection(property)
@@ -73,7 +73,7 @@
 				if (cp.maxSize) sb << ' maxlength="' << cp.maxSize << '"'
 				if (!cp.editable) sb << ' readonly="readonly"'
 				if (cp.matches) sb << ' pattern="${' << "${domainInstance}.constraints.${property.name}.matches" << '}"'
-				if (isRequired()) sb << ' required="required"'
+				if (isRequired()) sb << ' required=""'
 				sb << ' value="${' << "${domainInstance}?.${property.name}" << '}"'
 				sb << '/>'
 			}
@@ -94,7 +94,7 @@
  			sb << ' name="' << property.name << '.id"'
  			sb << ' from="${' << property.type.name << '.list()}"'
  			sb << ' optionKey="id"'
-			if (isRequired()) sb << ' required="required"'
+			if (isRequired()) sb << ' required=""'
  			sb << ' value="${' << "${domainInstance}?.${property.name}" << '?.id}"'
  			sb << ' class="many-to-one"'
  			sb << renderNoSelection(property)
@@ -110,7 +110,7 @@
  		sb << ' multiple="multiple"'
  		sb << ' optionKey="id"'
  		sb << ' size="5"'
-		if (isRequired()) sb << ' required="required"'
+		if (isRequired()) sb << ' required=""'
  		sb << ' value="${' << "${domainInstance}?.${property.name}" << '*.id}"'
  		sb << ' class="many-to-many"'
  		sb << '/>'
@@ -145,14 +145,14 @@
                 sb << '<g:select name="' << property.name << '"'
  				sb << ' from="${' << "${cp.range.from}..${cp.range.to}" << '}"'
  				sb << ' class="range"'
-				if (isRequired()) sb << ' required="required"'
+				if (isRequired()) sb << ' required=""'
 				sb << ' value="${' << "fieldValue(bean: ${domainInstance}, field: '${property.name}')" << '}"'
 				sb << renderNoSelection(property)
 				sb << '/>'
             } else if (cp.inList) {
                 sb << '<g:select name="' << property.name << '"'
  				sb << ' from="${' << "${domainInstance}.constraints.${property.name}.inList" << '}"'
-				if (isRequired()) sb << ' required="required"'
+				if (isRequired()) sb << ' required=""'
 				sb << ' value="${' << "fieldValue(bean: ${domainInstance}, field: '${property.name}')" << '}"'
 				sb << ' valueMessagePrefix="' << "${domainClass.propertyName}.${property.name}" << '"'
 				sb << renderNoSelection(property)
@@ -161,7 +161,7 @@
 				sb << '<g:field type="number" name="' << property.name << '"'
 				if (cp.min != null) sb << ' min="' << cp.min << '"'
 				if (cp.max != null) sb << ' max="' << cp.max << '"'
-				if (isRequired()) sb << ' required="required"'
+				if (isRequired()) sb << ' required=""'
 				sb << ' value="${' << "fieldValue(bean: ${domainInstance}, field: '${property.name}')" << '}"'
 				sb << '/>'
             }

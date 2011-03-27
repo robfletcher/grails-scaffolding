@@ -72,7 +72,7 @@ class InputTypesSpec extends NoJavascriptSpec {
 	@Unroll("the #input input has the #attribute attribute")
 	def "inputs have correct boolean attributes"() {
 		expect:
-		!($(input).@"$attribute" in [null, "", false, "false"]) // drivers handle boolean attributes differently
+		!($(input).getElement(0).getAttribute(attribute) in [null, false, "false"]) // drivers handle boolean attributes differently
 		
 		and:
 		$(input).parent().hasClass("required")
@@ -91,7 +91,7 @@ class InputTypesSpec extends NoJavascriptSpec {
 	@Unroll("the #input input does not have the #attribute attribute")
 	def "inputs do not have inappropriate boolean attributes"() {
 		expect:
-		$(input).@"$attribute" in [null, "", false, "false"] // drivers handle boolean attributes differently
+		$(input).getElement(0).getAttribute(attribute) in [null, false, "false"] // drivers handle boolean attributes differently
 		
 		and:
 		!$(input).parent().hasClass("required")

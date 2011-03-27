@@ -52,13 +52,13 @@ class InputTypesForRelationsSpec extends NoJavascriptSpec {
 		expect: $("#formats").empty
 	}
 	
-	@Unroll("the #input input has the #attribute attribute")
+	@Unroll("the #input input on #url has the #attribute attribute")
 	def "inputs have correct boolean attributes"() {
 		given:
 		go url
 		
 		expect:
-		!($(input).@"$attribute" in [null, "", false, "false"]) // drivers handle boolean attributes differently
+		!($(input).getElement(0).getAttribute(attribute) in [null, false, "false"])
 		
 		and:
 		$(input).parent().hasClass("required")
@@ -68,20 +68,20 @@ class InputTypesForRelationsSpec extends NoJavascriptSpec {
 		"/format/create?book.id=$book.id" | "#book" | "required"
 	}
 	
-	@Unroll("the #input input does not have the #attribute attribute")
+	@Unroll("the #input input on #url does not have the #attribute attribute")
 	def "inputs do not have inappropriate boolean attributes"() {
 		given:
 		go url
 		
 		expect:
-		$(input).@"$attribute" in [null, "", false, "false"] // drivers handle boolean attributes differently
+		$(input).getElement(0).getAttribute(attribute) in [null, false, "false"]
 		
 		and:
 		!$(input).parent().hasClass("required")
 		
 		where:
-		url            | input    | attribute
-		"/book/create" | "#book"  | "required"
-		"/book/create" | "#cover" | "required"
+		url            | input      | attribute
+		"/book/create" | "#authors" | "required"
+		"/book/create" | "#cover"   | "required"
 	}
 }
