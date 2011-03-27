@@ -34,12 +34,15 @@ class InputTypesForRelationsSpec extends NoJavascriptSpec {
 		go url
 		
 		expect:
-		$(input).is(expectedType)
+		$(input).is("select")
+		
+		and:
+		$(input).find("option")*.text() == options
 
 		where:
-		url                               | input      | expectedType
-		"/book/create"                    | "#authors" | "select" // many-to-many
-		"/format/create?book.id=$book.id" | "#book"    | "select" // many-to-one
+		url                               | input      | options
+		"/book/create"                    | "#authors" | ["William Gibson"] // many-to-many
+		"/format/create?book.id=$book.id" | "#book"    | ["Zero History"]   // many-to-one
 	}
 	
 	def "no input is rendered for a one-to-many relationship"() {
@@ -47,4 +50,35 @@ class InputTypesForRelationsSpec extends NoJavascriptSpec {
 		expect: $("#formats").empty
 	}
 	
+	@Unroll("the #input input has the #attribute attribute")
+	def "inputs have correct boolean attributes"() {
+		given:
+		go url
+		
+		expect:
+		!($(input).@"$attribute" in [null, "", false, "false"]) // drivers handle boolean attributes differently
+		
+		and:
+		$(input).parent().hasClass("required")
+		
+		where:
+		url                               | input   | attribute
+		"/format/create?book.id=$book.id" | "#book" | "required"
+	}
+	
+	@Unroll("the #input input does not have the #attribute attribute")
+	def "inputs do not have inappropriate boolean attributes"() {
+		given:
+		go url
+		
+		expect:
+		$(input).@"$attribute" in [null, "", false, "false"] // drivers handle boolean attributes differently
+		
+		and:
+		!$(input).parent().hasClass("required")
+		
+		where:
+		url            | input   | attribute
+		"/book/create" | "#book" | "required"
+	}
 }

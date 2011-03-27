@@ -93,15 +93,27 @@
  			sb << ' name="' << property.name << '.id"'
  			sb << ' from="${' << property.type.name << '.list()}"'
  			sb << ' optionKey="id"'
+			if (isRequired()) sb << ' required="required"'
  			sb << ' value="${' << "${domainInstance}?.${property.name}" << '?.id}"'
  			sb << ' class="many-to-one"'
  			sb << renderNoSelection(property)
  			sb << '/>'
+			sb as String
         }
     }
 
     private renderManyToMany(domainClass, property) {
-        return "<g:select name=\"${property.name}\" from=\"\${${property.referencedDomainClass.fullName}.list()}\" multiple=\"multiple\" optionKey=\"id\" size=\"5\" value=\"\${${domainInstance}?.${property.name}*.id}\" class=\"many-to-many\" />"
+		def sb = new StringBuilder()
+        sb << '<g:select name="' << property.name << '"'
+ 		sb << ' from="${' << property.referencedDomainClass.fullName << '.list()}"'
+ 		sb << ' multiple="multiple"'
+ 		sb << ' optionKey="id"'
+ 		sb << ' size="5"'
+		if (isRequired()) sb << ' required="required"'
+ 		sb << ' value="${' << "${domainInstance}?.${property.name}" << '*.id}"'
+ 		sb << ' class="many-to-many"'
+ 		sb << '/>'
+		sb as String
     }
 
     private renderOneToMany(domainClass, property) {
