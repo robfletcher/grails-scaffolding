@@ -6,7 +6,7 @@ class Format {
 	float price
 	
 	static constraints = {
-		price scale: 2
+		price scale: 2, min: 0.0f
 	}
 	
 	String toString() {

@@ -1,13 +1,6 @@
 /* Styles for progressively enhanced form components */
 
 /* range input */
-/*
-	found here http://net.tutsplus.com/tutorials/html-css-techniques/25-html5-features-tips-and-techniques-you-must-know/
-	doesn't seem to work in latest Chrome but does in Opera
-*/
-input[type=range]:before { content: attr(min); padding-right: 0.5em; }
-input[type=range]:after { content: attr(max); padding-left: 0.5em; }
-
 label + input[type=range],
 label + output.range-output {
 	vertical-align: middle;

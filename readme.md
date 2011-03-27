@@ -20,7 +20,7 @@ This is a sample project for prototyping changes to Grails scaffolding.
  * Fonts look terrible in IE8 (oddly they look OK in IE6 & IE7)
  * Left padding on buttons is wrong on iPhone (might just be xcode emulator)
  * Use `@media screen and (monochrome)` to optimise rendering on Kindle
- * Fieldset & dl are blacked out on Kindle
+ * Numeric inputs don't work for decimal values in webkit browsers
 
 ## Data format
 
@@ -28,10 +28,8 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ## Forms
 
- * put required class (and HTML5 attribute) on the input itself rather than the container
  * use `data-constraint-range="0..5"` etc. so we can enhance and validate inputs based on constraints
  * use size attribute where appropriate
- * add `pattern` attribute if text field has a `matches` constraint
  * Radio groups for enums (use select when more than x values?)
  * Dates using type="date" with 3-field JS enhanced version? Datepicker?
 
