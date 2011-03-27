@@ -10,7 +10,7 @@ class BookEditPage extends Page {
 		book { $("form") }
 		updateButton(to: BookShowPage) { $("input.save") }
 		deleteButton(to: BookListPage) { $("input.delete") }
-		errors(required: false) { $(".errors").text() }
+		errors(required: false) { $(".errors li")*.text() }
 	}
 
 	boolean hasError(String fieldName) {
@@ -25,4 +25,7 @@ class BookEditPage extends Page {
 		book."$fieldName"().next(".error").find("li").text()
 	}
 
+	void disableAutomaticValidation() {
+		book.jquery.attr("novalidate", "")
+	}
 }

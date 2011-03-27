@@ -9,7 +9,7 @@ class BookCreatePage extends Page {
 	static content = {
 		book { $("form") }
 		createButton(to: BookShowPage) { $("input.save") }
-		errors(required: false) { $(".errors").text() }
+		errors(required: false) { $(".errors li")*.text() }
 	}
 
 	boolean hasError(String fieldName) {
@@ -22,6 +22,10 @@ class BookCreatePage extends Page {
 
 	String errorFor(String fieldName) {
 		book."$fieldName"().next(".error").find("li").text()
+	}
+	
+	void disableAutomaticValidation() {
+		book.jquery.attr("novalidate", "")
 	}
 
 }
