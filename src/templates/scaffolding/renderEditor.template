@@ -53,9 +53,9 @@
             } else if (cp.inList) {
 				sb << '<g:select name="' << property.name << '"'
 				sb << ' from="${' << "${domainInstance}.constraints.${property.name}.inList" << '}"'
-				sb << ' value="${' << "${domainInstance}?.${property.name}" << '}"'
-				sb << ' valueMessagePrefix="' << "${domainClass.propertyName}.${property?.name}" << '"'
 				if (isRequired()) sb << ' required="required"'
+				sb << ' value="${' << "${domainInstance}?.${property.name}" << '}"'
+				sb << ' valueMessagePrefix="' << "${domainClass.propertyName}.${property.name}" << '"'
 				sb << renderNoSelection(property)
 				sb << '/>'
 			} else {
@@ -129,6 +129,7 @@
  				sb << ' from="${' << "${domainInstance}.constraints.${property.name}.inList" << '}"'
 				if (isRequired()) sb << ' required="required"'
 				sb << ' value="${' << "fieldValue(bean: ${domainInstance}, field: '${property.name}')" << '}"'
+				sb << ' valueMessagePrefix="' << "${domainClass.propertyName}.${property.name}" << '"'
 				sb << renderNoSelection(property)
 				sb << '/>'
             } else {
