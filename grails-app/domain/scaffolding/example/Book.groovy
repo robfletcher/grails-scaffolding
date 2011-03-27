@@ -4,6 +4,7 @@ class Book {
 
 	String title
 	List<Author> authors
+	Cover cover
 	String yearOfPublication
 	Integer averageRating
 	Integer numberOfPages
@@ -18,6 +19,7 @@ class Book {
     static constraints = {
 		title blank: false
 		authors minSize: 1
+		cover nullable: true
 		yearOfPublication blank: false, matches: /\d{4}/
 		averageRating range: 1..5
 		numberOfPages nullable: true, min: 0
