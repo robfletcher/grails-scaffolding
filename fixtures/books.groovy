@@ -1,5 +1,6 @@
-import scaffolding.example.Book
+import scaffolding.example.*
 import static scaffolding.example.Genre.*
+import static scaffolding.example.FormatType.*
 
 include "authors"
 
@@ -113,6 +114,18 @@ fixture {
 		numberOfPages = 416
 		ebook = false
 		genre = fiction
+	}
+	
+	zeroHistoryKindle(Format) {
+		book = ref("zeroHistory")
+		type = kindle
+		price = 11.99
+	}
+
+	zeroHistoryPaperback(Format) {
+		book = ref("zeroHistory")
+		type = paperback
+		price = 5.99
 	}
 
 	dragonTattoo(Book) {

@@ -242,6 +242,10 @@ select {
 	padding: 0.2em 0.2em 0.2em 0;
 }
 
+select[multiple] {
+	vertical-align: top;
+}
+
 textarea {
 	width: 250px;
 	height: 150px;
@@ -271,6 +275,21 @@ input:focus, select:focus, textarea:focus {
 	margin-left: 0.3em;
 	position: relative;
 	top: 0.1em;
+}
+
+ul.one-to-many {
+	display: inline-block;
+	list-style-position: inside;
+	vertical-align: top;
+}
+
+.ie6 ul.one-to-many, .ie7 ul.one-to-many {
+	display: inline;
+	zoom: 1;
+}
+
+ul.one-to-many li.add {
+	list-style-type: none;
 }
 
 /* MESSAGES AND ERRORS */
