@@ -13,7 +13,7 @@ class Book {
 	Date dateCreated
 	Date lastUpdated
 
-	static hasMany = [authors: Author]
+	static hasMany = [authors: Author, formats: Format]
 
     static constraints = {
 		title blank: false

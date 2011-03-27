@@ -86,7 +86,17 @@
 
     private renderManyToOne(domainClass,property) {
         if (property.association) {
-            return "<g:select name=\"${property.name}.id\" from=\"\${${property.type.name}.list()}\" optionKey=\"id\" value=\"\${${domainInstance}?.${property.name}?.id}\" class=\"many-to-one\" ${renderNoSelection(property)} />"
+			def sb = new StringBuilder()
+            sb << '<g:select'
+			// id is "x" and name is "x.id" as the label will have for="x" and "." in an id will confuse CSS
+ 			sb << ' id="' << property.name << '"'
+ 			sb << ' name="' << property.name << '.id"'
+ 			sb << ' from="${' << property.type.name << '.list()}"'
+ 			sb << ' optionKey="id"'
+ 			sb << ' value="${' << "${domainInstance}?.${property.name}" << '?.id}"'
+ 			sb << ' class="many-to-one"'
+ 			sb << renderNoSelection(property)
+ 			sb << '/>'
         }
     }
 
