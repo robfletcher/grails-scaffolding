@@ -27,7 +27,7 @@
 		// put close button on error and message alerts
 		$('.errors, .message').grailsAlert();
 
-		$('.field-error').grailsErrors();
+		$('.errors li').grailsErrors();
 
 		// prevent FOUC by only making body visible once document is ready
 		$('body').addClass('ready');

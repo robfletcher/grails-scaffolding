@@ -12,12 +12,14 @@
 		}
 
 		this.each(function() {
-			// grab the error box and its input
-			var errorBox = $(this);
-			var input = errorBox.prev(':input');
+			// grab the error message and its input
+			var errorMessage = $(this).text();
+			var fieldId = $(this).data('field-id');
+			var input = $('#' + fieldId);
 
-			errorBox.addClass('error-tooltip').attr('aria-role', 'tooltip');
-			input.attr('aria-invalid', 'true');
+			// create a tooltip adjacent to the input
+			var errorBox = $('<div></div>').text(errorMessage).addClass('error-tooltip').attr('aria-role', 'tooltip');
+			input.attr('aria-invalid', 'true').after(errorBox);
 
 			// insert a pointer between the input and the tooltip
 			var pointer = $('<div class="tooltip-pointer"/>');

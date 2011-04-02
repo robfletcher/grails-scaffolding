@@ -1,3 +1,13 @@
+/* prevent FOUC */
+
+body {
+	visibility: hidden;
+}
+
+.no-js body, body.ready {
+	visibility: visible;
+}
+
 /* Styles for progressively enhanced form components */
 
 /* range input */
@@ -99,8 +109,128 @@ body .ui-widget {
 	bottom: 0;
 	left: 25%;
 	width: 50%;
-
 	-moz-border-radius: 1em 1em 0 0;
  -webkit-border-radius: 1em 1em 0 0;
 		 border-radius: 1em 1em 0 0;
 }
+
+/* messages and errors */
+
+.errors,
+.message {
+	color: #fff;
+	font-size: 1em;
+	margin: 0;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+.ie6 .errors,
+.ie6 .message {
+	position: relative; /* IE6 doesn't do position:fixed, this will position the dismiss button inside the div */
+}
+
+.message {
+	background-color: rgba(127, 127, 255, 0.95);
+}
+
+.no-rgba .message {
+	background-color: #7f7fff;
+}
+
+.ie6 .message,
+.ie7 .message,
+.ie8 .message {
+	background-color: transparent;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#f27f7fff, endColorstr=#f27f7fff);
+}
+
+.errors {
+	background-color: rgba(255, 63, 63, 0.95);
+}
+
+.no-rgba .errors {
+	background-color: #ff3f3f;
+}
+
+.ie6 .errors,
+.ie7 .errors,
+.ie8 .errors {
+	background-color: transparent;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#f2ff3f3f, endColorstr=#f2ff3f3f);
+}
+
+.errors ul,
+.message p {
+	margin: 0.5em auto;
+	max-width: 640px;
+}
+
+.errors ul {
+	list-style: none;
+}
+
+.message p {
+	text-align: center;
+}
+
+.errors li,
+.message p {
+	padding: 0.5em 0.5em;
+}
+
+a.dismiss-alert {
+	color: rgba(0,0,0,0.5);
+	font-size: 1.2em;
+	line-height: 1;
+	position: absolute;
+	top: 0.5em;
+	right: 0.5em;
+	text-decoration: none;
+	text-shadow: none;
+}
+
+.errors a.dismiss-alert {
+	color: #7f3333;
+}
+
+.message a.dismiss-alert {
+	color: #43437f;
+}
+
+a.dismiss-alert:hover, a.dismiss-alert:focus {
+	color: #fff;
+}
+
+/* error tooltips */
+.error-tooltip {
+	background: #ff6666;
+	border: 1px solid #ff6666;
+	color: #ffffff;
+	font-size: 0.8em;
+	margin: 0;
+	max-width: 20em;
+	padding: 0.5em;
+	position: absolute;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+	-moz-border-radius: 0.5em;
+ -webkit-border-radius: 0.5em;
+		 border-radius: 0.5em;
+	-moz-box-shadow: 0 0 0.25em #ff6666;
+ -webkit-box-shadow: 0 0 0.25em #ff6666;
+		 box-shadow: 0 0 0.25em #ff6666;
+}
+
+.tooltip-pointer {
+	width: 0;
+	height: 0;
+	border: 0.75em solid transparent;
+	border-right-color: #ff6666;
+	position: absolute;
+	left: -1.5em;
+}
+

@@ -22,9 +22,11 @@
 			<div class="message" role="status"><p>\${flash.message}</p></div>
 			</g:if>
 			<g:hasErrors bean="\${${propertyName}}">
-			<div class="errors" role="alert">
-				<g:renderErrors bean="\${${propertyName}}" as="list" />
-			</div>
+			<ul class="errors" role="alert">
+				<g:eachError bean="\${${propertyName}}" var="error">
+				<li <g:if test="\${error in org.springframework.validation.FieldError}">data-field-id="\${error.field}"</g:if>><g:message error="\${error}"/></li>
+				</g:eachError>
+			</ul>
 			</g:hasErrors>
 			<g:form action="save" <%= multiPart ? ' enctype="multipart/form-data"' : '' %>>
 				<fieldset class="form">
