@@ -100,22 +100,27 @@ body .ui-widget {
 
 /* ajax loading indicator */
 .ajax-loading {
-	background: #333;
-	color: #ddd;
-	font-size: 1.5em;
-	padding: 0.5em;
+	background: rgba(0, 0, 0, 0.75);
+	color: #dddddd;
+	font-size: 1em;
+	padding: 1em 0;
 	text-align: center;
-	position: fixed;
-	bottom: 0;
-	left: 25%;
-	width: 50%;
-	-moz-border-radius: 1em 1em 0 0;
- -webkit-border-radius: 1em 1em 0 0;
-		 border-radius: 1em 1em 0 0;
+}
+
+.no-rgba .ajax-loading {
+	background-color: #404040;
+}
+
+.ie6 .ajax-loading,
+.ie7 .ajax-loading,
+.ie8 .ajax-loading {
+	background-color: transparent;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#c0000000, endColorstr=#c0000000);
 }
 
 /* messages and errors */
 
+.ajax-loading,
 .alert {
 	overflow: hidden;
 	position: fixed;
