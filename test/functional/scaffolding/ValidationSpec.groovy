@@ -9,6 +9,14 @@ class ValidationSpec extends GebSpec {
 	String getBaseUrl() {
 		super.getBaseUrl() ?: "http://localhost:8080/"
 	}
+	
+	def "I can select something with a numeric id"() {
+		given:
+		to BookCreatePage
+		
+		expect:
+		$('#123').text() == "O HAI!"
+	}
 
 	def "error messages are displayed for fields in error on a create page"() {
 		given: "I visit the create book page"
@@ -48,16 +56,16 @@ class ValidationSpec extends GebSpec {
 		then: "I am returned to the edit page"
 		at BookEditPage
 
-		and: "errors are displayed in an alert dialog"
-		errors == [
-			"Property [authors] of class [class scaffolding.example.Book] with value [[]] is less than the minimum size of [1]",
-			"Property [title] of class [class scaffolding.example.Book] cannot be blank",
-			"Property [yearOfPublication] of class [class scaffolding.example.Book] cannot be blank"
-		]
+		and: "errors are not displayed in an alert dialog"
+		errors == []
 
 		and: "errors are displayed next to the fields themselves"
+		hasError("authors")
+		errorTooltip("authors") == "Property [authors] of class [class scaffolding.example.Book] with value [[]] is less than the minimum size of [1]"
 		hasError("title")
+		errorTooltip("title") == "Property [title] of class [class scaffolding.example.Book] cannot be blank"
 		hasError("yearOfPublication")
+		errorTooltip("yearOfPublication") == "Property [yearOfPublication] of class [class scaffolding.example.Book] cannot be blank"
 
 		cleanup:
 		withConfirm {
