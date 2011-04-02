@@ -17,37 +17,42 @@
 			var fieldId = $(this).data('field-id');
 			var input = $('#' + fieldId);
 
-			// create a tooltip adjacent to the input
-			var errorBox = $('<div></div>').text(errorMessage).addClass('error-tooltip').attr('aria-role', 'tooltip');
-			input.attr('aria-invalid', 'true').after(errorBox);
+			if (input.size() == 1) {
+				// remove the original error message from the DOM
+				$(this).remove();
 
-			// insert a pointer between the input and the tooltip
-			var pointer = $('<div class="tooltip-pointer"/>');
-			errorBox.prepend(pointer);
+				// create a tooltip adjacent to the input
+				var errorBox = $('<div></div>').text(errorMessage).addClass('error-tooltip').attr('role', 'tooltip');
+				input.attr('aria-invalid', 'true').after(errorBox);
 
-			// position the error box to the right of the input and vertically aligned with it
-			var inputOffset = input.offset();
-			var inputMidpoint = input.outerHeight() / 2;
-			var errorBoxMidpoint = errorBox.outerHeight() / 2;
+				// insert a pointer between the input and the tooltip
+				var pointer = $('<div class="tooltip-pointer"/>');
+				errorBox.prepend(pointer);
 
-			errorBox.offset({
-				left: inputOffset.left + input.outerWidth() + pointer.outerWidth(),
-				top: inputOffset.top - (errorBoxMidpoint - inputMidpoint)
-			});
+				// position the error box to the right of the input and vertically aligned with it
+				var inputOffset = input.offset();
+				var inputMidpoint = input.outerHeight() / 2;
+				var errorBoxMidpoint = errorBox.outerHeight() / 2;
 
-			// position the pointer vertically in the middle of the error box
-			pointer.offset({
-				top: errorBox.offset().top - ((pointer.outerHeight() / 2) - errorBoxMidpoint)
-			});
-
-			// hide the error box until its input is focused
-			if (settings.hide) {
-				errorBox.hide().attr('aria-hidden', true);
-				input.focus(function() {
-					errorBox.show().removeAttr('aria-hidden');
-				}).blur(function() {
-					errorBox.hide().attr('aria-hidden', true);
+				errorBox.offset({
+					left: inputOffset.left + input.outerWidth() + pointer.outerWidth(),
+					top: inputOffset.top - (errorBoxMidpoint - inputMidpoint)
 				});
+
+				// position the pointer vertically in the middle of the error box
+				pointer.offset({
+					top: errorBox.offset().top - ((pointer.outerHeight() / 2) - errorBoxMidpoint)
+				});
+
+				// hide the error box until its input is focused
+				if (settings.hide) {
+					errorBox.hide().attr('aria-hidden', true);
+					input.focus(function() {
+						errorBox.show().removeAttr('aria-hidden');
+					}).blur(function() {
+						errorBox.hide().attr('aria-hidden', true);
+					});
+				}
 			}
 		});
 	};
