@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="qunit">
+		<g:javascript library="grails.errors"/>
 		<script>
 			$(document).ready(function() {
 				module('grailsErrors', {
@@ -31,7 +32,7 @@
 
 				test('valid input should not have a tooltip', function() {
 					var input = $('#genre');
-					ok(input.next().not('.error-tooltip'));
+					equal(input.next('.error-tooltip').size(), 0, 'there should be no tooltip next to the input');
 				});
 
 				test('inputs and error tooltips should have aria attributes', function() {
@@ -44,11 +45,11 @@
 				test('tooltips should only be visible when input is focused', function() {
 					var input = $('#title');
 					var tooltip = input.next();
-					ok(tooltip.not(':visible'), 'tooltip should not be visible until input is focused');
+					ok(tooltip.is(':not(:visible)'), 'tooltip should not be visible until input is focused');
 					input.trigger('focus');
 					ok(tooltip.is(':visible'), 'tooltip should become visible when input is focused');
 					input.trigger('blur');
-					ok(tooltip.not(':visible'), 'tooltip should become invisible when input is de-focused');
+					ok(tooltip.is(':not(:visible)'), 'tooltip should become invisible when input is de-focused');
 				});
 
 			});
@@ -70,6 +71,5 @@
 				<input id="genre" type="text" name="genre">
 			</div>
 		</form>
-		<g:javascript library="grails.errors"/>
 	</body>
 </html>

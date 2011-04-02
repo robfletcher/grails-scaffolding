@@ -18,5 +18,6 @@
 		<h2 id="qunit-userAgent"></h2>
 		<ol id="qunit-tests"></ol>
 		<div id="qunit-fixture"><g:layoutBody/></div>
+		<r:layoutResources/>
 	</body>
 </html>

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="qunit">
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+		<r:use modules="jquery-ui"/>
 		<g:javascript library="grails.autocomplete"/>
 		<script>
 			$(document).ready(function() {

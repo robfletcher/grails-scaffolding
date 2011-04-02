@@ -116,8 +116,7 @@ body .ui-widget {
 
 /* messages and errors */
 
-.errors,
-.message {
+.modal-alert {
 	color: #fff;
 	font-size: 1em;
 	margin: 0;
