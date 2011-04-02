@@ -46,10 +46,30 @@
 					var input = $('#title');
 					var tooltip = input.next();
 					ok(tooltip.is(':not(:visible)'), 'tooltip should not be visible until input is focused');
+					equal(tooltip.attr('aria-hidden'), 'true');
 					input.trigger('focus');
 					ok(tooltip.is(':visible'), 'tooltip should become visible when input is focused');
+					equal(tooltip.attr('aria-hidden'), undefined);
 					input.trigger('blur');
 					ok(tooltip.is(':not(:visible)'), 'tooltip should become invisible when input is de-focused');
+					equal(tooltip.attr('aria-hidden'), 'true');
+				});
+				
+				test('the original error container remains in the DOM if there are still messages in it', function() {
+					equal($('.errors').size(), 1, 'error container should still be present');
+				});
+
+				module('grailsErrors', {
+					setup: function() {
+						var errors = $('.errors li');
+						errors.first().remove();
+						errors.last().remove();
+						errors.grailsErrors();
+					}
+				});
+
+				test('the original error container is removed from the DOM if there are no remaining messages in it', function() {
+					equal($('.errors').size(), 0, 'error container should have been removed');
 				});
 
 			});

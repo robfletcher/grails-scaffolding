@@ -15,11 +15,13 @@
 					
 					equal(closeButton.size(), 1, 'there should be a close button');
 					ok(alert.is(':visible'), 'the alert should be visible to start with');
+					equal(alert.attr('aria-hidden'), undefined);
 					
 					stop();
 					closeButton.click();
 					setTimeout(function() {
 						ok(alert.is(':not(:visible)'), 'the alert should disappear when the link is clicked');
+						equal(alert.attr('aria-hidden'), 'true');
 						start();
 					}, 500);
 				});
@@ -30,10 +32,12 @@
 					var alert = $('.message');
 					
 					ok(alert.is(':visible'), 'the alert should be visible to start with');
+					equal(alert.attr('aria-hidden'), undefined);
 					
 					stop();
 					setTimeout(function() {
 						ok(alert.is(':not(:visible)'), 'the alert should disappear after a timeout');
+						equal(alert.attr('aria-hidden'), 'true');
 						start();
 					}, 500);
 				});

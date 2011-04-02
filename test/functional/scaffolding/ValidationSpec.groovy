@@ -21,15 +21,14 @@ class ValidationSpec extends GebSpec {
 		then: "I am returned to the create book page"
 		at BookCreatePage
 
-		and: "errors are displayed in an alert dialog"
-		errors == [
-			"Property [title] of class [class scaffolding.example.Book] cannot be blank",
-			"Property [yearOfPublication] of class [class scaffolding.example.Book] cannot be blank"
-		]
+		and: "errors are not displayed in an alert dialog"
+		errors == []
 
 		and: "errors are displayed next to the fields themselves"
 		hasError("title")
+		errorTooltip("title") == "Property [title] of class [class scaffolding.example.Book] cannot be blank"
 		hasError("yearOfPublication")
+		errorTooltip("yearOfPublication") == "Property [yearOfPublication] of class [class scaffolding.example.Book] cannot be blank"
 	}
 
 	def "error messages are displayed for fields in error on an edit page"() {

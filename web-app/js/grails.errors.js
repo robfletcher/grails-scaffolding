@@ -10,6 +10,8 @@
 		if (options) {
 			$.extend(settings, options);
 		}
+		
+		var container = $(this).parent();
 
 		this.each(function() {
 			// grab the error message and its input
@@ -55,5 +57,10 @@
 				}
 			}
 		});
+			
+		// if all error messages have been turned into tooltips remove the message container
+		if (container.has(this).size() == 0) {
+			container.remove();
+		}
 	};
 })(jQuery);

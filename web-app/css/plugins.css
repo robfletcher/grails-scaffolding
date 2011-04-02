@@ -116,7 +116,7 @@ body .ui-widget {
 
 /* messages and errors */
 
-.modal-alert {
+.alert {
 	color: #fff;
 	font-size: 1em;
 	margin: 0;
@@ -128,19 +128,17 @@ body .ui-widget {
 	z-index: 1;
 }
 
-.ie6 .errors,
-.ie6 .message {
+.ie6 .alert {
 	position: relative; /* IE6 doesn't do position:fixed, this will position the dismiss button inside the div */
 }
 
-.message {
+/*.message {
 	background-color: rgba(127, 127, 255, 0.95);
 }
 
 .no-rgba .message {
 	background-color: #7f7fff;
 }
-
 .ie6 .message,
 .ie7 .message,
 .ie8 .message {
@@ -162,6 +160,7 @@ body .ui-widget {
 	background-color: transparent;
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#f2ff3f3f, endColorstr=#f2ff3f3f);
 }
+*/
 
 .errors ul,
 .message p {

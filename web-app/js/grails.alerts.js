@@ -24,7 +24,7 @@
 			elements.animate({height: 'hide'}, 'fast').attr('aria-hidden', 'true');
 		}
 
-		this.hide().append('<a href="#" class="dismiss-alert" title="close">&times;</a>');
+		this.hide().addClass('alert').append('<a href="#" class="dismiss-alert" title="close">&times;</a>');
 		$('a.dismiss-alert').live('click', function() {
 			hide($(this).parent());
 			return false;
