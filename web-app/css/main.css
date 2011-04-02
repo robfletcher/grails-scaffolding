@@ -316,7 +316,7 @@ ul.one-to-many li.add {
 }
 
 .errors ul,
-.message p {
+.message {
 	padding: 0;
 }
 
@@ -326,7 +326,7 @@ ul.one-to-many li.add {
 	text-indent: 22px;
 }
 
-.message p {
+.message {
 	background: transparent url(../images/skin/information.png) 0 50% no-repeat;
 	text-indent: 22px;
 }

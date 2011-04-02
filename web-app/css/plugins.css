@@ -117,10 +117,7 @@ body .ui-widget {
 /* messages and errors */
 
 .alert {
-	color: #fff;
-	font-size: 1em;
-	margin: 0;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+	overflow: hidden;
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -132,53 +129,64 @@ body .ui-widget {
 	position: relative; /* IE6 doesn't do position:fixed, this will position the dismiss button inside the div */
 }
 
-/*.message {
-	background-color: rgba(127, 127, 255, 0.95);
+.alert .errors,
+.alert .message {
+	background: none;
+	border: none;
+	color: #fff;
+	font-size: 1em;
+	margin: 0;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 }
 
-.no-rgba .message {
+.alert .message {
+	background-color: rgba(127, 127, 255, 0.95);
+	text-align: center;
+}
+
+.no-rgba .alert .message {
 	background-color: #7f7fff;
 }
-.ie6 .message,
-.ie7 .message,
-.ie8 .message {
+.ie6 .alert .message,
+.ie7 .alert .message,
+.ie8 .alert .message {
 	background-color: transparent;
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#f27f7fff, endColorstr=#f27f7fff);
 }
 
-.errors {
+.alert .errors {
 	background-color: rgba(255, 63, 63, 0.95);
 }
 
-.no-rgba .errors {
+.no-rgba .alert .errors {
 	background-color: #ff3f3f;
 }
 
-.ie6 .errors,
-.ie7 .errors,
-.ie8 .errors {
+.ie6 .alert .errors,
+.ie7 .alert .errors,
+.ie8 .alert .errors {
 	background-color: transparent;
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#f2ff3f3f, endColorstr=#f2ff3f3f);
 }
-*/
 
-.errors ul,
-.message p {
+.alert .errors ul,
+.alert .message {
 	margin: 0.5em auto;
 	max-width: 640px;
 }
 
-.errors ul {
+.alert .errors ul {
 	list-style: none;
 }
 
-.message p {
-	text-align: center;
+.alert .errors li,
+.alert .message {
+	padding: 0.5em 0.5em;
 }
 
-.errors li,
-.message p {
-	padding: 0.5em 0.5em;
+.alert .errors li {
+	background: none;
+	list-style: disc inside;
 }
 
 a.dismiss-alert {
@@ -192,12 +200,8 @@ a.dismiss-alert {
 	text-shadow: none;
 }
 
-.errors a.dismiss-alert {
-	color: #7f3333;
-}
-
-.message a.dismiss-alert {
-	color: #43437f;
+.no-rgba a.dismiss-alert {
+	color: #444444;
 }
 
 a.dismiss-alert:hover, a.dismiss-alert:focus {

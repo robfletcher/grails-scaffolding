@@ -24,12 +24,15 @@
 			elements.animate({height: 'hide'}, 'fast').attr('aria-hidden', 'true');
 		}
 
-		this.hide().addClass('alert').append('<a href="#" class="dismiss-alert" title="close">&times;</a>');
+		this.wrap('<div class="alert" role="alert"/>');
+		var alert = this.parent();
+		alert.append('<a href="#" class="dismiss-alert" title="close">&times;</a>');
+		alert.hide();
 		$('a.dismiss-alert').live('click', function() {
-			hide($(this).parent());
+			hide(alert);
 			return false;
 		});
 
-		show(this);
+		show(alert);
 	};
 })(jQuery);
