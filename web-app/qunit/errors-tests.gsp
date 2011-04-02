@@ -5,9 +5,9 @@
 		<g:javascript library="grails.errors"/>
 		<script>
 			$(document).ready(function() {
-				module('grailsErrors', {
+				module('grailsErrorTooltips', {
 					setup: function() {
-						$('.errors li').grailsErrors();
+						$('.errors li').grailsErrorTooltips();
 					}
 				});
 
@@ -59,12 +59,12 @@
 					equal($('.errors').size(), 1, 'error container should still be present');
 				});
 
-				module('grailsErrors', {
+				module('grailsErrorTooltips', {
 					setup: function() {
 						var errors = $('.errors li');
 						errors.first().remove();
 						errors.last().remove();
-						errors.grailsErrors();
+						errors.grailsErrorTooltips();
 					}
 				});
 

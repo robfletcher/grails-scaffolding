@@ -24,11 +24,11 @@
 		// respond to AJAX events with a visual indicator
 		$('body').grailsAjaxLoader();
 
-		// put close button on error and message alerts
-		$('.errors, .message').grailsAlert();
-
 		// transform error messages into tooltips next to each input
-		$('.errors li').grailsErrors();
+		$('.errors li').grailsErrorTooltips();
+
+		// tranform errors and flash messages into popup alerts
+		$('.errors, .message').grailsAlert();
 
 		// prevent FOUC by only making body visible once document is ready
 		$('body').addClass('ready');

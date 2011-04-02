@@ -2,7 +2,7 @@
 	/**
 	 * Turns field-specific errors into tooltips shown on focus.
 	 */
-	$.fn.grailsErrors = function(options) {
+	$.fn.grailsErrorTooltips = function(options) {
 		// settings that can be overridden with arguments
 		var settings = {
 			hide: true // if true, hides the tooltips until the corresponding input is focused
@@ -62,5 +62,7 @@
 		if (container.has(this).size() == 0) {
 			container.remove();
 		}
+		
+		return this;
 	};
 })(jQuery);
