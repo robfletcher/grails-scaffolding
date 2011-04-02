@@ -12,7 +12,7 @@
 		}
 
 		function show(elements) {
-			elements.animate({height: 'show'}, 'fast').removeAttr('aria-hidden');
+			elements.slideDown('fast').removeAttr('aria-hidden');
 			if (settings.hideAfterMillis > 0) {
 				setTimeout(function() {
 					hide(elements)
@@ -21,13 +21,13 @@
 		}
 
 		function hide(elements) {
-			elements.animate({height: 'hide'}, 'fast').attr('aria-hidden', 'true');
+			elements.slideUp('fast').attr('aria-hidden', 'true');
 		}
 
 		this.wrap('<div class="alert" role="alert"/>');
 		var alert = this.parent();
 		alert.append('<a href="#" class="dismiss-alert" title="close">close</a>');
-		alert.hide();
+		// alert.hide();
 		$('a.dismiss-alert').live('click', function() {
 			hide(alert);
 			return false;

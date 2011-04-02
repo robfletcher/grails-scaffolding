@@ -6,14 +6,10 @@
 		$('<div class="ajax-loading">Loading&hellip;</div>')
 				.appendTo(this)
 				.bind('ajaxSend', function() {
-					$(this).animate({
-						height: 'show'
-					}, 'fast');
+					$(this).slideDown('fast');
 				})
 				.bind('ajaxComplete', function() {
-					$(this).animate({
-						height: 'hide'
-					}, 'fast');
+					$(this).slideUp('fast');
 				})
 				.hide();
 	};
