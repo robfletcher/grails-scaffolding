@@ -188,22 +188,14 @@ body .ui-widget {
 }
 
 a.dismiss-alert {
-	color: rgba(0,0,0,0.5);
-	font-size: 1.2em;
-	line-height: 1;
+	background: url(../images/skin/icon_close.png);
+	text-indent: -9999px;
+	height: 42px;
 	position: absolute;
-	top: 0.5em;
-	right: 0.5em;
-	text-decoration: none;
+	top: 0.25em;
+	right: 0.25em;
 	text-shadow: none;
-}
-
-.no-rgba a.dismiss-alert {
-	color: #444444;
-}
-
-a.dismiss-alert:hover, a.dismiss-alert:focus {
-	color: #fff;
+	width: 42px;
 }
 
 /* error tooltips */

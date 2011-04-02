@@ -26,7 +26,7 @@
 
 		this.wrap('<div class="alert" role="alert"/>');
 		var alert = this.parent();
-		alert.append('<a href="#" class="dismiss-alert" title="close">&times;</a>');
+		alert.append('<a href="#" class="dismiss-alert" title="close">close</a>');
 		alert.hide();
 		$('a.dismiss-alert').live('click', function() {
 			hide(alert);
