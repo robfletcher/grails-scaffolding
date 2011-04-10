@@ -1,5 +1,3 @@
-<% import grails.persistence.Event %>
-<% import org.codehaus.groovy.grails.plugins.PluginManagerHolder %>
 <%=packageName%>
 <!doctype html>
 <html>
@@ -33,25 +31,7 @@
 				<g:hiddenField name="id" value="\${${propertyName}?.id}" />
 				<g:hiddenField name="version" value="\${${propertyName}?.version}" />
 				<fieldset class="form">
-				<%  excludedProps = Event.allEvents.toList() << 'version' << 'id' << 'dateCreated' << 'lastUpdated'
-					persistentPropNames = domainClass.persistentProperties*.name
-					props = domainClass.properties.findAll { persistentPropNames.contains(it.name) && !excludedProps.contains(it.name) }
-					Collections.sort(props, comparator.constructors[0].newInstance([domainClass] as Object[]))
-					display = true
-					required = false
-					boolean hasHibernate = PluginManagerHolder.pluginManager.hasGrailsPlugin('hibernate')
-					props.each { p ->
-						if (hasHibernate) {
-							cp = domainClass.constrainedProperties[p.name]
-							display = (cp?.display ?: true)
-							required = (cp ? !(cp.propertyType in [boolean, Boolean]) && !cp.nullable && (cp.propertyType != String || !cp.blank) : false)
-						}
-						if (display) { %>
-					<div class="fieldcontain \${hasErrors(bean: ${propertyName}, field: '${p.name}', 'error')} ${required ? 'required' : ''}">
-						<label for="${p.name}"><g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}" /><% if (required) { %><span class="required-indicator">*</span><% } %></label>
-						${renderEditor(p)}
-					</div>
-				<%  }   } %>
+					<g:render template="form"/>
 				</fieldset>
 				<fieldset class="buttons">
 					<g:actionSubmit class="save" action="update" value="\${message(code: 'default.button.update.label', default: 'Update')}" />
