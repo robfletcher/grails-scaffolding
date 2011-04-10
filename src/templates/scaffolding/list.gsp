@@ -54,9 +54,9 @@
 				</g:each>
 				</tbody>
 			</table>
-			<fieldset class="pagination">
+			<div class="pagination">
 				<g:paginate total="\${${propertyName}Total}" />
-			</fieldset>
+			</div>
 		</div>
 	</body>
 </html>
