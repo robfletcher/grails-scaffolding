@@ -106,4 +106,14 @@ class InputTypesSpec extends NoJavascriptSpec {
 		"#aBoolean"           | "required"
 		"#optionalEnum"       | "required"
 	}
+	
+	@Issue("http://jira.grails.org/browse/GRAILS-5258")
+	@Unroll("the #input is present on the page")
+	def "inputs for embedded properties are rendered"() {
+		expect:
+		$("input[name=$input]").is("input")
+		
+		where:
+		input << ["address.street", "address.city", "address.postCode"]
+	}
 }

@@ -33,6 +33,8 @@ class Thing {
 	boolean aBoolean
 	// file
 	byte[] file
+	// embedded type
+	Address address 
 	
 	static constraints = {
 		name maxSize: 40, blank: false
@@ -56,6 +58,15 @@ class Thing {
 		optionalEnum nullable: true
 		aBoolean()
 		file nullable: true
+		address nullable: true
 	}
 	
+	static embedded = ["address"]
+	
+}
+
+class Address {
+	String street
+	String city
+	String postCode
 }
