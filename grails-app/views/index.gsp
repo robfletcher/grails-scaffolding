@@ -19,7 +19,7 @@
 				   border-radius: 0.6em;
 			}
 			.boxshadow #status {
-				margin: 0 2em 1em;
+				margin: 2em 2em 1em;
 			}
 
 			.ie6 #status {
@@ -39,7 +39,7 @@
 			}
 
 			#page-body {
-				margin: 0 1em 1.25em 16em;
+				margin: 3em 1em 1.25em 16em;
 			}
 
 			.boxshadow #page-body {
