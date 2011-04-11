@@ -8,8 +8,8 @@
 				background-color: #eee;
 				border: .2em solid #fff;
 				margin: 0 1em 1em;
-				padding: 1em;
-				width: 12em;
+				padding: 0em 1em 1em;
+				width: 14em;
 				float: left;
 				 -moz-box-shadow: 0px 0px 1.25em #ccc;
 			  -webkit-box-shadow: 0px 0px 1.25em #ccc;
@@ -35,7 +35,7 @@
 			#status h1 {
 				text-transform: uppercase;
 				font-size: 1.1em;
-				margin: 0 0 0.3em;
+				margin: 1em 0 0.3em;
 			}
 
 			#page-body {
