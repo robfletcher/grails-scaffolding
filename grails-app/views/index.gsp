@@ -11,12 +11,12 @@
 				padding: 0em 1em 1em;
 				width: 14em;
 				float: left;
-				 -moz-box-shadow: 0px 0px 1.25em #ccc;
-			  -webkit-box-shadow: 0px 0px 1.25em #ccc;
-					  box-shadow: 0px 0px 1.25em #ccc;
-			  -moz-border-radius: 0.6em;
-		   -webkit-border-radius: 0.6em;
-				   border-radius: 0.6em;
+				-moz-box-shadow: 0px 0px 0.25em #ccc;
+                                -webkit-box-shadow: 0px 0px 0.25em #ccc;
+				-box-shadow: 0px 0px 0.25em #ccc;
+                                -moz-border-radius: 0.6em;
+                                -webkit-border-radius: 0.6em;
+				border-radius: 0.6em;
 			}
 			.boxshadow #status {
 				margin: 2em 2em 1em;

@@ -297,6 +297,7 @@ fieldset.embedded {
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
+    border: 1px solid #CCCCCC;
 }
 
 fieldset.embedded legend {
