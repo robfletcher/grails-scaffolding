@@ -10,9 +10,8 @@ This is a sample project for prototyping changes to Grails scaffolding.
 ## Appearance
 
  * Blue mouseover highlight on list table looks wrong
- * Do messages with opaque full with bar like Songkick?
- * Do something more interesting with h1 tags?
  * Move mandatory indicator to right of form field (when not stacked)
+ * Use :after to add mandatory indicator?
 
 ## Browser issues
 
@@ -28,15 +27,9 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ## Forms
 
- * use `data-constraint-range="0..5"` etc. so we can enhance and validate inputs based on constraints
  * use size attribute where appropriate
  * Radio groups for enums (use select when more than x values?)
  * Dates using type="date" with 3-field JS enhanced version? Datepicker?
-
-## Errors & messages
-
- * Display errors & messages in traditional position when no-js
- * tooltip inputs with error message (on focus?)
 
 ## Enhanced experience
 
@@ -67,11 +60,11 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ## Integration
 
- * Depend on resources plugin & export appropriate resource declarations
- * Depend on jQuery & jQuery-UI (can we make the latter optional & disable autocomplete without it?)
  * Does modernizr need a plugin?
  * Should the scaffolding enhancements be a plugin so they can be removed if using non-jQuery framework?
 
 ## Misc
 
  * Test the use of many-to-many on create as it might not work
+ * Generate "edit this" links next to links to 1:m domains
+ * Check that links to related objects are correct if the controller is named something other than the domain class name + 'Controller'
