@@ -73,10 +73,6 @@
 				#page-body, .boxshadow #page-body {
 					margin: 0 1em 1em;
 				}
-
-				#page-body h1 {
-					margin-top: 0;
-				}
 			}
 		</style>
 	</head>

@@ -90,7 +90,10 @@
 			// point the label for the select at the autocompleter instead
 			$('label[for=' + selectId + ']').attr('for', autocompleter.attr('id'));
 		
-			autocompleter.insertAfter(select).width(select.outerWidth());
+			autocompleter.insertAfter(select);
+			if (autocompleter.outerWidth() < select.outerWidth()) {
+				autocompleter.width(select.outerWidth());
+			}
 			selectedList.insertAfter(autocompleter).width(autocompleter.outerWidth()).offset({left: autocompleter.offset().left});
 			updateSelection(null, 0);
 		});
