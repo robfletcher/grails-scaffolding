@@ -144,9 +144,9 @@ img {
     display: block;
     padding: 0.25em 0.7em;
     text-decoration: none;
-    -moz-border-radius: 1em; 
-    -webkit-border-radius: 1em; 
-    border-radius: 1em; 
+    -moz-border-radius: 0.3em; 
+    -webkit-border-radius: 0.3em; 
+    border-radius: 0.3em; 
 }
 
 .nav a:active, .nav a:visited {
@@ -479,9 +479,9 @@ th:hover, tr:hover {
     margin: 0 0.1em;
     padding: 0.25em 0.7em;
     text-decoration: none;
-    -moz-border-radius: 1em; 
-    -webkit-border-radius: 1em; 
-    border-radius: 1em; 
+    -moz-border-radius: 0.3em; 
+    -webkit-border-radius: 0.3em; 
+    border-radius: 0.3em; 
 }
 
 .pagination a:hover, .pagination a:focus,
@@ -524,9 +524,9 @@ th:hover, tr:hover {
     padding: 0.25em 0.7em;
     text-decoration: none;
 
-    -moz-border-radius: 1em; 
-    -webkit-border-radius: 1em; 
-    border-radius: 1em; 
+    -moz-border-radius: 0.3em; 
+    -webkit-border-radius: 0.3em; 
+    border-radius: 0.3em; 
 }
 
 .buttons input:hover, .buttons input:focus,
