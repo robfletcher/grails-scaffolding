@@ -9,7 +9,6 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ## Appearance
 
- * Blue mouseover highlight on list table looks wrong
  * Move mandatory indicator to right of form field (when not stacked)
  * Use :after to add mandatory indicator?
 
