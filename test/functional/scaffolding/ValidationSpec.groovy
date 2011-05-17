@@ -10,14 +10,6 @@ class ValidationSpec extends GebSpec {
 		super.getBaseUrl() ?: "http://localhost:8080/"
 	}
 	
-	def "I can select something with a numeric id"() {
-		given:
-		to BookCreatePage
-		
-		expect:
-		$('#123').text() == "O HAI!"
-	}
-
 	def "error messages are displayed for fields in error on a create page"() {
 		given: "I visit the create book page"
 		to BookCreatePage

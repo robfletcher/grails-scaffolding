@@ -52,7 +52,7 @@
 					input.focus(function() {
 						errorBox.show().removeAttr('aria-hidden');
 					}).blur(function() {
-						errorBox.hide().attr('aria-hidden', true);
+						errorBox.hide().attr('aria-hidden', 'true');
 					});
 				}
 			}

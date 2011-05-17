@@ -33,7 +33,7 @@
 				// when an autocomplete suggestion is chosen the corresponding option in the select is selected
 				select: function(event, ui) {
 					var matchingOption = select.find('option[value=' + ui.item.id + ']');
-					matchingOption.attr('selected', true);
+					matchingOption.prop('selected', true);
 					select.trigger('change');
 					// clear the search input and prevent default behaviour
 					$(this).val('');
@@ -81,7 +81,7 @@
 			// each element in the selected list has a button that can be used to remove it from the selection
 			$('a.autocomplete-remove-selection').live('click', function() {
 				var objectId = $(this).parent('li').data('object-id');
-				select.find('option[value=' + objectId + ']').attr('selected', false);
+				select.find('option[value=' + objectId + ']').prop('selected', false);
 				select.trigger('change');
 				return false;
 			});

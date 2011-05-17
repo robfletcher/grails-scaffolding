@@ -2,6 +2,7 @@ package scaffolding.pages
 
 import geb.Page
 
+@Mixin(Form)
 class BookEditPage extends Page {
 
 	static url = "/book/edit"
@@ -13,19 +14,8 @@ class BookEditPage extends Page {
 		errors(required: false) { $(".errors li")*.text() }
 	}
 
-	boolean hasError(String fieldName) {
-		book."$fieldName"().parent(".fieldcontain").hasClass("error")
+	private getForm() {
+		book
 	}
-
-	boolean isRequired(String fieldName) {
-		book."$fieldName"().parent(".fieldcontain").hasClass("required")
-	}
-
-	String errorFor(String fieldName) {
-		book."$fieldName"().next(".error").find("li").text()
-	}
-
-	void disableAutomaticValidation() {
-		book.jquery.attr("novalidate", "")
-	}
+	
 }
