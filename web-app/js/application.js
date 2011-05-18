@@ -29,6 +29,11 @@
 
 		// tranform errors and flash messages into popup alerts
 		$('.errors, .message').grailsAlert();
+		
+		// add confirmations to delete buttons, etc.
+		$('[data-confirmation-message]').click(function() {
+			return confirm($(this).data('confirmation-message'));
+		});
 
 		// prevent FOUC by only making body visible once document is ready
 		$('body').addClass('ready');

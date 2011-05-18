@@ -100,9 +100,21 @@ class JavascriptScaffoldingSpec extends GebSpec {
 		book.yearOfPublication == 1990
 	}
 
+	def "change mind about deleting book"() {
+		when:
+		withConfirm(false) {
+			deleteButton.click()
+		}
+
+		then:
+		at BookShowPage
+	}
+	
 	def "delete book"() {
 		when:
-		deleteButton.click()
+		withConfirm {
+			deleteButton.click()
+		}
 
 		then:
 		at BookListPage
