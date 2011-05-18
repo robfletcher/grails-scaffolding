@@ -64,6 +64,7 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ## Misc
 
+ * Get rid of inline script for delete buttons
  * Test the use of many-to-many on create as it might not work
  * Generate "edit this" links next to links to 1:m domains
  * Check that links to related objects are correct if the controller is named something other than the domain class name + 'Controller'
