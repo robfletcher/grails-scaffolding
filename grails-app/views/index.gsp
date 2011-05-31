@@ -104,6 +104,8 @@
 			<p>The code for this application is hosted on <a href="https://github.com/robfletcher/grails-scaffolding">GitHub</a>.
 			Please feel free to fork, raise issues or contact me on <a href="http://twitter.com/rfletcherEW">Twitter</a>
 			with suggestions.</p>
+			<p>Grails core will contain HTML and CSS updates and scripted enhancements will be provided by an additional
+			plugin.</p>
 			<p>Below is a list of controllers that are currently deployed in this application,
 			click on each to execute its default action:</p>
 

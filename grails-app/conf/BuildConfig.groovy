@@ -13,9 +13,22 @@ grails.project.dependency.resolution = {
         mavenCentral()
     }
     dependencies {
-		test "org.seleniumhq.selenium:selenium-firefox-driver:latest.integration"
-		test("org.seleniumhq.selenium:selenium-htmlunit-driver:latest.integration") {
-			exclude "xml-apis"
-		}
+//		test "org.seleniumhq.selenium:selenium-firefox-driver:latest.integration"
+//		test("org.seleniumhq.selenium:selenium-htmlunit-driver:latest.integration") {
+//			exclude "xml-apis"
+//		}
     }
+	plugins {
+		compile ":cache-headers:1.1.5"
+		compile ":cached-resources:1.0"
+//		compile ":fixtures:1.0.7-SNAPSHOT"
+		compile ":hibernate:$grailsVersion"
+		compile ":jquery:1.6.1.1"
+		compile ":jquery-ui:1.8.10.1"
+		compile ":resources:1.0"
+		build ":cloud-foundry:1.0.0.M3"
+		build ":tomcat:$grailsVersion"
+//		test ":spock:0.6-SNAPSHOT"
+		test ":geb:0.5.1"
+	}
 }
