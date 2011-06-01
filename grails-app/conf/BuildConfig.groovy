@@ -19,6 +19,7 @@ grails.project.dependency.resolution = {
 //		}
     }
 	plugins {
+		compile ":enhanced-scaffolding:1.0"
 		compile ":cache-headers:1.1.5"
 		compile ":cached-resources:1.0"
 //		compile ":fixtures:1.0.7-SNAPSHOT"
