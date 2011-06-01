@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="qunit">
-		<g:javascript library="grails.range"/>
+		<script src="../js/grails.range.js"></script>
 		<script>
 			$(document).ready(function() {
 				module('grailsRange', {

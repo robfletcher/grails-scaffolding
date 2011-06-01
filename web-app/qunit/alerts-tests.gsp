@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="qunit">
-		<g:javascript library="grails.alerts"/>
+		<script src="../js/grails.alerts.js"></script>
 		<script>
 			$(document).ready(function() {
 				module('grailsAlerts');

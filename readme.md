@@ -33,6 +33,7 @@ This is a sample project for prototyping changes to Grails scaffolding.
 ## Enhanced experience
 
  * History manipulation breaks if you go back to the list page after paginating/sorting [GitHub](https://github.com/robfletcher/grails-scaffolding/issues/#issue/2)
+ * Modal create/edit for related domain classes
  * Light-box show, edit, create direct from list page
  * Functional tests to ensure non-JS and JS versions work consistently
  * Autocomplete:
@@ -42,6 +43,7 @@ This is a sample project for prototyping changes to Grails scaffolding.
     * autocomplete for enums & inList constraint?
  * FOUC prevention by fade-in with CSS transition
  * Slicker version of confirmation on delete
+ * Use jQuery-UI slider if !Modernizr.inputs.range
 
 ## Navigation
 
@@ -59,8 +61,8 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 ## Integration
 
- * Does modernizr need a plugin?
- * Should the scaffolding enhancements be a plugin so they can be removed if using non-jQuery framework?
+ * Use modernizr plugin
+ * Declare separate resources for each jQuery plugin
 
 ## Misc
 

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="qunit">
-		<g:javascript library="grails.errors"/>
+		<script src="../js/grails.errors.js"></script>
 		<script>
 			$(document).ready(function() {
 				module('grailsErrorTooltips', {

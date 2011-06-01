@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="qunit">
-		<g:javascript library="application"/>
+		<script src="../js/application.js"></script>
 		<script>
 			$(document).ready(function() {
 

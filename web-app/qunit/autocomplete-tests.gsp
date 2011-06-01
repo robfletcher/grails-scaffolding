@@ -3,7 +3,7 @@
 	<head>
 		<meta name="layout" content="qunit">
 		<r:use modules="jquery-ui"/>
-		<g:javascript library="grails.autocomplete"/>
+		<script src="../js/grails.autocomplete.js"></script>
 		<script>
 			$(document).ready(function() {
 				module('grailsAutocompleteInput', {
