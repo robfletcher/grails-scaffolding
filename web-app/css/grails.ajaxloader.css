@@ -1,0 +1,18 @@
+.ajax-loading {
+	background: rgba(0, 0, 0, 0.75);
+	color: #dddddd;
+	font-size: 1em;
+	padding: 1em 0;
+	text-align: center;
+}
+
+.no-rgba .ajax-loading {
+	background-color: #404040;
+}
+
+.ie6 .ajax-loading,
+.ie7 .ajax-loading,
+.ie8 .ajax-loading {
+	background-color: transparent;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#c0000000, endColorstr=#c0000000);
+}

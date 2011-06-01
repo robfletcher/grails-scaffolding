@@ -1,0 +1,26 @@
+.error-tooltip {
+	background: #ff6666;
+	border: 1px solid #ff6666;
+	color: #ffffff;
+	font-size: 0.8em;
+	margin: 0;
+	max-width: 20em;
+	padding: 0.5em;
+	position: absolute;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+	-moz-border-radius: 0.5em;
+ -webkit-border-radius: 0.5em;
+		 border-radius: 0.5em;
+	-moz-box-shadow: 0 0 0.25em #ff6666;
+ -webkit-box-shadow: 0 0 0.25em #ff6666;
+		 box-shadow: 0 0 0.25em #ff6666;
+}
+
+.tooltip-pointer {
+	width: 0;
+	height: 0;
+	border: 0.75em solid transparent;
+	border-right-color: #ff6666;
+	position: absolute;
+	left: -1.5em;
+}
