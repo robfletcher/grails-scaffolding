@@ -25,6 +25,7 @@ grails.project.dependency.resolution = {
 		compile ":hibernate:$grailsVersion"
 		compile ":jquery:1.6.1.1"
 		compile ":jquery-ui:1.8.10.1"
+		compile ":modernizr:1.7.2"
 		compile ":resources:1.0"
 		build ":cloud-foundry:1.0.0.M3"
 		build ":tomcat:$grailsVersion"

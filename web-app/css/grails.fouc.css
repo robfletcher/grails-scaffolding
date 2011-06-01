@@ -1,0 +1,14 @@
+/* prevent FOUC */
+
+body {
+	opacity: 0;
+     -moz-transition: opacity 0.3s ease-out;  
+       -o-transition: opacity 0.3s ease-out;  
+  -webkit-transition: opacity 0.3s ease-out;  
+      -ms-transition: opacity 0.3s ease-out;  
+          transition: opacity 0.3s ease-out;  
+}
+
+.no-js body, body.ready {
+	opacity: 1;
+}

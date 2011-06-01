@@ -2,9 +2,9 @@
 <html>
 	<head>
 		<meta name="layout" content="qunit">
-		<script src="../js/application.js"></script>
+		<script src="../js/grails.forms.js"></script>
 		<script>
-			$(document).ready(function() {
+			$(function() {
 
 				test('first field with an error should be focused', function() {
 					ok($('input:focus').is('#genre'));

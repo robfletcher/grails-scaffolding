@@ -1,13 +1,3 @@
-/* prevent FOUC */
-
-body {
-	visibility: hidden;
-}
-
-.no-js body, body.ready {
-	visibility: visible;
-}
-
 /* Styles for progressively enhanced form components */
 
 /* range input */
