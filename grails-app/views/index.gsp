@@ -100,12 +100,24 @@
 		</div>
 		<div id="page-body" role="main">
 			<h1>Welcome to Grails</h1>
-			<p>This is a sandbox application for the development of changes to scaffolding targetted at Grails 1.4.</p>
-			<p>The code for this application is hosted on <a href="https://github.com/robfletcher/grails-scaffolding">GitHub</a>.
-			Please feel free to fork, raise issues or contact me on <a href="http://twitter.com/rfletcherEW">Twitter</a>
+			<p>This is a sandbox application for the development of changes to scaffolding targeted at Grails 1.4.</p>
+			<p>The code for this application is hosted on <a href="https://github.com/robfletcher/grails-scaffolding" rel="external">GitHub</a>.
+			Please feel free to fork, raise issues or contact me on <a href="http://twitter.com/rfletcherEW" rel="author">Twitter</a>
 			with suggestions.</p>
-			<p>Grails core will contain HTML and CSS updates and scripted enhancements will be provided by an additional
+			<p>Grails core will contain HTML and CSS updates and JavaScript enhancements will be provided by the <a href="https://github.com/robfletcher/grails-enhanced-scaffolding" rel="external"><em>enhanced-scaffolding</em></a>
 			plugin.</p>
+			<p>The <em>enhanced-scaffolding</em> plugin bundles a selection of jQuery plugins that layer over the core scaffolding. Applications using the plugin will be able to select which features are enabled. Features currently added to this demo by <em>enhanced-scaffolding</em> are:<p>
+			<ul>
+				<li>An AJAX loading indicator</li>
+				<li>Enhanced presentation of flash messages and error messages</li>
+				<li>Field errors presented as tooltips</li>
+				<li>Autocompletion of many-to-many and one-to-many relationships in <em>create</em> and <em>edit</em> forms</li>
+				<li>Auto-focus of first form field or first field with an error</li>
+				<li><a href="http://en.wikipedia.org/wiki/Flash_of_unstyled_content" rel="external"><abbr title="Flash of unstyled content">FOUC</abbr></a> prevention by fading in the document body once it has fully loaded</li>
+				<li>AJAX for paginating or sorting on <em>list</em> pages</li>
+				<li>Replacing <code>&lt;select&gt;</code> elements with <code>&lt;input type="range"&gt;</code> when used for properties with the <a href="http://grails.org/doc/latest/ref/Constraints/range.html" rel="external"><em>range</em></a> constraint.</li>
+			</ul>
+			<p>The application should be 100% usable even with JavaScript disabled. There are also a number of display optimisations for mobile devices included in Grails core as of version 1.4.</p>
 			<p>Below is a list of controllers that are currently deployed in this application,
 			click on each to execute its default action:</p>
 

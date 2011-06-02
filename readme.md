@@ -2,6 +2,10 @@ This is a sample project for prototyping changes to Grails scaffolding.
 
 # To-Do
 
+## Core scaffolding
+
+ * `rel="next|prev|first|last"` on pagination links
+
 ## Bugs
 
  * Autocompleted results need to re-position horizontally if window resized
