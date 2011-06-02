@@ -25,8 +25,9 @@ environments {
     }
     production {
         dataSource {
+            dialect = org.hibernate.dialect.MySQLInnoDBDialect
+            driverClassName = "com.mysql.jdbc.Driver"
             dbCreate = "update"
-            url = "jdbc:h2:file:prodDb;shutdown=true"
         }
     }
 }
