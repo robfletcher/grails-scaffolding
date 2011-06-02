@@ -43,7 +43,7 @@
 			}
 
 			.boxshadow #page-body {
-				margin-left: 18em;
+				margin-left: 20.5em;
 			}
 
 			h2 {
@@ -53,11 +53,21 @@
 			}
 
 			p {
-				margin: 0.25em 0;
+				margin: 0.25em 0 0.5em;
 			}
+
+            #page-body ul {
+                list-style-position: outside;
+                padding-left: 2em;
+            }
+
+            #page-body li {
+                margin: 0 0 0.5em 0;
+            }
 
 			#controller-list ul {
 				list-style-position: inside;
+                padding-left: 0;
 			}
 
 			#controller-list li {
