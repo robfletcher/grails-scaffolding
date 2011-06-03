@@ -2,9 +2,8 @@
 /devDB.*
 *.iml
 /target/
-
-
 /out/
 *.log
 /CodeNarcReport.html
 *.tmproj
+*.sha1
