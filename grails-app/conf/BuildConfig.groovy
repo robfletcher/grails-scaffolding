@@ -20,7 +20,6 @@ grails.project.dependency.resolution = {
 		}
     }
 	plugins {
-		compile ":enhanced-scaffolding:1.0"
 		compile ":cache-headers:1.1.5"
 		compile ":cached-resources:1.0"
 		compile ":fixtures:1.0.7-SNAPSHOT"
@@ -35,3 +34,5 @@ grails.project.dependency.resolution = {
 		test ":geb:0.5.1"
 	}
 }
+
+grails.plugin.location."enhanced-scaffolding" = "../grails-enhanced-scaffolding"
