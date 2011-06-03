@@ -1,8 +1,11 @@
 package scaffolding
 
-import grails.util.*
-import spock.lang.*
-import scaffolding.example.*
+import scaffolding.example.Author
+import scaffolding.example.Book
+import scaffolding.example.Cover
+import scaffolding.example.Genre
+import spock.lang.Shared
+import spock.lang.Unroll
 
 class InputTypesForRelationsSpec extends NoJavascriptSpec {
 	
@@ -29,7 +32,7 @@ class InputTypesForRelationsSpec extends NoJavascriptSpec {
 		go "/thing/create"
 	}
 	
-	@Unroll("the #input field on #url is a selected type with the options #options")
+	@Unroll({"the $input field on $url is a selected type with the options $options"})
 	def "appropriate input types are used"() {
 		given:
 		go url
@@ -52,7 +55,7 @@ class InputTypesForRelationsSpec extends NoJavascriptSpec {
 		expect: $("#formats").empty
 	}
 	
-	@Unroll("the #input input on #url has the #attribute attribute")
+	@Unroll({"the $input input on $url has the $attribute attribute"})
 	def "inputs have correct boolean attributes"() {
 		given:
 		go url
@@ -68,7 +71,7 @@ class InputTypesForRelationsSpec extends NoJavascriptSpec {
 		"/format/create?book.id=$book.id" | "#book" | "required"
 	}
 	
-	@Unroll("the #input input on #url does not have the #attribute attribute")
+	@Unroll({"the $input input on $url does not have the $attribute attribute"})
 	def "inputs do not have inappropriate boolean attributes"() {
 		given:
 		go url

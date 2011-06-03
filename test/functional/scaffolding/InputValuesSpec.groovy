@@ -44,7 +44,7 @@ class InputValuesSpec extends NoJavascriptSpec {
 		go "/thing/edit/$thingInstance.id"
 	}
 	
-	@Unroll("the value of the #input input should be '#value'")
+	@Unroll({"the value of the $input input should be '$value'"})
 	def "text input values"() {
 		expect:
 		$(input).value() == value as String

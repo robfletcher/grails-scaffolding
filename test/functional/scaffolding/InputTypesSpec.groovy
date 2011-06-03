@@ -9,7 +9,7 @@ class InputTypesSpec extends NoJavascriptSpec {
 		go "/thing/create"
 	}
 	
-	@Unroll("the #input input is type #expectedType")
+	@Unroll({"the $input input is type $expectedType"})
 	def "appropriate input types are used"() {
 		expect:
 		$(input).is("input")
@@ -26,7 +26,7 @@ class InputTypesSpec extends NoJavascriptSpec {
 		"#aBoolean" | "checkbox"
 	}
 	
-	@Unroll("the #input input is a #expectedType")
+	@Unroll({"the $input input is a $expectedType"})
 	def "appropriate input tags are used"() {
 		expect:
 		$(input).is(expectedType)
@@ -37,7 +37,7 @@ class InputTypesSpec extends NoJavascriptSpec {
 		"#optionalLongText" | "textarea"
 	}
 	
-	@Unroll("#input is a select with the options #options")
+	@Unroll({"$input is a select with the options $options"})
 	def "select inputs have the correct options"() {
 		expect:
 		$(input).is("select")
@@ -53,7 +53,7 @@ class InputTypesSpec extends NoJavascriptSpec {
 		"#optionalEnum"       | [""] + Environment.values()*.toString()
 	}
 	
-	@Unroll("the #input input has #attribute='#value'")
+	@Unroll({"the $input input has $attribute='$value'"})
 	def "inputs have correct attributes"() {
 		expect:
 		$(input).@"$attribute" == value
@@ -69,7 +69,7 @@ class InputTypesSpec extends NoJavascriptSpec {
 		"#numberWithMinAndMax" | "max"       | "100"
 	}
 	
-	@Unroll("the #input input has the #attribute attribute")
+	@Unroll({"the $input input has the $attribute attribute"})
 	def "inputs have correct boolean attributes"() {
 		expect:
 		!($(input).getElement(0).getAttribute(attribute) in [null, false, "false"]) // drivers handle boolean attributes differently
@@ -88,7 +88,7 @@ class InputTypesSpec extends NoJavascriptSpec {
 		"#anEnum"        | "required"
 	}
 	
-	@Unroll("the #input input does not have the #attribute attribute")
+	@Unroll({"the $input input does not have the $attribute attribute"})
 	def "inputs do not have inappropriate boolean attributes"() {
 		expect:
 		$(input).getElement(0).getAttribute(attribute) in [null, false, "false"] // drivers handle boolean attributes differently
@@ -108,10 +108,10 @@ class InputTypesSpec extends NoJavascriptSpec {
 	}
 	
 	@Issue("http://jira.grails.org/browse/GRAILS-5258")
-	@Unroll("the #input is present on the page")
+	@Unroll({"the $input input is present on the page"})
 	def "inputs for embedded properties are rendered"() {
 		expect:
-		$("input[name=$input]").is("input")
+		$("input[name='$input']").is("input")
 		
 		where:
 		input << ["address.street", "address.city", "address.postCode"]
