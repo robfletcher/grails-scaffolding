@@ -8,4 +8,8 @@ class Cover {
 	String toString() {
 		filename
 	}
+
+    static mapping = {
+        image sqlType: "blob"
+    }
 }
