@@ -11,7 +11,7 @@ grails.project.dependency.resolution = {
         grailsCentral()
         mavenLocal()
         mavenCentral()
-//        mavenRepo "http://m2repo.spockframework.org/snapshots"
+        mavenRepo "http://m2repo.spockframework.org/snapshots"
     }
     dependencies {
 		test "org.seleniumhq.selenium:selenium-firefox-driver:latest.integration"
