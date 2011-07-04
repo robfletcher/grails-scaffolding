@@ -1,5 +1,9 @@
 This is a sample project for prototyping changes to Grails scaffolding.
 
+To build this project,
+you must have the [grails-enhanced-scaffolding plugin](https://github.com/robfletcher/grails-enhanced-scaffolding)
+in the same parent folder (it's used as an inline plugin).
+
 # To-Do
 
 ## Core scaffolding
