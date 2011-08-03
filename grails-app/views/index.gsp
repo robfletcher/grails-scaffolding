@@ -110,12 +110,10 @@
 		</div>
 		<div id="page-body" role="main">
 			<h1>Welcome to Grails</h1>
-			<p>This is a sandbox application for the development of changes to scaffolding targeted at Grails 1.4.</p>
-			<p>The code for this application is hosted on <a href="https://github.com/robfletcher/grails-scaffolding" rel="external">GitHub</a>.
+			<p>This is a demo of the <a href="http://grails.org/plugin/enhanced-scaffolding" rel="external">enhanced-scaffolding plugin</a> running on Grails 2.0.</p>
+			<p>There are GitHub repositories for <a href="https://github.com/robfletcher/grails-enhanced-scaffolding" rel="external">the plugin</a> and <a href="https://github.com/robfletcher/grails-scaffolding" rel="external">this application</a>.
 			Please feel free to fork, raise issues or contact me on <a href="http://twitter.com/rfletcherEW" rel="author">Twitter</a>
 			with suggestions.</p>
-			<p>Grails core will contain HTML and CSS updates and JavaScript enhancements will be provided by the <a href="https://github.com/robfletcher/grails-enhanced-scaffolding" rel="external"><em>enhanced-scaffolding</em></a>
-			plugin.</p>
 			<p>The <em>enhanced-scaffolding</em> plugin bundles a selection of jQuery plugins that layer over the core scaffolding. Applications using the plugin will be able to select which features are enabled. Features currently added to this demo by <em>enhanced-scaffolding</em> are:<p>
 			<ul>
 				<li>An AJAX loading indicator</li>

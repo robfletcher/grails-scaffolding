@@ -9,7 +9,7 @@ class Cover {
 		filename
 	}
 
-    static mapping = {
-        image sqlType: "blob"
-    }
+//    static mapping = {
+//        image sqlType: "blob"
+//    }
 }
