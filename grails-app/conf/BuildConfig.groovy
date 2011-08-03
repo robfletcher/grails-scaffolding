@@ -10,6 +10,7 @@ grails.project.dependency.resolution = {
         grailsCentral()
         mavenLocal()
         mavenCentral()
+        mavenRepo "http://m2repo.spockframework.org/snapshots"
     }
     dependencies {
 		test "org.seleniumhq.selenium:selenium-firefox-driver:2.0b3"
@@ -21,7 +22,7 @@ grails.project.dependency.resolution = {
         compile ":enhanced-scaffolding:1.0"
 		compile ":cache-headers:1.1.5"
 		compile ":cached-resources:1.0"
-		compile ":fixtures:1.0.7-SNAPSHOT"
+		compile ":fixtures:1.0.7"
 		compile ":hibernate:$grailsVersion"
 		compile ":jquery:1.6.1.1"
 		compile ":jquery-ui:1.8.11"
